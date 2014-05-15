@@ -131,9 +131,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// The actual value of the data point.
     /// </summary>
-    public double? Value
+    public double Value
     {
-      get { return this.value; }
+      get { return this.value.GetValueOrDefault(); }
       set { this.value = value; }
     }
     

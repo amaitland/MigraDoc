@@ -33,6 +33,7 @@
 
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.DocumentObjectModel.Visitors;
+using PdfSharp.Charting;
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {

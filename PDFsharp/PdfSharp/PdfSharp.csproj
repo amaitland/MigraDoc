@@ -750,12 +750,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PdfSharp\ProductVersionInfo.cs" />
-    <Compile Include="PdfSharp\enums\PageOrientation.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp\enums\PageSize.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PdfSharp\enums\PSMsgID.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -819,6 +813,12 @@
   <ItemGroup>
     <Folder Include="PdfSharp.Drawing.Wpf\" />
     <Folder Include="Resources\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdfSharp.Core\PdfSharp.Core.csproj">
+      <Project>{23E6D19E-C966-4896-879B-63E5DB5ACA3D}</Project>
+      <Name>PdfSharp.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

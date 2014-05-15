@@ -151,7 +151,7 @@ namespace MigraDoc.DocumentObjectModel
     {
       TabStop tab = AddTabStop(position);
       tab.Alignment = alignment;
-      tab.Leader = leader;
+      tab.leader = leader;
       return tab;
     }
 

@@ -78,15 +78,15 @@ namespace MigraDoc.Rendering
 
     private BorderStyle GetStyle(BorderType type)
     {
-      BorderStyle style = BorderStyle.Single;
+      var border = GetBorder(type);
 
-      Border border = GetBorder(type);
-      if (border != null && !border.IsNull("Style"))
-        style = border.Style;
-      else if (!this.borders.IsNull("Style"))
-        style = this.borders.Style;
+      if (border != null && border.style.HasValue)
+		  return border.style.Value;
 
-      return style;
+	  if (borders.style.HasValue)
+		    return borders.style.Value;
+
+	    return BorderStyle.Single;
     }
 
     internal XUnit GetWidth(BorderType type)
@@ -114,13 +114,13 @@ namespace MigraDoc.Rendering
       }
       else if (!(type == BorderType.DiagonalDown || type == BorderType.DiagonalUp))
       {
-        if (!this.borders.IsNull("Visible") && !this.borders.Visible)
+        if (borders.visible.HasValue && !borders.visible.Value)
           return 0;
 
-        if (!this.borders.IsNull("Width"))
+        if (this.borders.width != Unit.NullValue)
           return this.borders.Width.Point;
 
-        if (!this.borders.IsNull("Color") || !this.borders.IsNull("Style") || this.borders.Visible)
+        if (this.borders.color != Color.Empty || borders.style.HasValue || this.borders.Visible)
           return 0.5;
       }
       return 0;

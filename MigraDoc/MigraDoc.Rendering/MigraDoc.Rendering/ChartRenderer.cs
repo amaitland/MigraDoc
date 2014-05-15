@@ -32,10 +32,14 @@ using System;
 using MigraDoc.DocumentObjectModel;
 
 using MigraDoc.DocumentObjectModel.Tables;
+using PdfSharp.Charting;
 using PdfSharp.Drawing;
 using MigraDoc.Rendering.ChartMapper;
-using MigraDoc.DocumentObjectModel.Shapes;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
+using Chart = MigraDoc.DocumentObjectModel.Shapes.Charts.Chart;
+using FillFormat = MigraDoc.DocumentObjectModel.Shapes.FillFormat;
+using LineFormat = MigraDoc.DocumentObjectModel.Shapes.LineFormat;
+using PlotArea = MigraDoc.DocumentObjectModel.Shapes.Charts.PlotArea;
 
 namespace MigraDoc.Rendering
 {
@@ -238,7 +242,7 @@ namespace MigraDoc.Rendering
     }
 
 
-    XUnit AlignVertically(VerticalAlignment vAlign, XUnit top, XUnit bottom, XUnit height)
+    XUnit AlignVertically(VerticalAlignment? vAlign, XUnit top, XUnit bottom, XUnit height)
     {
       switch (vAlign)
       {

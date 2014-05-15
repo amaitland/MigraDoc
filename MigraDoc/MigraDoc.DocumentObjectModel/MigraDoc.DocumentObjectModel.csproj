@@ -177,13 +177,7 @@
     <Compile Include="MigraDoc.DocumentObjectModel.Shapes.Charts\enums\DataLabelType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Shapes.Charts\enums\HorizontalAlignment.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Shapes.Charts\enums\MarkerStyle.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Shapes.Charts\enums\TickMarkType.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Shapes.Charts\Gridlines.cs">
@@ -296,9 +290,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Tables\enums\RowHeightRule.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Tables\enums\VerticalAlignment.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Tables\Row.cs">
@@ -557,7 +548,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\PDFsharp\PdfSharp.Core\PdfSharp.Core.csproj">
+      <Project>{23E6D19E-C966-4896-879B-63E5DB5ACA3D}</Project>
+      <Name>PdfSharp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

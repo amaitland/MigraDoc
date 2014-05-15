@@ -537,7 +537,7 @@ namespace MigraDoc.DocumentObjectModel
     public Underline? Underline
     {
       get { return Font.Underline; }
-      set { Font.Underline = value; }
+      set { Font.underline = value; }
     }
 
     /// <summary>
@@ -557,7 +557,7 @@ namespace MigraDoc.DocumentObjectModel
     public bool? Superscript
     {
       get { return Font.Superscript; }
-      set { Font.Superscript = value; }
+      set { Font.superscript = value; }
     }
 
     /// <summary>
@@ -567,7 +567,7 @@ namespace MigraDoc.DocumentObjectModel
     public bool? Subscript
     {
       get { return Font.Subscript; }
-      set { Font.Subscript = value; }
+      set { Font.subscript = value; }
     }
 
     /// <summary>

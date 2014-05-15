@@ -65,9 +65,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets a value indicating whether the line should be visible.
     /// </summary>
-    public bool? Visible
+    public bool Visible
     {
-      get { return this.visible; }
+      get { return this.visible.GetValueOrDefault(); }
       set { this.visible = value; }
     }
     

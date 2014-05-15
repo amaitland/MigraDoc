@@ -30,8 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-
-using MigraDoc.DocumentObjectModel.Tables;
+using PdfSharp.Charting;
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -40,118 +39,118 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
   /// </summary>
   public class AxisTitle : ChartObject
   {
-    /// <summary>
-    /// Initializes a new instance of the AxisTitle class.
-    /// </summary>
-    public AxisTitle()
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the AxisTitle class.
+	/// </summary>
+	public AxisTitle()
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the AxisTitle class with the specified parent.
-    /// </summary>
-    internal AxisTitle(DocumentObject parent) : base(parent) { }
+	/// <summary>
+	/// Initializes a new instance of the AxisTitle class with the specified parent.
+	/// </summary>
+	internal AxisTitle(DocumentObject parent) : base(parent) { }
 
-    #region Methods
-    /// <summary>
-    /// Creates a deep copy of this object.
-    /// </summary>
-    public new AxisTitle Clone()
-    {
-      return (AxisTitle)DeepCopy();
-    }
+	#region Methods
+	/// <summary>
+	/// Creates a deep copy of this object.
+	/// </summary>
+	public new AxisTitle Clone()
+	{
+	  return (AxisTitle)DeepCopy();
+	}
 
-    /// <summary>
-    /// Implements the deep copy of the object.
-    /// </summary>
-    protected override object DeepCopy()
-    {
-      AxisTitle axisTitle = (AxisTitle)base.DeepCopy();
-      if (axisTitle.font != null)
-      {
-        axisTitle.font = axisTitle.font.Clone();
-        axisTitle.font.parent = axisTitle;
-      }
-      return axisTitle;
-    }
-    #endregion
+	/// <summary>
+	/// Implements the deep copy of the object.
+	/// </summary>
+	protected override object DeepCopy()
+	{
+	  AxisTitle axisTitle = (AxisTitle)base.DeepCopy();
+	  if (axisTitle.font != null)
+	  {
+		axisTitle.font = axisTitle.font.Clone();
+		axisTitle.font.parent = axisTitle;
+	  }
+	  return axisTitle;
+	}
+	#endregion
 
-    #region Properties
-    /// <summary>
-    /// Gets or sets the style name of the axis.
-    /// </summary>
-    public string Style
-    {
-      get { return this.style; }
-      set { this.style = value; }
-    }
-    
-    internal string style = null;
+	#region Properties
+	/// <summary>
+	/// Gets or sets the style name of the axis.
+	/// </summary>
+	public string Style
+	{
+	  get { return this.style; }
+	  set { this.style = value; }
+	}
+	
+	internal string style = null;
 
-    /// <summary>
-    /// Gets or sets the caption of the title.
-    /// </summary>
-    public string Caption
-    {
-      get { return this.caption; }
-      set { this.caption = value; }
-    }
-    
-    internal string caption = null;
+	/// <summary>
+	/// Gets or sets the caption of the title.
+	/// </summary>
+	public string Caption
+	{
+	  get { return this.caption; }
+	  set { this.caption = value; }
+	}
+	
+	internal string caption = null;
 
-    /// <summary>
-    /// Gets the font object of the title.
-    /// </summary>
-    public Font Font
-    {
-      get
-      {
-        if (this.font == null)
-          this.font = new Font(this);
+	/// <summary>
+	/// Gets the font object of the title.
+	/// </summary>
+	public Font Font
+	{
+	  get
+	  {
+		if (this.font == null)
+		  this.font = new Font(this);
 
-        return this.font;
-      }
-      set
-      {
-        SetParent(value);
-        this.font = value;
-      }
-    }
-    
-    internal Font font;
+		return this.font;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.font = value;
+	  }
+	}
+	
+	internal Font font;
 
-    /// <summary>
-    /// Gets or sets the orientation of the caption.
-    /// </summary>
-    public Unit Orientation
-    {
-      get { return this.orientation; }
-      set { this.orientation = value; }
-    }
-    
-    internal Unit orientation = Unit.NullValue;
+	/// <summary>
+	/// Gets or sets the orientation of the caption.
+	/// </summary>
+	public Unit Orientation
+	{
+	  get { return this.orientation; }
+	  set { this.orientation = value; }
+	}
+	
+	internal Unit orientation = Unit.NullValue;
 
-    /// <summary>
-    /// Gets or sets the alignment of the caption.
-    /// </summary>
-    public HorizontalAlignment? Alignment
-    {
-      get { return this.alignment; }
-      set { this.alignment = value; }
-    }
+	/// <summary>
+	/// Gets or sets the alignment of the caption.
+	/// </summary>
+	public HorizontalAlignment Alignment
+	{
+	  get { return this.alignment.GetValueOrDefault(); }
+	  set { this.alignment = value; }
+	}
 
 	internal HorizontalAlignment? alignment;
 
-    /// <summary>
-    /// Gets or sets the alignment of the caption.
-    /// </summary>
-    public VerticalAlignment? VerticalAlignment
-    {
-      get { return this.verticalAlignment; }
-      set { this.verticalAlignment = value; }
-    }
+	/// <summary>
+	/// Gets or sets the alignment of the caption.
+	/// </summary>
+	public VerticalAlignment VerticalAlignment
+	{
+	  get { return this.verticalAlignment.GetValueOrDefault(); }
+	  set { this.verticalAlignment = value; }
+	}
 
 	internal VerticalAlignment? verticalAlignment;
-    #endregion
+	#endregion
   }
 }

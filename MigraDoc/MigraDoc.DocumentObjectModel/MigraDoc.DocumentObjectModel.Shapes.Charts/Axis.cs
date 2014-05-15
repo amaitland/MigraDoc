@@ -30,6 +30,8 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
+using PdfSharp.Charting;
+
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
   /// <summary>
@@ -118,9 +120,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets the minimum value of the axis.
 	/// </summary>
-	public double? MinimumScale
+	public double MinimumScale
 	{
-	  get { return this.minimumScale; }
+	  get { return this.minimumScale.GetValueOrDefault(); }
 	  set { this.minimumScale = value; }
 	}
 	
@@ -129,9 +131,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets the maximum value of the axis.
 	/// </summary>
-	public double? MaximumScale
+	public double MaximumScale
 	{
-	  get { return this.maximumScale; }
+	  get { return this.maximumScale.GetValueOrDefault(); }
 	  set { this.maximumScale = value; }
 	}
 	
@@ -140,9 +142,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets the interval of the primary tick.
 	/// </summary>
-	public double? MajorTick
+	public double MajorTick
 	{
-	  get { return this.majorTick; }
+	  get { return this.majorTick.GetValueOrDefault(); }
 	  set { this.majorTick = value; }
 	}
 	
@@ -151,9 +153,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets the interval of the secondary tick.
 	/// </summary>
-	public double? MinorTick
+	public double MinorTick
 	{
-	  get { return this.minorTick; }
+	  get { return this.minorTick.GetValueOrDefault(); }
 	  set { this.minorTick = value; }
 	}
 	
@@ -268,9 +270,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets, whether the axis has a primary gridline object.
 	/// </summary>
-	public bool? HasMajorGridlines
+	public bool HasMajorGridlines
 	{
-	  get { return this.hasMajorGridlines; }
+	  get { return this.hasMajorGridlines.GetValueOrDefault(); }
 	  set { this.hasMajorGridlines = value; }
 	}
 	
@@ -279,9 +281,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 	/// <summary>
 	/// Gets or sets, whether the axis has a secondary gridline object.
 	/// </summary>
-	public bool? HasMinorGridlines
+	public bool HasMinorGridlines
 	{
-	  get { return this.hasMinorGridlines; }
+	  get { return this.hasMinorGridlines.GetValueOrDefault(); }
 	  set { this.hasMinorGridlines = value; }
 	}
 	

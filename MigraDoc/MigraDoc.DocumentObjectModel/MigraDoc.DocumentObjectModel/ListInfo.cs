@@ -68,9 +68,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets the type of the list.
     /// </summary>
-    public ListType? ListType
+    public ListType ListType
     {
-      get { return this.listType; }
+      get { return this.listType.GetValueOrDefault(); }
       set { this.listType = value; }
     }
     
@@ -91,9 +91,9 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets a value indicating whether
     /// the previous list numbering should be continued.
     /// </summary>
-    public bool? ContinuePreviousList
+    public bool ContinuePreviousList
     {
-      get { return this.continuePreviousList; }
+      get { return this.continuePreviousList.GetValueOrDefault(); }
       set { this.continuePreviousList = value; }
     }
     

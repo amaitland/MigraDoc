@@ -30,6 +30,7 @@
 
 using System;
 using System.Collections;
+using PdfSharp.Charting;
 using PdfSharp.Drawing;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Visitors;
@@ -155,7 +156,7 @@ namespace MigraDoc.Rendering
       if (renderInfos == null)
         return;
 
-      VerticalAlignment verticalAlignment = cell.VerticalAlignment;
+      VerticalAlignment verticalAlignment = cell.VerticalAlignment.GetValueOrDefault();
       XUnit contentHeight = formattedCell.ContentHeight;
       XUnit innerHeight = innerRect.Height;
       XUnit targetX = innerRect.X + cell.Column.LeftPadding;

@@ -237,9 +237,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// Gets or sets a value which defines whether the odd and even pages
 	/// of the section have different header and footer.
 	/// </summary>
-	public bool? OddAndEvenPagesHeaderFooter
+	public bool OddAndEvenPagesHeaderFooter
 	{
-	  get { return this.oddAndEvenPagesHeaderFooter; }
+	  get { return this.oddAndEvenPagesHeaderFooter.GetValueOrDefault(); }
 	  set { this.oddAndEvenPagesHeaderFooter = value; }
 	}
 	
@@ -249,9 +249,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// Gets or sets a value which define whether the section has a different
 	/// first page header and footer.
 	/// </summary>
-	public bool? DifferentFirstPageHeaderFooter
+	public bool DifferentFirstPageHeaderFooter
 	{
-	  get { return this.differentFirstPageHeaderFooter; }
+	  get { return this.differentFirstPageHeaderFooter.GetValueOrDefault(); }
 	  set { this.differentFirstPageHeaderFooter = value; }
 	}
 	
@@ -285,9 +285,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// Gets or sets a value which defines whether the odd and even pages
 	/// of the section should change left and right margin.
 	/// </summary>
-	public bool? MirrorMargins
+	public bool MirrorMargins
 	{
-	  get { return this.mirrorMargins; }
+	  get { return this.mirrorMargins.GetValueOrDefault(); }
 	  set { this.mirrorMargins = value; }
 	}
 	
@@ -297,9 +297,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// Gets or sets a value which defines whether a page should break horizontally.
 	/// Currently only tables are supported.
 	/// </summary>
-	public bool? HorizontalPageBreak
+	public bool HorizontalPageBreak
 	{
-	  get { return this.horizontalPageBreak; }
+	  get { return this.horizontalPageBreak.GetValueOrDefault(); }
 	  set { this.horizontalPageBreak = value; }
 	}
 	

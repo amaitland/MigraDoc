@@ -295,42 +295,6 @@
     <Compile Include="PdfSharp.Charting\DocumentObjectCollection.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PdfSharp.Charting\enums\BlankType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\ChartType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\DataLabelPosition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\DataLabelType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\DockingType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\FontProperties.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\HorizontalAlignment.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\LineStyle.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\MarkerStyle.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\TickMarkType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\Underline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PdfSharp.Charting\enums\VerticalAlignment.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PdfSharp.Charting\FillFormat.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -386,6 +350,10 @@
     <None Include="StrongnameKey.snk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PdfSharp.Core\PdfSharp.Core.csproj">
+      <Project>{23E6D19E-C966-4896-879B-63E5DB5ACA3D}</Project>
+      <Name>PdfSharp.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PdfSharp\PdfSharp.csproj">
       <Project>{5384CE57-1F94-4D22-860D-2E9C1AC12DDF}</Project>
       <Name>PdfSharp</Name>
@@ -407,6 +375,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PdfSharp.Charting\enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -192,12 +192,12 @@ namespace MigraDoc.Rendering
           double vertRes = usrResolutionSet ? (double)image.Resolution : xImage.VerticalResolution;
           XUnit inherentHeight = XUnit.FromInch(yPixels / vertRes);
 
-          bool lockRatio = this.image.IsNull("LockAspectRatio") ? true : image.LockAspectRatio;
+		  bool lockRatio = image.LockAspectRatio.GetValueOrDefault(true);
 
-          double scaleHeight = this.image.ScaleHeight;
-          double scaleWidth = this.image.ScaleWidth;
-          bool scaleHeightSet = !this.image.IsNull("ScaleHeight");
-          bool scaleWidthSet = !this.image.IsNull("ScaleWidth");
+		  bool scaleHeightSet = this.image.ScaleHeight.HasValue;
+		  bool scaleWidthSet = this.image.ScaleWidth.HasValue;
+		  double scaleHeight = this.image.ScaleHeight.GetValueOrDefault();
+		  double scaleWidth = this.image.ScaleWidth.GetValueOrDefault();
 
           if (lockRatio && !(scaleHeightSet && scaleWidthSet))
           {

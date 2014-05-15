@@ -191,9 +191,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// <summary>
 	/// Gets or sets the underline property.
 	/// </summary>
-	public Underline? Underline
+	public Underline Underline
 	{
-	  get { return underline; }
+	  get { return underline.GetValueOrDefault(); }
 	  set { this.underline = value; }
 	}
 	
@@ -213,9 +213,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// <summary>
 	/// Gets or sets the superscript property.
 	/// </summary>
-	public bool? Superscript
+	public bool Superscript
 	{
-	  get { return this.superscript; }
+	  get { return this.superscript.GetValueOrDefault(); }
 	  set
 	  {
 		this.superscript = value;
@@ -228,9 +228,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// <summary>
 	/// Gets or sets the subscript property.
 	/// </summary>
-	public bool? Subscript
+	public bool Subscript
 	{
-	  get { return this.subscript; }
+	  get { return this.subscript.GetValueOrDefault(); }
 	  set
 	  {
 		this.subscript = value;

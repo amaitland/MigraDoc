@@ -292,9 +292,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether to use the CMYK color model when rendered as PDF.
     /// </summary>
-    public bool? UseCmykColor
+    public bool UseCmykColor
     {
-      get { return this.useCmykColor; }
+      get { return this.useCmykColor.GetValueOrDefault(); }
       set { this.useCmykColor = value; }
     }
     

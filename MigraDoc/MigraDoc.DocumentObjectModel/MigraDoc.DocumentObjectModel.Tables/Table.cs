@@ -418,9 +418,9 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// Gets or sets a value indicating whether
     /// to keep all the table rows on the same page.
     /// </summary>
-    public bool? KeepTogether
+    public bool KeepTogether
     {
-      get { return this.keepTogether; }
+      get { return this.keepTogether.GetValueOrDefault(); }
       set { this.keepTogether = value; }
     }
     

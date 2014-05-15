@@ -99,9 +99,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets the character which is used as a leader for the tabstop.
     /// </summary>
-    public TabLeader? Leader
+    public TabLeader Leader
     {
-      get { return this.leader; }
+      get { return this.leader.GetValueOrDefault(); }
       set { this.leader = value; }
     }
     

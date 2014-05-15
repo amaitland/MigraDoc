@@ -224,9 +224,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether to keep all the paragraph's lines on the same page.
     /// </summary>
-    public bool? KeepTogether
+    public bool KeepTogether
     {
-      get { return this.keepTogether; }
+      get { return this.keepTogether.GetValueOrDefault(); }
       set { this.keepTogether = value; }
     }
     
@@ -235,9 +235,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether this and the next paragraph stay on the same page.
     /// </summary>
-    public bool? KeepWithNext
+    public bool KeepWithNext
     {
-      get { return this.keepWithNext; }
+      get { return this.keepWithNext.GetValueOrDefault(); }
       set { this.keepWithNext = value; }
     }
     
@@ -311,9 +311,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether a page break is inserted before the paragraph.
     /// </summary>
-    public bool? PageBreakBefore
+    public bool PageBreakBefore
     {
-      get { return this.pageBreakBefore; }
+      get { return this.pageBreakBefore.GetValueOrDefault(); }
       set { this.pageBreakBefore = value; }
     }
     
@@ -405,9 +405,9 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether a line from the paragraph stays alone in a page.
     /// </summary>
-    public bool? WidowControl
+    public bool WidowControl
     {
-      get { return this.widowControl; }
+      get { return this.widowControl.GetValueOrDefault(); }
       set { this.widowControl = value; }
     }
     

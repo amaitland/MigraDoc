@@ -224,9 +224,9 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// Gets or sets the number of columns that should be kept together with
     /// current column in case of a page break.
     /// </summary>
-    public int? KeepWith
+    public int KeepWith
     {
-      get { return this.keepWith; }
+      get { return this.keepWith.GetValueOrDefault(); }
       set { this.keepWith = value; }
     }
     
@@ -235,9 +235,9 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// <summary>
     /// Gets or sets a value which define whether the column is a header.
     /// </summary>
-    public bool? HeadingFormat
+    public bool HeadingFormat
     {
-      get { return this.headingFormat; }
+      get { return this.headingFormat.GetValueOrDefault(); }
       set { this.headingFormat = value; }
     }
     

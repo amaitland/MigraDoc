@@ -2257,7 +2257,7 @@ namespace MigraDoc.Rendering
     VerticalLineInfo CalcVerticalInfo(XFont font)
     {
       ParagraphFormat paragraphFormat = this.paragraph.Format;
-      LineSpacingRule spacingRule = paragraphFormat.LineSpacingRule;
+      var spacingRule = paragraphFormat.LineSpacingRule;
       XUnit lineHeight = 0;
 
       XUnit descent = FontHandler.GetDescent(font);

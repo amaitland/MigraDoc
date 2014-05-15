@@ -263,9 +263,9 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// Gets or sets whether the series has a DataLabel.
     /// </summary>
-    public bool? HasDataLabel
+    public bool HasDataLabel
     {
-      get { return this.hasDataLabel; }
+      get { return this.hasDataLabel.GetValueOrDefault(); }
       set { this.hasDataLabel = value; }
     }
     

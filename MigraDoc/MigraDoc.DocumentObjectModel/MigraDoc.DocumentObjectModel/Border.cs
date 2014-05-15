@@ -73,9 +73,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// <summary>
 	/// Gets or sets a value indicating whether the border visible is.
 	/// </summary>
-	public bool? Visible
+	public bool Visible
 	{
-	  get { return this.visible; }
+	  get { return this.visible.GetValueOrDefault(); }
 	  set { this.visible = value; }
 	}
 	

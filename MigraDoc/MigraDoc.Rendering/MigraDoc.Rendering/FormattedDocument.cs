@@ -452,8 +452,8 @@ namespace MigraDoc.Rendering
       this.currentFieldInfos.pyhsicalPageNr = this.currentPage;
       this.currentFieldInfos.section = this.sectionNumber;
 
-      if (this.isNewSection && !this.currentSection.PageSetup.IsNull("StartingNumber"))
-        this.shownPageNumber = this.currentSection.PageSetup.StartingNumber;
+      if (this.isNewSection && this.currentSection.PageSetup.startingNumber.HasValue)
+        this.shownPageNumber = this.currentSection.PageSetup.StartingNumber.Value;
 
       this.currentFieldInfos.displayPageNr = this.shownPageNumber;
     }
