@@ -139,20 +139,6 @@ namespace MigraDoc.Rendering.Forms
     internal XPrivateFontCollection privateFonts;
 
     /// <summary>
-    /// Gets or sets a DDL string or file.
-    /// </summary>
-    public string Ddl
-    {
-      get { return ddl; }
-      set
-      {
-        ddl = value;
-        DdlUpdated();
-      }
-    }
-    string ddl;
-
-    /// <summary>
     /// Gets or sets the current page.
     /// </summary>
     public int Page
@@ -246,54 +232,6 @@ namespace MigraDoc.Rendering.Forms
         this.preview.Invalidate();
         OnPageChanged(new EventArgs());
       }
-    }
-
-    ///// <summary>
-    ///// Gets or sets the working directory.
-    ///// </summary>
-    //public string WorkingDirectory
-    //{
-    //  get
-    //  {
-    //    return this.workingDirectory;
-    //  }
-    //  set
-    //  {
-    //    this.workingDirectory = value;
-    //  }
-    //}
-    //string workingDirectory = "";
-
-    /// <summary>
-    /// Called when the Ddl property has changed.
-    /// </summary>
-    void DdlUpdated()
-    {
-      if (this.ddl != null)
-      {
-        this.document = MigraDoc.DocumentObjectModel.IO.DdlReader.DocumentFromString(this.ddl);
-        this.renderer = new DocumentRenderer(document);
-        this.renderer.PrivateFonts = this.privateFonts;
-        this.renderer.PrepareDocument();
-        Page = 1;
-        this.preview.Invalidate();
-      }
-      //      if (this.job != null)
-      //        this.job.Dispose();
-      //
-      //      if (this.ddl == null || this.ddl == "")
-      //        return;
-      //
-      //      this.job = new PrintJob();
-      //      this.job.Type = JobType.Standard;
-      //      this.job.Ddl = this.ddl;
-      //      this.job.WorkingDirectory = this.workingDirectory;
-      //      this.job.InitDocument();
-      //      this.preview = this.job.GetPreview(this.Handle);
-      //      this.previewHandle = this.preview.Hwnd;
-      //
-      //      if (this.preview != null)
-      //        this.preview.Page = 1;
     }
 
     /// <summary>
