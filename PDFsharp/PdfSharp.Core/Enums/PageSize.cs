@@ -27,9 +27,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System;
-
-namespace PdfSharp
+namespace PdfSharp.Core.Enums
 {
   /// <summary>
   /// Identifies the most popular predefined page sizes.

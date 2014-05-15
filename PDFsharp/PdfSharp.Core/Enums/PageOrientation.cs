@@ -27,16 +27,9 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace PdfSharp
+namespace PdfSharp.Core.Enums
 {
-  /// <summary>
-  /// Base namespace of PDFsharp. Most classes are implemented in nested namespaces like e. g. PdfSharp.Pdf.
-  /// </summary>
-  /// <seealso cref="PdfSharp.Pdf"></seealso>
-  [System.Runtime.CompilerServices.CompilerGenerated]
-  internal class NamespaceDoc { }
-
-  /// <summary>
+	/// <summary>
   /// Specifies the orientation of a page.
   /// </summary>
   public enum PageOrientation

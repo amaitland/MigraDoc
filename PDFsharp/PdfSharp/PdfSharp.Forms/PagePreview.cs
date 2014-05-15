@@ -1029,7 +1029,7 @@ namespace PdfSharp.Forms
     /// <summary>
     /// Real page size in point.
     /// </summary>
-    SizeF pageSize = PageSizeConverter.ToSize(PdfSharp.PageSize.A4).ToSizeF();
+    SizeF pageSize = PageSizeConverter.ToSize(Core.Enums.PageSize.A4).ToSizeF();
 
     /// <summary>
     /// Page in pixel relative to virtual canvas.

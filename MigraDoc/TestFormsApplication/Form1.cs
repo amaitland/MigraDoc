@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
 using MigraDoc.Rendering;
-using PdfSharp.Charting;
+using PdfSharp.Core.Enums;
 using ChartType = MigraDoc.DocumentObjectModel.Shapes.Charts.ChartType;
 
 namespace TestFormsApplication

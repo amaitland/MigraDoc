@@ -27,9 +27,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System;
-
-namespace PdfSharp.Charting
+namespace PdfSharp.Core.Enums
 {
   /// <summary>
   /// Used to determine the vertical alignment of the axis title.

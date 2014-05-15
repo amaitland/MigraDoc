@@ -27,9 +27,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System;
-
-namespace PdfSharp.Charting
+namespace PdfSharp.Core.Enums
 {
   /// <summary>
   /// Determines where the data label will be positioned.

@@ -35,7 +35,7 @@ using System.Diagnostics;
 using System.Reflection;
 
 using MigraDoc.DocumentObjectModel.Visitors;
-using PdfSharp.Charting;
+using PdfSharp.Core.Enums;
 
 namespace MigraDoc.DocumentObjectModel.Tables
 {

@@ -29,7 +29,7 @@
 
 using System;
 
-namespace PdfSharp.Charting
+namespace PdfSharp.Core.Enums
 {
   /// <summary>
   /// Specifies the properties for the font.

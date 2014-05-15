@@ -35,6 +35,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Data;
 using System.Windows.Forms;
+using PdfSharp.Core.Enums;
 using PdfSharp.Drawing;
 using MigraDoc.Rendering;
 
@@ -154,7 +155,7 @@ namespace MigraDoc.Rendering.Forms
             {
               this.page = value;
               PageInfo pageInfo = this.renderer.formattedDocument.GetPageInfo(this.page);
-              if (pageInfo.Orientation == PdfSharp.PageOrientation.Portrait)
+              if (pageInfo.Orientation == PageOrientation.Portrait)
                 this.preview.PageSize = new Size((int)pageInfo.Width, (int)pageInfo.Height);
               else
                 this.preview.PageSize = new Size((int)pageInfo.Height, (int)pageInfo.Width);
