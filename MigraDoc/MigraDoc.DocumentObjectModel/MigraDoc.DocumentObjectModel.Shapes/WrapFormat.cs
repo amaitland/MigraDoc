@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
@@ -66,13 +66,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets the wrapping style.
     /// </summary>
-    public WrapStyle Style
+    public WrapStyle? Style
     {
-      get { return (WrapStyle)this.style.Value; }
-      set { this.style.Value = (int)value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NEnum style = NEnum.NullValue(typeof(WrapStyle));
+    internal WrapStyle? style;
 
     /// <summary>
     /// Gets or sets the distance between the top side of the shape with the adjacent text.

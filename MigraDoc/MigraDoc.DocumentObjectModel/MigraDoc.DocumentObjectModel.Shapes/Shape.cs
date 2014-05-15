@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 
 namespace MigraDoc.DocumentObjectModel.Shapes
@@ -112,24 +112,24 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets the reference point of the Top property.
     /// </summary>
-    public RelativeVertical RelativeVertical
+    public RelativeVertical? RelativeVertical
     {
-      get { return (RelativeVertical)this.relativeVertical.Value; }
-      set { this.relativeVertical.Value = (int)value; }
+      get { return this.relativeVertical; }
+      set { this.relativeVertical = value; }
     }
     
-    internal NEnum relativeVertical = NEnum.NullValue(typeof(RelativeVertical));
+    internal RelativeVertical? relativeVertical;
 
     /// <summary>
     /// Gets or sets the reference point of the Left property.
     /// </summary>
-    public RelativeHorizontal RelativeHorizontal
+    public RelativeHorizontal? RelativeHorizontal
     {
-      get { return (RelativeHorizontal)this.relativeHorizontal.Value; }
-      set { this.relativeHorizontal.Value = (int)value; }
+      get { return relativeHorizontal; }
+      set { this.relativeHorizontal = value; }
     }
     
-    internal NEnum relativeHorizontal = NEnum.NullValue(typeof(RelativeHorizontal));
+    internal RelativeHorizontal? relativeHorizontal;
 
     /// <summary>
     /// Gets or sets the position of the top side of the shape.

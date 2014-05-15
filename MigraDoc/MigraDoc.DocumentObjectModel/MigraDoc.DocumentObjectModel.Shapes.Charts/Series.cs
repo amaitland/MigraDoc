@@ -30,7 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -136,11 +136,11 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// </summary>
     public string Name
     {
-      get { return this.name.Value; }
-      set { this.name.Value = value; }
+      get { return this.name; }
+      set { this.name = value; }
     }
     
-    internal NString name = NString.NullValue;
+    internal string name = null;
 
     /// <summary>
     /// Gets the line format of the border of each data.
@@ -198,13 +198,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// Gets or sets the style of the marker in a line chart.
     /// </summary>
-    public MarkerStyle MarkerStyle
+    public MarkerStyle? MarkerStyle
     {
-      get { return (MarkerStyle)this.markerStyle.Value; }
-      set { this.markerStyle.Value = (int)value; }
+      get { return this.markerStyle; }
+      set { this.markerStyle = value; }
     }
     
-    internal NEnum markerStyle = NEnum.NullValue(typeof(MarkerStyle));
+    internal MarkerStyle? markerStyle;
 
     /// <summary>
     /// Gets or sets the foreground color of the marker in a line chart.
@@ -231,13 +231,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// Gets or sets the chart type of the series if it's intended to be different than the global chart type.
     /// </summary>
-    public ChartType ChartType
+    public ChartType? ChartType
     {
-      get { return (ChartType)this.chartType.Value; }
-      set { this.chartType.Value = (int)value; }
+      get { return this.chartType; }
+      set { this.chartType = value; }
     }
     
-    internal NEnum chartType = NEnum.NullValue(typeof(ChartType));
+    internal ChartType? chartType;
 
     /// <summary>
     /// Gets the DataLabel of the series.
@@ -263,13 +263,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// Gets or sets whether the series has a DataLabel.
     /// </summary>
-    public bool HasDataLabel
+    public bool? HasDataLabel
     {
-      get { return this.hasDataLabel.Value; }
-      set { this.hasDataLabel.Value = value; }
+      get { return this.hasDataLabel; }
+      set { this.hasDataLabel = value; }
     }
     
-    internal NBool hasDataLabel = NBool.NullValue;
+    internal bool? hasDataLabel = null;
 
     /// <summary>
     /// Gets the elementcount of the series.

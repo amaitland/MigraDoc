@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.DocumentObjectModel.Shapes;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
@@ -56,42 +56,42 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenParagraphFormat(ParagraphFormat format, ParagraphFormat refFormat)
     {
-      if (format.alignment.IsNull)
+      if (format.alignment == null)
         format.alignment = refFormat.alignment;
 
-      if (format.firstLineIndent.IsNull)
+      if (format.firstLineIndent == null)
         format.firstLineIndent = refFormat.firstLineIndent;
 
-      if (format.leftIndent.IsNull)
+      if (format.leftIndent == null)
         format.leftIndent = refFormat.leftIndent;
 
-      if (format.rightIndent.IsNull)
+      if (format.rightIndent == null)
         format.rightIndent = refFormat.rightIndent;
 
-      if (format.spaceBefore.IsNull)
+      if (format.spaceBefore == null)
         format.spaceBefore = refFormat.spaceBefore;
 
-      if (format.spaceAfter.IsNull)
+      if (format.spaceAfter == null)
         format.spaceAfter = refFormat.spaceAfter;
 
-      if (format.lineSpacingRule.IsNull)
+      if (format.lineSpacingRule == null)
         format.lineSpacingRule = refFormat.lineSpacingRule;
-      if (format.lineSpacing.IsNull)
+      if (format.lineSpacing == null)
         format.lineSpacing = refFormat.lineSpacing;
 
-      if (format.widowControl.IsNull)
+      if (format.widowControl == null)
         format.widowControl = refFormat.widowControl;
 
-      if (format.keepTogether.IsNull)
+      if (format.keepTogether == null)
         format.keepTogether = refFormat.keepTogether;
 
-      if (format.keepWithNext.IsNull)
+      if (format.keepWithNext == null)
         format.keepWithNext = refFormat.keepWithNext;
 
-      if (format.pageBreakBefore.IsNull)
+      if (format.pageBreakBefore == null)
         format.pageBreakBefore = refFormat.pageBreakBefore;
 
-      if (format.outlineLevel.IsNull)
+      if (format.outlineLevel == null)
         format.outlineLevel = refFormat.outlineLevel;
 
       if (format.font == null)
@@ -134,40 +134,40 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenListInfo(ListInfo listInfo, ListInfo refListInfo)
     {
-      if (listInfo.continuePreviousList.IsNull)
+      if (listInfo.continuePreviousList == null)
         listInfo.continuePreviousList = refListInfo.continuePreviousList;
-      if (listInfo.listType.IsNull)
+      if (listInfo.listType == null)
         listInfo.listType = refListInfo.listType;
-      if (listInfo.numberPosition.IsNull)
+      if (listInfo.numberPosition == null)
         listInfo.numberPosition = refListInfo.numberPosition;
     }
 
     protected void FlattenFont(Font font, Font refFont)
     {
-      if (font.name.IsNull)
+      if (font.name == null)
         font.name = refFont.name;
-      if (font.size.IsNull)
+      if (font.size == null)
         font.size = refFont.size;
-      if (font.color.IsNull)
+      if (font.color == null)
         font.color = refFont.color;
-      if (font.underline.IsNull)
+      if (font.underline == null)
         font.underline = refFont.underline;
-      if (font.bold.IsNull)
+      if (font.bold == null)
         font.bold = refFont.bold;
-      if (font.italic.IsNull)
+      if (font.italic == null)
         font.italic = refFont.italic;
-      if (font.superscript.IsNull)
+      if (font.superscript == null)
         font.superscript = refFont.superscript;
-      if (font.subscript.IsNull)
+      if (font.subscript == null)
         font.subscript = refFont.subscript;
     }
 
     protected void FlattenShading(Shading shading, Shading refShading)
     {
       //fClear?
-      if (shading.visible.IsNull)
+      if (shading.visible == null)
         shading.visible = refShading.visible;
-      if (shading.color.IsNull)
+      if (shading.color == null)
         shading.color = refShading.color;
     }
 
@@ -176,16 +176,16 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       if (border == null)
         border = new Border(parentBorders);
 
-      if (border.visible.IsNull)
+      if (border.visible == null)
         border.visible = parentBorders.visible;
 
-      if (border.style.IsNull)
+      if (border.style == null)
         border.style = parentBorders.style;
 
-      if (border.width.IsNull)
+      if (border.width == null)
         border.width = parentBorders.width;
 
-      if (border.color.IsNull)
+      if (border.color == null)
         border.color = parentBorders.color;
 
       return border;
@@ -193,22 +193,22 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenBorders(Borders borders, Borders refBorders)
     {
-      if (borders.visible.IsNull)
+      if (borders.visible == null)
         borders.visible = refBorders.visible;
-      if (borders.width.IsNull)
+      if (borders.width == null)
         borders.width = refBorders.width;
-      if (borders.style.IsNull)
+      if (borders.style == null)
         borders.style = refBorders.style;
-      if (borders.color.IsNull)
+      if (borders.color == null)
         borders.color = refBorders.color;
 
-      if (borders.distanceFromBottom.IsNull)
+      if (borders.distanceFromBottom == null)
         borders.distanceFromBottom = refBorders.distanceFromBottom;
-      if (borders.distanceFromRight.IsNull)
+      if (borders.distanceFromRight == null)
         borders.distanceFromRight = refBorders.distanceFromRight;
-      if (borders.distanceFromLeft.IsNull)
+      if (borders.distanceFromLeft == null)
         borders.distanceFromLeft = refBorders.distanceFromLeft;
-      if (borders.distanceFromTop.IsNull)
+      if (borders.distanceFromTop == null)
         borders.distanceFromTop = refBorders.distanceFromTop;
 
       if (refBorders.left != null)
@@ -235,13 +235,13 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenBorder(Border border, Border refBorder)
     {
-      if (border.visible.IsNull)
+      if (border.visible == null)
         border.visible = refBorder.visible;
-      if (border.width.IsNull)
+      if (border.width == null)
         border.width = refBorder.width;
-      if (border.style.IsNull)
+      if (border.style == null)
         border.style = refBorder.style;
-      if (border.color.IsNull)
+      if (border.color == null)
         border.color = refBorder.color;
     }
 
@@ -270,9 +270,9 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     protected void FlattenPageSetup(PageSetup pageSetup, PageSetup refPageSetup)
     {
       Unit dummyUnit;
-      if (pageSetup.pageWidth.IsNull && pageSetup.pageHeight.IsNull)
+      if (pageSetup.pageWidth == null && pageSetup.pageHeight == null)
       {
-        if (pageSetup.pageFormat.IsNull)
+        if (pageSetup.pageFormat == null)
         {
           pageSetup.pageWidth = refPageSetup.pageWidth;
           pageSetup.pageHeight = refPageSetup.pageHeight;
@@ -283,50 +283,50 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       }
       else
       {
-        if (pageSetup.pageWidth.IsNull)
+        if (pageSetup.pageWidth == null)
         {
-          if (pageSetup.pageFormat.IsNull)
+          if (pageSetup.pageFormat == null)
             pageSetup.pageHeight = refPageSetup.pageHeight;
           else
             PageSetup.GetPageSize(pageSetup.PageFormat, out dummyUnit, out pageSetup.pageHeight);
         }
-        else if (pageSetup.pageHeight.IsNull)
+        else if (pageSetup.pageHeight == null)
         {
-          if (pageSetup.pageFormat.IsNull)
+          if (pageSetup.pageFormat == null)
             pageSetup.pageWidth = refPageSetup.pageWidth;
           else
             PageSetup.GetPageSize(pageSetup.PageFormat, out pageSetup.pageWidth, out dummyUnit);
         }
       }
-      //      if (pageSetup.pageWidth.IsNull)
+      //      if (pageSetup.pageWidth == null)
       //        pageSetup.pageWidth = refPageSetup.pageWidth;
-      //      if (pageSetup.pageHeight.IsNull)
+      //      if (pageSetup.pageHeight == null)
       //        pageSetup.pageHeight = refPageSetup.pageHeight;
-      //      if (pageSetup.pageFormat.IsNull)
+      //      if (pageSetup.pageFormat == null)
       //        pageSetup.pageFormat = refPageSetup.pageFormat;
-      if (pageSetup.sectionStart.IsNull)
+      if (pageSetup.sectionStart == null)
         pageSetup.sectionStart = refPageSetup.sectionStart;
-      if (pageSetup.orientation.IsNull)
+      if (pageSetup.orientation == null)
         pageSetup.orientation = refPageSetup.orientation;
-      if (pageSetup.topMargin.IsNull)
+      if (pageSetup.topMargin == null)
         pageSetup.topMargin = refPageSetup.topMargin;
-      if (pageSetup.bottomMargin.IsNull)
+      if (pageSetup.bottomMargin == null)
         pageSetup.bottomMargin = refPageSetup.bottomMargin;
-      if (pageSetup.leftMargin.IsNull)
+      if (pageSetup.leftMargin == null)
         pageSetup.leftMargin = refPageSetup.leftMargin;
-      if (pageSetup.rightMargin.IsNull)
+      if (pageSetup.rightMargin == null)
         pageSetup.rightMargin = refPageSetup.rightMargin;
-      if (pageSetup.headerDistance.IsNull)
+      if (pageSetup.headerDistance == null)
         pageSetup.headerDistance = refPageSetup.headerDistance;
-      if (pageSetup.footerDistance.IsNull)
+      if (pageSetup.footerDistance == null)
         pageSetup.footerDistance = refPageSetup.footerDistance;
-      if (pageSetup.oddAndEvenPagesHeaderFooter.IsNull)
+      if (pageSetup.oddAndEvenPagesHeaderFooter == null)
         pageSetup.oddAndEvenPagesHeaderFooter = refPageSetup.oddAndEvenPagesHeaderFooter;
-      if (pageSetup.differentFirstPageHeaderFooter.IsNull)
+      if (pageSetup.differentFirstPageHeaderFooter == null)
         pageSetup.differentFirstPageHeaderFooter = refPageSetup.differentFirstPageHeaderFooter;
-      if (pageSetup.mirrorMargins.IsNull)
+      if (pageSetup.mirrorMargins == null)
         pageSetup.mirrorMargins = refPageSetup.mirrorMargins;
-      if (pageSetup.horizontalPageBreak.IsNull)
+      if (pageSetup.horizontalPageBreak == null)
         pageSetup.horizontalPageBreak = refPageSetup.horizontalPageBreak;
     }
 
@@ -342,7 +342,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       if (refLineFormat != null)
       {
-        if (lineFormat.width.IsNull)
+        if (lineFormat.width == null)
           lineFormat.width = refLineFormat.width;
       }
     }
@@ -388,9 +388,9 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     internal override void VisitChart(Chart chart)
     {
       Document document = chart.Document;
-      if (chart.style.IsNull)
-        chart.style.Value = Style.DefaultParagraphName;
-      Style style = document.Styles[chart.style.Value];
+      if (chart.style == null)
+        chart.style = Style.DefaultParagraphName;
+      Style style = document.Styles[chart.style];
       if (chart.format == null)
       {
         chart.format = style.paragraphFormat.Clone();
@@ -450,7 +450,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
       ParagraphFormat format = null;
 
-      Style style = document.styles[footnote.style.Value];
+      Style style = document.styles[footnote.style];
       if (style != null)
         format = ParagraphFormatFromStyle(style);
       else
@@ -476,7 +476,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       ParagraphFormat format = null;
 
       DocumentObject currentElementHolder = GetDocumentElementHolder(paragraph);
-      Style style = document.styles[paragraph.style.Value];
+      Style style = document.styles[paragraph.style];
       if (style != null)
         format = ParagraphFormatFromStyle(style);
 
@@ -514,7 +514,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       }
       else
       {
-        if (paragraph.style.Value != "")
+        if (paragraph.style != "")
           paragraph.Style = "InvalidStyleName";
         else
           paragraph.Style = "Normal";
@@ -542,7 +542,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
         styleString = "Footer";
 
       ParagraphFormat format;
-      Style style = document.styles[headerFooter.style.Value];
+      Style style = document.styles[headerFooter.style];
       if (style != null)
         format = ParagraphFormatFromStyle(style);
       else
@@ -601,9 +601,9 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     #region Shape
     internal override void VisitTextFrame(TextFrame textFrame)
     {
-      if (textFrame.height.IsNull)
+      if (textFrame.height == null)
         textFrame.height = Unit.FromInch(1);
-      if (textFrame.width.IsNull)
+      if (textFrame.width == null)
         textFrame.width = Unit.FromInch(1);
     }
     #endregion
@@ -618,10 +618,10 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       foreach (Column col in columns)
       {
-        if (col.width.IsNull)
+        if (col.width == null)
           col.width = columns.width;
 
-        if (col.width.IsNull)
+        if (col.width == null)
           col.width = "2.5cm";
       }
     }
@@ -630,7 +630,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       foreach (Cell cell in row.Cells)
       {
-        if (cell.verticalAlignment.IsNull)
+        if (cell.verticalAlignment == null)
           cell.verticalAlignment = row.verticalAlignment;
       }
     }
@@ -639,11 +639,11 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       foreach (Row row in rows)
       {
-        if (row.height.IsNull)
+        if (row.height == null)
           row.height = rows.height;
-        if (row.heightRule.IsNull)
+        if (row.heightRule == null)
           row.heightRule = rows.heightRule;
-        if (row.verticalAlignment.IsNull)
+        if (row.verticalAlignment == null)
           row.verticalAlignment = rows.verticalAlignment;
       }
     }
@@ -668,13 +668,13 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       Document document = table.Document;
 
-      if (table.leftPadding.IsNull)
+      if (table.leftPadding == null)
         table.leftPadding = Unit.FromMillimeter(1.2);
-      if (table.rightPadding.IsNull)
+      if (table.rightPadding == null)
         table.rightPadding = Unit.FromMillimeter(1.2);
 
       ParagraphFormat format;
-      Style style = document.styles[table.style.Value];
+      Style style = document.styles[table.style];
       if (style != null)
         format = ParagraphFormatFromStyle(style);
       else
@@ -698,7 +698,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       {
         Column column = table.Columns[idxclm];
         ParagraphFormat colFormat;
-        style = document.styles[column.style.Value];
+        style = document.styles[column.style];
         if (style != null)
           colFormat = ParagraphFormatFromStyle(style);
         else
@@ -717,9 +717,9 @@ namespace MigraDoc.DocumentObjectModel.Visitors
         else
           FlattenParagraphFormat(column.format, colFormat);
 
-        if (column.leftPadding.IsNull)
+        if (column.leftPadding == null)
           column.leftPadding = table.leftPadding;
-        if (column.rightPadding.IsNull)
+        if (column.rightPadding == null)
           column.rightPadding = table.rightPadding;
 
         if (column.shading == null)
@@ -739,7 +739,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
         Row row = table.Rows[idxrow];
 
         ParagraphFormat rowFormat;
-        style = document.styles[row.style.Value];
+        style = document.styles[row.style];
         if (style != null)
         {
           rowFormat = ParagraphFormatFromStyle(style);
@@ -756,7 +756,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
           Cell cell = row[idxclm];
 
           ParagraphFormat cellFormat;
-          Style cellStyle = document.styles[cell.style.Value];
+          Style cellStyle = document.styles[cell.style];
           if (cellStyle != null)
           {
             cellFormat = ParagraphFormatFromStyle(cellStyle);
@@ -814,9 +814,9 @@ namespace MigraDoc.DocumentObjectModel.Visitors
         else
           FlattenParagraphFormat(row.format, rowFormat);
 
-        if (row.topPadding.IsNull)
+        if (row.topPadding == null)
           row.topPadding = table.topPadding;
-        if (row.bottomPadding.IsNull)
+        if (row.bottomPadding == null)
           row.bottomPadding = table.bottomPadding;
 
         if (row.shading == null)
@@ -836,7 +836,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     internal override void VisitLegend(Legend legend)
     {
       ParagraphFormat parentFormat;
-      if (!legend.style.IsNull)
+      if (legend.style != null)
       {
         Style style = legend.Document.Styles[legend.Style];
         if (style == null)
@@ -865,7 +865,7 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
       ParagraphFormat parentFormat;
 
-      if (!textArea.style.IsNull)
+      if (textArea.style != null)
       {
         Style style = textArea.Document.Styles[textArea.Style];
         if (style == null)

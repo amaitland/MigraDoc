@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -82,22 +82,22 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets or sets the label's number format.
     /// </summary>
     public string Format
     {
-      get { return this.format.Value; }
-      set { this.format.Value = value; }
+      get { return this.format; }
+      set { this.format = value; }
     }
     
-    internal NString format = NString.NullValue;
+    internal string format = null;
 
     /// <summary>
     /// Gets the font of the label.

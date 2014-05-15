@@ -31,203 +31,141 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
-using MigraDoc.DocumentObjectModel.Shapes;
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
-  /// <summary>
-  /// Represents the left position in a shape.
-  /// </summary>
-  public struct LeftPosition : INullableValue
-  {
-    /// <summary>
-    /// Initializes a new instance of the LeftPosition class from Unit.
-    /// </summary>
-    private LeftPosition(Unit value)
-    {
-      this.shapePosition = ShapePosition.Undefined;
-      this.position = value;
-      this.notNull = !value.IsNull;
-    }
+	/// <summary>
+	/// Represents the left position in a shape.
+	/// </summary>
+	public struct LeftPosition
+	{
+		/// <summary>
+		/// Initializes a new instance of the LeftPosition class from Unit.
+		/// </summary>
+		private LeftPosition(Unit value)
+		{
+			shapePosition = ShapePosition.Undefined;
+			position = value;
+			notNull = !value.IsNull;
+		}
 
-    /// <summary>
-    /// Initializes a new instance of the LeftPosition class from ShapePosition.
-    /// </summary>
-    private LeftPosition(ShapePosition value)
-    {
-      if (!(value == ShapePosition.Undefined || IsValid(value)))
-        throw new ArgumentException(DomSR.InvalidEnumForLeftPosition);
+		/// <summary>
+		/// Initializes a new instance of the LeftPosition class from ShapePosition.
+		/// </summary>
+		private LeftPosition(ShapePosition value)
+		{
+			if (!(value == ShapePosition.Undefined || IsValid(value)))
+				throw new ArgumentException(DomSR.InvalidEnumForLeftPosition);
 
-      this.shapePosition = value;
-      this.position = Unit.NullValue;
-      this.notNull = (value != ShapePosition.Undefined);
-    }
+			shapePosition = value;
+			position = Unit.NullValue;
+			notNull = (value != ShapePosition.Undefined);
+		}
 
-    /// <summary>
-    /// Sets shapeposition enum and resets position.
-    /// </summary>
-    private void SetFromEnum(ShapePosition shapePosition)
-    {
-      if (!IsValid(shapePosition))
-        throw new ArgumentException(DomSR.InvalidEnumForLeftPosition);
+		/// <summary>
+		/// Determines whether this instance is null (not set).
+		/// </summary>
+		public bool IsNull
+		{
+			get { return !notNull; }
+		}
 
-      this.shapePosition = shapePosition;
-      this.position = Unit.NullValue;
-    }
+		/// <summary>
+		/// Gets the value of the position in unit.
+		/// </summary>
+		public Unit Position
+		{
+			get { return position; }
+		}
 
-    /// <summary>
-    /// Sets the Position from a Unit.
-    /// </summary>
-    private void SetFromUnit(Unit unit)
-    {
-      this.shapePosition = ShapePosition.Undefined;
-      this.position = unit;
-    }
+		/// <summary>
+		/// Gets the value of the position.
+		/// </summary>
+		public ShapePosition ShapePosition
+		{
+			get { return shapePosition; }
+		}
+		internal ShapePosition shapePosition;
+		internal Unit position;
+		private bool notNull;
 
-    /// <summary>
-    /// Sets the Position from an object.
-    /// </summary>
-    void INullableValue.SetValue(object value)
-    {
-      //REVIEW KlPo4KlPo: Code-Verdopplung in TopPostion/LeftPosition
-      if (value == null)
-        throw new ArgumentNullException("value");
+		/// <summary>
+		/// Indicates the given shapePosition is valid for LeftPosition.
+		/// </summary>
+		private static bool IsValid(ShapePosition shapePosition)
+		{
+			return shapePosition == ShapePosition.Left ||
+				   shapePosition == ShapePosition.Center ||
+				   shapePosition == ShapePosition.Right ||
+				   shapePosition == ShapePosition.Inside ||
+				   shapePosition == ShapePosition.Outside;
+		}
 
-      if (value is ShapePosition)
-        SetFromEnum((ShapePosition)value);
+		/// <summary>
+		/// Converts a ShapePosition to a LeftPosition.
+		/// </summary>
+		public static implicit operator LeftPosition(ShapePosition value)
+		{
+			return new LeftPosition(value);
+		}
 
-      else if (value is string && Enum.IsDefined(typeof(ShapePosition), value))
-        SetFromEnum((ShapePosition)Enum.Parse(typeof(ShapePosition), (string)value));
-      else
-        SetFromUnit(value.ToString());
+		/// <summary>
+		/// Converts a Unit to a LeftPosition.
+		/// </summary>
+		public static implicit operator LeftPosition(Unit value)
+		{
+			return new LeftPosition(value);
+		}
 
-      this.notNull = true;
-    }
+		/// <summary>
+		/// Converts a string to a LeftPosition.
+		/// The string is interpreted as a Unit.
+		/// </summary>
+		public static implicit operator LeftPosition(string value)
+		{
+			Unit unit = value;
+			return new LeftPosition(unit);
+		}
 
-    /// <summary>
-    /// Gets the value of the position.
-    /// </summary>
-    object INullableValue.GetValue()
-    {
-      if (this.shapePosition == ShapePosition.Undefined)
-        return this.position;
+		/// <summary>
+		/// Converts a double to a LeftPosition.
+		/// The double is interpreted as a Unit in Point.
+		/// </summary>
+		public static implicit operator LeftPosition(double value)
+		{
+			Unit unit = value;
+			return new LeftPosition(unit);
+		}
 
-      return this.shapePosition;
-    }
+		/// <summary>
+		/// Converts an integer to a LeftPosition. 
+		/// The integer is interpreted as a Unit in Point.
+		/// </summary>
+		public static implicit operator LeftPosition(int value)
+		{
+			Unit unit = value;
+			return new LeftPosition(unit);
+		}
 
-    /// <summary>
-    /// Resets this instance, i.e. IsNull() will return true afterwards.
-    /// </summary>
-    void INullableValue.SetNull()
-    {
-      this = new LeftPosition();
-    }
+		/// <summary>
+		/// Parses the specified value.
+		/// </summary>
+		public static LeftPosition Parse(string value)
+		{
+			if (string.IsNullOrEmpty(value))
+				throw new ArgumentNullException("value");
 
-    /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    bool INullableValue.IsNull
-    {
-      get { return !this.notNull; }
-    }
+			value = value.Trim();
+			char ch = value[0];
+			if (ch == '+' || ch == '-' || Char.IsNumber(ch))
+				return Unit.Parse(value);
+			else
+				return (ShapePosition)Enum.Parse(typeof(ShapePosition), value, true);
+		}
 
-    /// <summary>
-    /// Gets the value of the position in unit.
-    /// </summary>
-    public Unit Position
-    {
-      get { return this.position; }
-    }
-
-    /// <summary>
-    /// Gets the value of the position.
-    /// </summary>
-    public ShapePosition ShapePosition
-    {
-      get { return this.shapePosition; }
-    }
-    internal ShapePosition shapePosition;
-    internal Unit position;
-    private bool notNull;
-
-    /// <summary>
-    /// Indicates the given shapePosition is valid for LeftPosition.
-    /// </summary>
-    private static bool IsValid(ShapePosition shapePosition)
-    {
-      return shapePosition == ShapePosition.Left ||
-             shapePosition == ShapePosition.Center ||
-             shapePosition == ShapePosition.Right ||
-             shapePosition == ShapePosition.Inside ||
-             shapePosition == ShapePosition.Outside;
-    }
-
-    /// <summary>
-    /// Converts a ShapePosition to a LeftPosition.
-    /// </summary>
-    public static implicit operator LeftPosition(ShapePosition value)
-    {
-      return new LeftPosition(value);
-    }
-
-    /// <summary>
-    /// Converts a Unit to a LeftPosition.
-    /// </summary>
-    public static implicit operator LeftPosition(Unit value)
-    {
-      return new LeftPosition(value);
-    }
-
-    /// <summary>
-    /// Converts a string to a LeftPosition.
-    /// The string is interpreted as a Unit.
-    /// </summary>
-    public static implicit operator LeftPosition(string value)
-    {
-      Unit unit = value;
-      return new LeftPosition(unit);
-    }
-
-    /// <summary>
-    /// Converts a double to a LeftPosition.
-    /// The double is interpreted as a Unit in Point.
-    /// </summary>
-    public static implicit operator LeftPosition(double value)
-    {
-      Unit unit = value;
-      return new LeftPosition(unit);
-    }
-
-    /// <summary>
-    /// Converts an integer to a LeftPosition. 
-    /// The integer is interpreted as a Unit in Point.
-    /// </summary>
-    public static implicit operator LeftPosition(int value)
-    {
-      Unit unit = value;
-      return new LeftPosition(unit);
-    }
-
-    /// <summary>
-    /// Parses the specified value.
-    /// </summary>
-    public static LeftPosition Parse(string value)
-    {
-      if (value == null || value.Length == 0)
-        throw new ArgumentNullException("value");
-
-      value = value.Trim();
-      char ch = value[0];
-      if (ch == '+' || ch == '-' || Char.IsNumber(ch))
-        return Unit.Parse(value);
-      else
-        return (ShapePosition)Enum.Parse(typeof(ShapePosition), value, true);
-    }
-
-    /// <summary>
-    /// Returns the unitialized LeftPosition object.
-    /// </summary>
-    internal static readonly LeftPosition NullValue = new LeftPosition();
-  }
+		/// <summary>
+		/// Returns the unitialized LeftPosition object.
+		/// </summary>
+		internal static readonly LeftPosition NullValue = new LeftPosition();
+	}
 }

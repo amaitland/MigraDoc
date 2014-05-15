@@ -30,7 +30,7 @@
 
 using System;
 using MigraDoc.DocumentObjectModel;
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Tables;
 using PdfSharp.Drawing;
 using MigraDoc.Rendering.ChartMapper;

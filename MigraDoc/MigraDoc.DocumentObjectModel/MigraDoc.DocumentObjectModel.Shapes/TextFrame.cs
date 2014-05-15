@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
 using MigraDoc.DocumentObjectModel.Tables;
@@ -209,13 +209,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets the text orientation for the texframe content.
     /// </summary>
-    public TextOrientation Orientation
+    public TextOrientation? Orientation
     {
-      get { return (TextOrientation)this.orientation.Value; }
-      set { this.orientation.Value = (int)value; }
+      get { return this.orientation; }
+      set { this.orientation = value; }
     }
     
-    internal NEnum orientation = NEnum.NullValue(typeof(TextOrientation));
+    internal TextOrientation? orientation;
 
     /// <summary>
     /// The document elements that build the textframe's content.

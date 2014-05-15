@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel
 {
@@ -77,13 +77,13 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets a value indicating whether the shading is visible.
     /// </summary>
-    public bool Visible
+    public bool? Visible
     {
-      get { return this.visible.Value; }
-      set { this.visible.Value = value; }
+      get { return this.visible; }
+      set { this.visible = value; }
     }
     
-    internal NBool visible = NBool.NullValue;
+    internal bool? visible = null;
 
     /// <summary>
     /// Gets or sets the shading color.

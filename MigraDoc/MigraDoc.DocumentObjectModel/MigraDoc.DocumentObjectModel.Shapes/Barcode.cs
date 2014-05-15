@@ -30,10 +30,11 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
+using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.IO;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
@@ -68,90 +69,90 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets the text orientation for the barcode content.
     /// </summary>
-    public TextOrientation Orientation
+    public TextOrientation? Orientation
     {
-      get { return (TextOrientation)this.orientation.Value; }
-      set { this.orientation.Value = (int)value; }
+      get { return this.orientation.Value; }
+      set { this.orientation = value; }
     }
     
-    internal NEnum orientation = NEnum.NullValue(typeof(TextOrientation));
+    internal TextOrientation? orientation;
 
     /// <summary>
     /// Gets or sets the type of the barcode.
     /// </summary>
-    public BarcodeType Type
+    public BarcodeType? Type
     {
-      get { return (BarcodeType)this.type.Value; }
-      set { this.type.Value = (int)value; }
+      get { return this.type; }
+      set { this.type = value; }
     }
-    
-    internal NEnum type = NEnum.NullValue(typeof(BarcodeType));
+
+	internal BarcodeType? type;
 
     /// <summary>
     /// Gets or sets a value indicating whether bars shall appear beside the barcode
     /// </summary>
-    public bool BearerBars
+    public bool? BearerBars
     {
-      get { return this.bearerBars.Value; }
-      set { this.bearerBars.Value = value; }
+      get { return this.bearerBars; }
+      set { this.bearerBars = value; }
     }
     
-    internal NBool bearerBars = NBool.NullValue;
+    internal bool? bearerBars = null;
 
     /// <summary>
     /// Gets or sets the a value indicating whether the barcode's code is rendered.
     /// </summary>
-    public bool Text
+    public bool? Text
     {
-      get { return this.text.Value; }
-      set { this.text.Value = value; }
+      get { return this.text; }
+      set { this.text = value; }
     }
     
-    internal NBool text = NBool.NullValue;
+    internal bool? text = null;
 
     /// <summary>
     /// Gets or sets code the barcode represents.
     /// </summary>
     public string Code
     {
-      get { return this.code.Value; }
-      set { this.code.Value = value; }
+      get { return this.code; }
+      set { this.code = value; }
     }
     
-    internal NString code = NString.NullValue;
+    internal string code = null;
 
     /// <summary>
     /// ???
     /// </summary>
-    public double LineRatio
+    public double? LineRatio
     {
-      get { return this.lineRatio.Value; }
-      set { this.lineRatio.Value = value; }
+      get { return this.lineRatio; }
+      set { this.lineRatio = value; }
     }
     
-    internal NDouble lineRatio = NDouble.NullValue;
+    internal double? lineRatio = null;
 
     /// <summary>
     /// ???
     /// </summary>
-    public double LineHeight
+    public double? LineHeight
     {
-      get { return this.lineHeight.Value; }
-      set { this.lineHeight.Value = value; }
+      get { return this.lineHeight; }
+      set { this.lineHeight = value; }
     }
     
-    internal NDouble lineHeight = NDouble.NullValue;
+    internal double? lineHeight = null;
 
     /// <summary>
     /// ???
     /// </summary>
-    public double NarrowLineWidth
+    public double? NarrowLineWidth
     {
-      get { return this.narrowLineWidth.Value; }
-      set { this.narrowLineWidth.Value = value; }
+      get { return this.narrowLineWidth; }
+      set { this.narrowLineWidth = value; }
     }
     
-    internal NDouble narrowLineWidth = NDouble.NullValue;
+    internal double? narrowLineWidth = null;
     #endregion
 
   }

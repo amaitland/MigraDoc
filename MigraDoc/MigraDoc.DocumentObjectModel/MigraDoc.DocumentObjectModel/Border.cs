@@ -30,11 +30,6 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System.Diagnostics;
-using System.Reflection;
-using System.Globalization;
-using MigraDoc.DocumentObjectModel.Internals;
-
 namespace MigraDoc.DocumentObjectModel
 {
   /// <summary>
@@ -70,7 +65,7 @@ namespace MigraDoc.DocumentObjectModel
 	/// </summary>
 	public void Clear()
 	{
-	  this.fClear.Value = true;
+	  fClear = true;
 	}
 	#endregion
 
@@ -78,24 +73,24 @@ namespace MigraDoc.DocumentObjectModel
 	/// <summary>
 	/// Gets or sets a value indicating whether the border visible is.
 	/// </summary>
-	public bool Visible
+	public bool? Visible
 	{
-	  get { return this.visible.Value; }
-	  set { this.visible.Value = value; }
+	  get { return this.visible; }
+	  set { this.visible = value; }
 	}
 	
-	internal NBool visible = NBool.NullValue;
+	internal bool? visible = null;
 
 	/// <summary>
 	/// Gets or sets the line style of the border.
 	/// </summary>
-	public BorderStyle Style
+	public BorderStyle? Style
 	{
-	  get { return (BorderStyle)this.style.Value; }
-	  set { this.style.Value = (int)value; }
+	  get { return this.style; }
+	  set { this.style = value; }
 	}
-	
-	internal NEnum style = NEnum.NullValue(typeof(BorderStyle));
+
+	  internal BorderStyle? style;
 
 	/// <summary>
 	/// Gets or sets the line width of the border.
@@ -133,9 +128,9 @@ namespace MigraDoc.DocumentObjectModel
 	/// </summary>
 	public bool BorderCleared
 	{
-	  get { return this.fClear.Value; }
+	  get { return this.fClear; }
 	}
-	internal NBool fClear = new NBool(false);
+	internal bool fClear;
 	#endregion
 
 	#region Internal

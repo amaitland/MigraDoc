@@ -221,14 +221,14 @@ namespace PdfSharp.Drawing.BarCodes
 
       BarCodeRenderInfo info = new BarCodeRenderInfo(gfx, brush, font, position);
       InitRendering(info);
-      info.CurrPosInString = 0;
+      info.CurrPosIstring = 0;
       //info.CurrPos = info.Center - this.size / 2;
       info.CurrPos = position - CodeBase.CalcDistance(AnchorType.TopLeft, this.anchor, this.size);
 
       if (TurboBit)
         RenderTurboBit(info, true);
       RenderStart(info);
-      while (info.CurrPosInString < this.text.Length)
+      while (info.CurrPosIstring < this.text.Length)
       {
         RenderNextChar(info);
         RenderGap(info, false);
@@ -244,8 +244,8 @@ namespace PdfSharp.Drawing.BarCodes
 
     private void RenderNextChar(BarCodeRenderInfo info)
     {
-      RenderChar(info, this.text[info.CurrPosInString]);
-      ++info.CurrPosInString;
+      RenderChar(info, this.text[info.CurrPosIstring]);
+      ++info.CurrPosIstring;
     }
 
     private void RenderChar(BarCodeRenderInfo info, char ch)

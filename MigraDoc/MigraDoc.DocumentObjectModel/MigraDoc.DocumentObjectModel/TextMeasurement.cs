@@ -34,7 +34,7 @@ using System;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Drawing;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel
 {

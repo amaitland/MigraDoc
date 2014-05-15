@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel
 {
@@ -40,272 +40,243 @@ namespace MigraDoc.DocumentObjectModel
   /// </summary>
   public sealed class Font : DocumentObject
   {
-    /// <summary>
-    /// Initializes a new instance of the Font class that can be used as a template.
-    /// </summary>
-    public Font()
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the Font class that can be used as a template.
+	/// </summary>
+	public Font()
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the Font class with the specified parent.
-    /// </summary>
-    internal Font(DocumentObject parent) : base(parent) { }
+	/// <summary>
+	/// Initializes a new instance of the Font class with the specified parent.
+	/// </summary>
+	internal Font(DocumentObject parent) : base(parent) { }
 
-    /// <summary>
-    /// Initializes a new instance of the Font class with the specified name and size.
-    /// </summary>
-    public Font(string name, Unit size)
-    {
-      this.name.Value = name;
-      this.size.Value = size;
-    }
+	/// <summary>
+	/// Initializes a new instance of the Font class with the specified name and size.
+	/// </summary>
+	public Font(string name, Unit size)
+	{
+	  this.name = name;
+	  this.size = size;
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the Font class with the specified name.
-    /// </summary>
-    public Font(string name)
-    {
-      this.name.Value = name;
-    }
+	/// <summary>
+	/// Initializes a new instance of the Font class with the specified name.
+	/// </summary>
+	public Font(string name)
+	{
+	  this.name = name;
+	}
 
-    #region Methods
-    /// <summary>
-    /// Creates a copy of the Font.
-    /// </summary>
-    public new Font Clone()
-    {
-      return (Font)DeepCopy();
-    }
+	#region Methods
+	/// <summary>
+	/// Creates a copy of the Font.
+	/// </summary>
+	public new Font Clone()
+	{
+	  return (Font)DeepCopy();
+	}
 
-    /// <summary>
-    /// Applies all non-null properties of a font to this font if the given font's property is different from the given refFont's property.
-    /// </summary>
-    internal void ApplyFont(Font font, Font refFont)
-    {
-      if (font == null)
-        throw new ArgumentNullException("font");
+	/// <summary>
+	/// Applies all non-null properties of a font to this font if the given font's property is different from the given refFont's property.
+	/// </summary>
+	internal void ApplyFont(Font font, Font refFont)
+	{
+		if (font == null)
+			throw new ArgumentNullException("font");
 
-      if ((!font.name.IsNull && font.name.Value != "") && (refFont == null || font.Name != refFont.Name))
-        this.Name = font.Name;
+		if ((!string.IsNullOrEmpty(font.name)) && (refFont == null || font.Name != refFont.Name))
+			this.Name = font.Name;
 
-      if (!font.size.IsNull && (refFont == null || font.Size != refFont.Size))
-        this.Size = font.Size;
+		if (!font.size.IsNull && (refFont == null || font.Size != refFont.Size))
+			this.Size = font.Size;
 
-      if (!font.bold.IsNull && (refFont == null || font.Bold != refFont.Bold))
-        this.Bold = font.Bold;
+		if (font.bold.HasValue && (refFont == null || font.Bold != refFont.Bold))
+			this.Bold = font.Bold;
 
-      if (!font.italic.IsNull && (refFont == null || font.Italic != refFont.Italic))
-        this.Italic = font.Italic;
+		if (font.italic.HasValue && (refFont == null || font.Italic != refFont.Italic))
+			this.Italic = font.Italic;
 
-      if (!font.subscript.IsNull && (refFont == null || font.Subscript != refFont.Subscript))
-        this.Subscript = font.Subscript;
-      else if (!font.superscript.IsNull && (refFont == null || font.Superscript != refFont.Superscript))
-        this.Superscript = font.Superscript;
+		if (font.subscript.HasValue && (refFont == null || font.Subscript != refFont.Subscript))
+			this.Subscript = font.Subscript;
+		else if (font.superscript.HasValue && (refFont == null || font.Superscript != refFont.Superscript))
+			this.Superscript = font.Superscript;
 
-      if (!font.underline.IsNull && (refFont == null || font.Underline != refFont.Underline))
-        this.Underline = font.Underline;
+		if (font.underline.HasValue && (refFont == null || font.Underline != refFont.Underline))
+			this.Underline = font.Underline;
 
-      if (!font.color.IsNull && (refFont == null || font.Color.Argb != refFont.Color.Argb))
-        this.Color = font.Color;
-    }
+		if (!font.color.IsNull && (refFont == null || font.Color.Argb != refFont.Color.Argb))
+			this.Color = font.Color;
+	}
 
-    /// <summary>
-    /// Applies all non-null properties of a font to this font.
-    /// </summary>
-    public void ApplyFont(Font font)
-    {
-      if (font == null)
-        throw new ArgumentNullException("font");
+	/// <summary>
+	/// Applies all non-null properties of a font to this font.
+	/// </summary>
+	public void ApplyFont(Font font)
+	{
+		if (font == null)
+			throw new ArgumentNullException("font");
 
-      if (!font.name.IsNull && font.name.Value != "")
-        this.Name = font.Name;
+		if (!string.IsNullOrEmpty(font.name))
+			this.Name = font.Name;
 
-      if (!font.size.IsNull)
-        this.Size = font.Size;
+		if (!font.size.IsNull)
+			this.Size = font.Size;
 
-      if (!font.bold.IsNull)
-        this.Bold = font.Bold;
+		if (font.bold.HasValue)
+			this.Bold = font.Bold;
 
-      if (!font.italic.IsNull)
-        this.Italic = font.Italic;
+		if (font.italic.HasValue)
+			this.Italic = font.Italic;
 
-      if (!font.subscript.IsNull)
-        this.Subscript = font.Subscript;
-      else if (!font.superscript.IsNull)
-        this.Superscript = font.Superscript;
+		if (font.subscript.HasValue)
+			this.Subscript = font.Subscript;
+		else if (font.superscript.HasValue)
+			this.Superscript = font.Superscript;
 
-      if (!font.underline.IsNull)
-        this.Underline = font.Underline;
+		if (font.underline.HasValue)
+			this.Underline = font.Underline;
 
-      if (!font.color.IsNull)
-        this.Color = font.Color;
-    }
-    #endregion
+		if (!font.color.IsNull)
+			this.Color = font.Color;
+	}
+	#endregion
 
-    #region Properties
-    /// <summary>
-    /// Gets or sets the name of the font.
-    /// </summary>
-    public string Name
-    {
-      get { return this.name.Value; }
-      set { this.name.Value = value; }
-    }
-    
-    internal NString name = NString.NullValue;
+	#region Properties
+	/// <summary>
+	/// Gets or sets the name of the font.
+	/// </summary>
+	public string Name
+	{
+	  get { return this.name; }
+	  set { this.name = value; }
+	}
+	
+	internal string name = null;
 
-    /// <summary>
-    /// Gets or sets the size of the font.
-    /// </summary>
-    public Unit Size
-    {
-      get { return this.size; }
-      set { this.size = value; }
-    }
-    
-    internal Unit size = Unit.NullValue;
+	/// <summary>
+	/// Gets or sets the size of the font.
+	/// </summary>
+	public Unit Size
+	{
+	  get { return this.size; }
+	  set { this.size = value; }
+	}
+	
+	internal Unit size = Unit.NullValue;
 
-    /// <summary>
-    /// Gets or sets the bold property.
-    /// </summary>
-    public bool Bold
-    {
-      get { return this.bold.Value; }
-      set { this.bold.Value = value; }
-    }
-    
-    internal NBool bold = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets the bold property.
+	/// </summary>
+	public bool Bold
+	{
+	  get { return this.bold.GetValueOrDefault(); }
+	  set { this.bold = value; }
+	}
+	
+	internal bool? bold = null;
 
-    /// <summary>
-    /// Gets or sets the italic property.
-    /// </summary>
-    public bool Italic
-    {
-      get { return this.italic.Value; }
-      set { this.italic.Value = value; }
-    }
-    
-    internal NBool italic = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets the italic property.
+	/// </summary>
+	public bool Italic
+	{
+	  get { return this.italic.GetValueOrDefault(); }
+	  set { this.italic = value; }
+	}
+	
+	internal bool? italic = null;
 
-    /// <summary>
-    /// Gets or sets the underline property.
-    /// </summary>
-    public Underline Underline
-    {
-      get { return (Underline)this.underline.Value; }
-      set { this.underline.Value = (int)value; }
-    }
-    
-    internal NEnum underline = NEnum.NullValue(typeof(Underline));
+	/// <summary>
+	/// Gets or sets the underline property.
+	/// </summary>
+	public Underline? Underline
+	{
+	  get { return underline; }
+	  set { this.underline = value; }
+	}
+	
+	internal Underline? underline;
 
-    /// <summary>
-    /// Gets or sets the color property.
-    /// </summary>
-    public Color Color
-    {
-      get { return this.color; }
-      set { this.color = value; }
-    }
-    
-    internal Color color = Color.Empty;
+	/// <summary>
+	/// Gets or sets the color property.
+	/// </summary>
+	public Color Color
+	{
+	  get { return this.color; }
+	  set { this.color = value; }
+	}
+	
+	internal Color color = Color.Empty;
 
-    /// <summary>
-    /// Gets or sets the superscript property.
-    /// </summary>
-    public bool Superscript
-    {
-      get { return this.superscript.Value; }
-      set
-      {
-        this.superscript.Value = value;
-        this.subscript.SetNull();
-      }
-    }
-    
-    internal NBool superscript = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets the superscript property.
+	/// </summary>
+	public bool? Superscript
+	{
+	  get { return this.superscript; }
+	  set
+	  {
+		this.superscript = value;
+		  this.subscript = null;
+	  }
+	}
+	
+	internal bool? superscript = null;
 
-    /// <summary>
-    /// Gets or sets the subscript property.
-    /// </summary>
-    public bool Subscript
-    {
-      get { return this.subscript.Value; }
-      set
-      {
-        this.subscript.Value = value;
-        this.superscript.SetNull();
-      }
-    }
-    
-    internal NBool subscript = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets the subscript property.
+	/// </summary>
+	public bool? Subscript
+	{
+	  get { return this.subscript; }
+	  set
+	  {
+		this.subscript = value;
+		this.superscript = null;
+	  }
+	}
+	
+	internal bool? subscript = null;
 
-    //  + .Name = "Verdana"
-    //  + .Size = 8
-    //  + .Bold = False
-    //  + .Italic = False
-    //  + .Underline = wdUnderlineDouble
-    //  * .UnderlineColor = wdColorOrange
-    //    .StrikeThrough = False
-    //    .DoubleStrikeThrough = False
-    //    .Outline = False
-    //    .Emboss = False
-    //    .Shadow = False
-    //    .Hidden = False
-    //  * .SmallCaps = False
-    //  * .AllCaps = False
-    //  + .Color = wdColorAutomatic
-    //    .Engrave = False
-    //  + .Superscript = False
-    //  + .Subscript = False
-    //  * .Spacing = 0
-    //  * .Scaling = 100
-    //  * .Position = 0
-    //    .Kerning = 0
-    //    .Animation = wdAnimationNone
-    #endregion
+	//  + .Name = "Verdana"
+	//  + .Size = 8
+	//  + .Bold = False
+	//  + .Italic = False
+	//  + .Underline = wdUnderlineDouble
+	//  * .UnderlineColor = wdColorOrange
+	//    .StrikeThrough = False
+	//    .DoubleStrikeThrough = False
+	//    .Outline = False
+	//    .Emboss = False
+	//    .Shadow = False
+	//    .Hidden = False
+	//  * .SmallCaps = False
+	//  * .AllCaps = False
+	//  + .Color = wdColorAutomatic
+	//    .Engrave = False
+	//  + .Superscript = False
+	//  + .Subscript = False
+	//  * .Spacing = 0
+	//  * .Scaling = 100
+	//  * .Position = 0
+	//    .Kerning = 0
+	//    .Animation = wdAnimationNone
+	#endregion
 
-    /// <summary>
-    /// Gets a value indicating whether the specified font exists.
-    /// </summary>
-    public static bool Exists(string fontName)
-    {
-      System.Drawing.FontFamily[] families = System.Drawing.FontFamily.Families;
-      foreach (System.Drawing.FontFamily family in families)
-      {
-        if (String.Compare(family.Name, fontName, true) == 0)
-          return true;
-      }
-      return false;
-    }
-
-    #region Internal
-    /// <summary>
-    /// Get a bitmask of all non-null properties.
-    /// </summary>
-    private FontProperties CheckWhatIsNotNull()
-    {
-      FontProperties fp = FontProperties.None;
-      if (!this.name.IsNull)
-        fp |= FontProperties.Name;
-      if (!this.size.IsNull)
-        fp |= FontProperties.Size;
-      if (!this.bold.IsNull)
-        fp |= FontProperties.Bold;
-      if (!this.italic.IsNull)
-        fp |= FontProperties.Italic;
-      if (!this.underline.IsNull)
-        fp |= FontProperties.Underline;
-      if (!this.color.IsNull)
-        fp |= FontProperties.Color;
-      if (!this.superscript.IsNull)
-        fp |= FontProperties.Superscript;
-      if (!this.subscript.IsNull)
-        fp |= FontProperties.Subscript;
-      return fp;
-    }
-
-	  
-    #endregion
+	/// <summary>
+	/// Gets a value indicating whether the specified font exists.
+	/// </summary>
+	public static bool Exists(string fontName)
+	{
+	  System.Drawing.FontFamily[] families = System.Drawing.FontFamily.Families;
+	  foreach (System.Drawing.FontFamily family in families)
+	  {
+		if (String.Compare(family.Name, fontName, true) == 0)
+		  return true;
+	  }
+	  return false;
+	}
   }
 }

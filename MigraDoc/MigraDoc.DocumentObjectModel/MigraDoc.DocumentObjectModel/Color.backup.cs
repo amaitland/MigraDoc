@@ -34,7 +34,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 #if old
 namespace MigraDoc.DocumentObjectModel

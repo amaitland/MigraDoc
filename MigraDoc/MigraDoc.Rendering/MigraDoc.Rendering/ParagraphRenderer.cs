@@ -1931,12 +1931,12 @@ namespace MigraDoc.Rendering
           ch = chars[0];
           break;
       }
-      string returnString = "";
-      returnString += ch;
+      string returstring = "";
+      returstring += ch;
       int count = character.Count;
       while (--count > 0)
-        returnString += ch;
-      return returnString;
+        returstring += ch;
+      return returstring;
     }
 
     FormatResult FormatSymbol(Character character)

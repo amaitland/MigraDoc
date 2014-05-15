@@ -30,7 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 
 namespace MigraDoc.DocumentObjectModel.Tables
@@ -117,16 +117,16 @@ namespace MigraDoc.DocumentObjectModel.Tables
     {
       get
       {
-        if (index.IsNull)
+        if (index == null)
         {
           Rows rws = this.parent as Rows;
           index = rws.IndexOf(this);
         }
-        return index;
+        return index.GetValueOrDefault();
       }
     }
     
-    internal NInt index = NInt.NullValue;
+    internal int? index = null;
 
     /// <summary>
     /// Gets a cell by its column index. The first cell has index 0.
@@ -141,11 +141,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets the default ParagraphFormat for all cells of the row.
@@ -171,13 +171,13 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// <summary>
     /// Gets or sets the default vertical alignment for all cells of the row.
     /// </summary>
-    public VerticalAlignment VerticalAlignment
+    public VerticalAlignment? VerticalAlignment
     {
-      get { return (VerticalAlignment)this.verticalAlignment.Value; }
-      set { this.verticalAlignment.Value = (int)value; }
+      get { return this.verticalAlignment; }
+      set { this.verticalAlignment = value; }
     }
     
-    internal NEnum verticalAlignment = NEnum.NullValue(typeof(VerticalAlignment));
+    internal VerticalAlignment? verticalAlignment;
 
     /// <summary>
     /// Gets or sets the height of the row.
@@ -193,13 +193,13 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// <summary>
     /// Gets or sets the rule which is used to determine the height of the row.
     /// </summary>
-    public RowHeightRule HeightRule
+    public RowHeightRule? HeightRule
     {
-      get { return (RowHeightRule)this.heightRule.Value; }
-      set { this.heightRule.Value = (int)value; }
+      get { return this.heightRule; }
+      set { this.heightRule = value; }
     }
-    
-    internal NEnum heightRule = NEnum.NullValue(typeof(RowHeightRule));
+
+	internal RowHeightRule? heightRule;
 
     /// <summary>
     /// Gets or sets the default value for all cells of the row.
@@ -226,13 +226,13 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// <summary>
     /// Gets or sets a value which define whether the row is a header.
     /// </summary>
-    public bool HeadingFormat
+    public bool? HeadingFormat
     {
-      get { return this.headingFormat.Value; }
-      set { this.headingFormat.Value = value; }
+      get { return this.headingFormat; }
+      set { this.headingFormat = value; }
     }
     
-    internal NBool headingFormat = NBool.NullValue;
+    internal bool? headingFormat = null;
 
     /// <summary>
     /// Gets the default Borders object for all cells of the row.
@@ -280,13 +280,13 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// Gets or sets the number of rows that should be
     /// kept together with the current row in case of a page break.
     /// </summary>
-    public int KeepWith
+    public int? KeepWith
     {
-      get { return this.keepWith.Value; }
-      set { this.keepWith.Value = value; }
+      get { return this.keepWith; }
+      set { this.keepWith = value; }
     }
     
-    internal NInt keepWith = NInt.NullValue;
+    internal int? keepWith = null;
 
     /// <summary>
     /// Gets the Cells collection of the table.
@@ -314,11 +314,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Comment
     {
-      get { return this.comment.Value; }
-      set { this.comment.Value = value; }
+      get { return this.comment; }
+      set { this.comment = value; }
     }
     
-    internal NString comment = NString.NullValue;
+    internal string comment = null;
     #endregion
 
     #region Internal

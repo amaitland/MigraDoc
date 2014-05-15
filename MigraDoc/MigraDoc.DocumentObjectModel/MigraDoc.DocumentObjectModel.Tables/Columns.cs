@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 
 namespace MigraDoc.DocumentObjectModel.Tables
@@ -124,11 +124,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Comment
     {
-      get { return this.comment.Value; }
-      set { this.comment.Value = value; }
+      get { return this.comment; }
+      set { this.comment = value; }
     }
     
-    internal NString comment = NString.NullValue;
+    internal string comment = null;
     #endregion
 
     #region Internal

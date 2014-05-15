@@ -569,20 +569,20 @@ namespace PdfSharp.Drawing
         /// Version string in the fonts NAME table.
         /// Version strings vary significantly in format - to obtain the version 
         /// as a numeric value use the 'Version' property,
-        /// do not attempt to parse the VersionString. 
+        /// do not attempt to parse the Versiostring. 
         /// </summary> 
         /// <SecurityNote>
         /// Critical - as this accesses _fontFace which can reveal Windows font information. 
         /// Safe - as this does a demand before it gives out the information asked.
         /// </SecurityNote>
-        public IDictionary<CultureInfo, string> VersionStrings
+        public IDictionary<CultureInfo, string> Versiostrings
         { 
             [SecurityCritical]
             get 
             { 
                 CheckInitialized(); // This can only be called on fully initialized GlyphTypeface
                 DemandPermissionsForFontInformation(); 
-                return _fontFace.GetVersionStringDictionary();
+                return _fontFace.GetVersiostringDictionary();
             }
         }
  

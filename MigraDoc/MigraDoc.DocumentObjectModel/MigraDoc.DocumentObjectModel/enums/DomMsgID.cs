@@ -149,7 +149,7 @@ namespace MigraDoc.DocumentObjectModel
     //    FileNotFound,
     //    NotSupported,
 
-    NewlineInString,
+    NewlineIstring,
     EscapeSequenceNotAllowed,
     //    SymboleNotAllowedInsideText,
     NullAssignmentNotSupported,

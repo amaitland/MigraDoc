@@ -30,7 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.DocumentObjectModel.Shapes;
@@ -175,22 +175,22 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public string Reference
     {
-      get { return this.reference.Value; }
-      set { this.reference.Value = value; }
+      get { return this.reference; }
+      set { this.reference = value; }
     }
     
-    internal NString reference = NString.NullValue;
+    internal string reference = null;
 
     /// <summary>
     /// Gets or sets the style name of the footnote.
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets the format of the footnote.

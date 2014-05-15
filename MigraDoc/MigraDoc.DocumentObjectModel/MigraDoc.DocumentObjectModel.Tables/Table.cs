@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 
 namespace MigraDoc.DocumentObjectModel.Tables
@@ -301,11 +301,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets the default ParagraphFormat for all rows and columns of the table.
@@ -418,24 +418,24 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// Gets or sets a value indicating whether
     /// to keep all the table rows on the same page.
     /// </summary>
-    public bool KeepTogether
+    public bool? KeepTogether
     {
-      get { return this.keepTogether.Value; }
-      set { this.keepTogether.Value = value; }
+      get { return this.keepTogether; }
+      set { this.keepTogether = value; }
     }
     
-    internal NBool keepTogether = NBool.NullValue;
+    internal bool? keepTogether = null;
 
     /// <summary>
     /// Gets or sets a comment associated with this object.
     /// </summary>
     public string Comment
     {
-      get { return this.comment.Value; }
-      set { this.comment.Value = value; }
+      get { return this.comment; }
+      set { this.comment = value; }
     }
     
-    internal NString comment = NString.NullValue;
+    internal string comment = null;
     #endregion
 
     #region Internal

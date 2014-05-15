@@ -34,7 +34,7 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.IO;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
@@ -94,47 +94,47 @@ namespace MigraDoc.DocumentObjectModel.Shapes
 	/// </summary>
 	public string Name
 	{
-	  get { return this.name.Value; }
-	  set { this.name.Value = value; }
+	  get { return this.name; }
+	  set { this.name = value; }
 	}
 	
-	internal NString name = NString.NullValue;
+	internal string name = null;
 
 	/// <summary>
 	/// Gets or sets the ScaleWidth of the image.
 	/// If the Width is set to, the resulting image width is ScaleWidth * Width.
 	/// </summary>
-	public double ScaleWidth
+	public double? ScaleWidth
 	{
-	  get { return this.scaleWidth.Value; }
-	  set { this.scaleWidth.Value = value; }
+	  get { return this.scaleWidth; }
+	  set { this.scaleWidth = value; }
 	}
 	
-	internal NDouble scaleWidth = NDouble.NullValue;
+	internal double? scaleWidth = null;
 
 	/// <summary>
 	/// Gets or sets the ScaleHeight of the image.
 	/// If the Height is set too, the resulting image height is ScaleHeight * Height.
 	/// </summary>
-	public double ScaleHeight
+	public double? ScaleHeight
 	{
-	  get { return this.scaleHeight.Value; }
-	  set { this.scaleHeight.Value = value; }
+	  get { return this.scaleHeight; }
+	  set { this.scaleHeight = value; }
 	}
 	
-	internal NDouble scaleHeight = NDouble.NullValue;
+	internal double? scaleHeight = null;
 
 	/// <summary>
 	/// Gets or sets whether the AspectRatio of the image is kept unchanged.
 	/// If both Width and Height are set, this property is ignored.
 	/// </summary>
-	public bool LockAspectRatio
+	public bool? LockAspectRatio
 	{
-	  get { return this.lockAspectRatio.Value; }
-	  set { this.lockAspectRatio.Value = value; }
+	  get { return this.lockAspectRatio; }
+	  set { this.lockAspectRatio = value; }
 	}
 	
-	internal NBool lockAspectRatio = NBool.NullValue;
+	internal bool? lockAspectRatio = null;
 
 	/// <summary>
 	/// Gets or sets the PictureFormat for the image
@@ -159,13 +159,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes
 	/// <summary>
 	/// Gets or sets a user defined resolution for the image in dots per inch.
 	/// </summary>
-	public double Resolution
+	public double? Resolution
 	{
-	  get { return this.resolution.Value; }
-	  set { this.resolution.Value = value; }
+	  get { return this.resolution; }
+	  set { this.resolution = value; }
 	}
 	
-	internal NDouble resolution = NDouble.NullValue;
+	internal double? resolution = null;
 	//#endregion
 
 	#region Internal
@@ -185,7 +185,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
 		else
 		  filePath = Directory.GetCurrentDirectory() + "\\";
 
-		if (!Document.imagePath.IsNull)
+		if (string.IsNullOrEmpty(Document.imagePath))
 		{
 		  string foundfile = ImageHelper.GetImageName(filePath, this.Name, Document.ImagePath);
 		  if (foundfile != null)

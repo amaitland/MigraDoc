@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Fields
 {
@@ -70,17 +70,17 @@ namespace MigraDoc.DocumentObjectModel.Fields
     /// </summary>
     public string Name
     {
-      get { return this.name.Value; }
+      get { return this.name; }
       set
       {
         if (IsValidName(value))
-          this.name.Value = value;
+          this.name = value;
         else
           throw new ArgumentException(DomSR.InvalidInfoFieldName(value));
       }
     }
     
-    internal NString name = NString.NullValue;
+    internal string name = null;
     #endregion
 
     /// <summary>

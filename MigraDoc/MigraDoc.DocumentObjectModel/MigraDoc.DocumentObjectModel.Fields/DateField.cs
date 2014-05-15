@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Fields
 {
@@ -70,11 +70,11 @@ namespace MigraDoc.DocumentObjectModel.Fields
     /// </summary>
     public string Format
     {
-      get { return this.format.Value; }
-      set { this.format.Value = value; }
+      get { return this.format; }
+      set { this.format = value; }
     }
     
-    internal NString format = NString.NullValue;
+    internal string format = null;
     #endregion
   }
 }

@@ -33,7 +33,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel
 {
@@ -68,13 +68,13 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Gets or sets the type of the list.
     /// </summary>
-    public ListType ListType
+    public ListType? ListType
     {
-      get { return (ListType)this.listType.Value; }
-      set { this.listType.Value = (int)value; }
+      get { return this.listType; }
+      set { this.listType = value; }
     }
     
-    internal NEnum listType = NEnum.NullValue(typeof(ListType));
+    internal ListType? listType;
 
     /// <summary>
     /// Gets or sets the left indent of the list symbol.
@@ -91,13 +91,13 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets a value indicating whether
     /// the previous list numbering should be continued.
     /// </summary>
-    public bool ContinuePreviousList
+    public bool? ContinuePreviousList
     {
-      get { return this.continuePreviousList.Value; }
-      set { this.continuePreviousList.Value = value; }
+      get { return this.continuePreviousList; }
+      set { this.continuePreviousList = value; }
     }
     
-    internal NBool continuePreviousList = NBool.NullValue;
+    internal bool? continuePreviousList = null;
     #endregion
 
     #region Internal

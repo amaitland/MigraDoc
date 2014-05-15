@@ -31,7 +31,7 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -131,13 +131,13 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// The actual value of the data point.
     /// </summary>
-    public double Value
+    public double? Value
     {
-      get { return this.value.Value; }
-      set { this.value.Value = value; }
+      get { return this.value; }
+      set { this.value = value; }
     }
     
-    internal NDouble value = NDouble.NullValue;
+    internal double? value = null;
     #endregion
 
     #region Internal

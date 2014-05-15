@@ -30,7 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.DocumentObjectModel.Tables
 {
@@ -111,16 +111,16 @@ namespace MigraDoc.DocumentObjectModel.Tables
     {
       get
       {
-        if (index.IsNull)
+        if (index == null)
         {
           Columns clms = Parent as Columns;
             index = clms.IndexOf(this);
         }
-        return index;
+        return index.GetValueOrDefault();
       }
     }
     
-    internal NInt index = NInt.NullValue;
+    internal int? index = null;
 
     /// <summary>
     /// Gets a cell by its row index. The first cell has index 0.
@@ -130,7 +130,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
       get
       {
         //Check.ArgumentOutOfRange(index >= 0 && index < table.Rows.Count, "index");
-        return Table.Rows[index][this.index];
+        return Table.Rows[index][Index];
       }
     }
 
@@ -139,11 +139,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets the default ParagraphFormat for all cells of the column.
@@ -224,24 +224,24 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// Gets or sets the number of columns that should be kept together with
     /// current column in case of a page break.
     /// </summary>
-    public int KeepWith
+    public int? KeepWith
     {
-      get { return this.keepWith.Value; }
-      set { this.keepWith.Value = value; }
+      get { return this.keepWith; }
+      set { this.keepWith = value; }
     }
     
-    internal NInt keepWith = NInt.NullValue;
+    internal int? keepWith = null;
 
     /// <summary>
     /// Gets or sets a value which define whether the column is a header.
     /// </summary>
-    public bool HeadingFormat
+    public bool? HeadingFormat
     {
-      get { return this.headingFormat.Value; }
-      set { this.headingFormat.Value = value; }
+      get { return this.headingFormat; }
+      set { this.headingFormat = value; }
     }
     
-    internal NBool headingFormat = NBool.NullValue;
+    internal bool? headingFormat = null;
 
     /// <summary>
     /// Gets the default Shading object for all cells of the column.
@@ -269,11 +269,11 @@ namespace MigraDoc.DocumentObjectModel.Tables
     /// </summary>
     public string Comment
     {
-      get { return this.comment.Value; }
-      set { this.comment.Value = value; }
+      get { return this.comment; }
+      set { this.comment = value; }
     }
     
-    internal NString comment = NString.NullValue;
+    internal string comment = null;
     #endregion
 
     #region Internal

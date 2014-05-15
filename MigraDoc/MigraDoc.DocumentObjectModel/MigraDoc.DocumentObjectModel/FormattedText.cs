@@ -30,7 +30,7 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using MigraDoc.DocumentObjectModel.Internals;
+
 using MigraDoc.DocumentObjectModel.Visitors;
 using MigraDoc.DocumentObjectModel.Fields;
 using MigraDoc.DocumentObjectModel.Shapes;
@@ -473,11 +473,11 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public string Style
     {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
+      get { return this.style; }
+      set { this.style = value; }
     }
     
-    internal NString style = NString.NullValue;
+    internal string style = null;
 
     /// <summary>
     /// Gets or sets the name of the font.
@@ -534,7 +534,7 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets the underline property.
     /// </summary>
     
-    public Underline Underline
+    public Underline? Underline
     {
       get { return Font.Underline; }
       set { Font.Underline = value; }
@@ -554,7 +554,7 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets the superscript property.
     /// </summary>
     
-    public bool Superscript
+    public bool? Superscript
     {
       get { return Font.Superscript; }
       set { Font.Superscript = value; }
@@ -564,7 +564,7 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets the subscript property.
     /// </summary>
     
-    public bool Subscript
+    public bool? Subscript
     {
       get { return Font.Subscript; }
       set { Font.Subscript = value; }

@@ -32,7 +32,7 @@ using System;
 using MigraDoc.DocumentObjectModel;
 using PdfSharp.Drawing;
 using MigraDoc.DocumentObjectModel.Shapes;
-using MigraDoc.DocumentObjectModel.Internals;
+
 
 namespace MigraDoc.Rendering
 {

@@ -52,7 +52,7 @@ namespace PdfSharp.Drawing.BarCodes
     public XPoint Position;
     public double BarHeight;
     public XPoint CurrPos;
-    public int CurrPosInString;
+    public int CurrPosIstring;
     public double ThinBarWidth;
   }
 }
