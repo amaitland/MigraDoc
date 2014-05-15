@@ -294,21 +294,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts HeaderFooter into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      HeadersFooters headersfooters = this.parent as HeadersFooters;
-      if (headersfooters.Primary == this)
-        this.Serialize(serializer, "primary");
-      else if (headersfooters.EvenPage == this)
-        this.Serialize(serializer, "evenpage");
-      else if (headersfooters.FirstPage == this)
-        this.Serialize(serializer, "firstpage");
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Converts HeaderFooter into DDL.
     /// </summary>
     internal void Serialize(Serializer serializer, string prefix)
@@ -323,8 +310,9 @@ namespace MigraDoc.DocumentObjectModel
 
       serializer.BeginContent();
       if (!IsNull("Elements"))
-        this.elements.Serialize(serializer);
-      serializer.EndContent();
+      {
+      }
+	    serializer.EndContent();
     }
 
     /// <summary>

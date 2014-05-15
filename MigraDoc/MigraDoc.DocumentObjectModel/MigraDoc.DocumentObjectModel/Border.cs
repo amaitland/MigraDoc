@@ -30,7 +30,6 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Globalization;
@@ -140,15 +139,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts Border into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      throw new Exception("A Border cannot be serialized alone.");
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Converts Border into DDL.
     /// </summary>
     internal void Serialize(Serializer serializer, string name, Border refBorder)

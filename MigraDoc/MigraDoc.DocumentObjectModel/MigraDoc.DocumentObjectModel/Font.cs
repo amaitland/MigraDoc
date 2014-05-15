@@ -305,15 +305,7 @@ namespace MigraDoc.DocumentObjectModel
       return fp;
     }
 
-    /// <summary>
-    /// Converts Font into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      Serialize(serializer, null);
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Converts Font into DDL. Properties with the same value as in an optionally given
     /// font are not serialized.
     /// </summary>

@@ -30,7 +30,6 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-using System;
 using System.Diagnostics;
 using System.Reflection;
 using MigraDoc.DocumentObjectModel.Internals;
@@ -122,30 +121,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts DocumentInfo into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      serializer.WriteComment(this.comment.Value);
-      int pos = serializer.BeginContent("Info");
 
-      if (this.Title != String.Empty)
-        serializer.WriteSimpleAttribute("Title", this.Title);
-
-      if (this.Subject != String.Empty)
-        serializer.WriteSimpleAttribute("Subject", this.Subject);
-
-      if (this.Author != String.Empty)
-        serializer.WriteSimpleAttribute("Author", this.Author);
-
-      if (this.Keywords != String.Empty)
-        serializer.WriteSimpleAttribute("Keywords", this.Keywords);
-
-      serializer.EndContent(pos);
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

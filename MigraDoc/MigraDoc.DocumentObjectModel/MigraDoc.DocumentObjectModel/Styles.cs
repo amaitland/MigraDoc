@@ -328,40 +328,8 @@ namespace MigraDoc.DocumentObjectModel
     }
 
     #region Internal
-    /// <summary>
-    /// Converts Styles into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      serializer.WriteComment(this.comment.Value);
-      int pos = serializer.BeginContent("\\styles");
 
-      // A style can only be added to Styles if its base style exists. Therefore the
-      // styles collection is consistent at any one time by definition. But because it 
-      // is possible  to change the base style of a style, the sequence of the styles 
-      // in the styles collection can be in an order that a style comes before its base
-      // style. The styles in an DDL file must be ordered such that each style appears
-      // after its base style. We cannot simple reorder the styles collection, because
-      // the predefined styles are expected at a fixed position.
-      // The solution is to reorder the styles during serialization.
-      int count = Count;
-      bool[] fSerialized = new bool[count];  // already serialized
-      fSerialized[0] = true;                       // consider DefaultParagraphFont as serialized
-      bool[] fSerializePending = new bool[count];  // currently serializing
-      bool newLine = false;  // gets true if at least one style was written
-      //Start from 1 and do not serialize DefaultParagraphFont
-      for (int index = 1; index < count; index++)
-      {
-        if (!fSerialized[index])
-        {
-          Style style = this[index];
-          SerializeStyle(serializer, index, ref fSerialized, ref fSerializePending, ref newLine);
-        }
-      }
-      serializer.EndContent(pos);
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Serialize a style, but serialize its base style first (if that was not yet done).
     /// </summary>
     void SerializeStyle(Serializer serializer, int index, ref bool[] fSerialized, ref bool[] fSerializePending,
@@ -398,8 +366,7 @@ namespace MigraDoc.DocumentObjectModel
       int pos2 = serializer.BeginBlock();
       if (newLine)
         serializer.WriteLineNoCommit();
-      style.Serialize(serializer);
-      if (serializer.EndBlock(pos2))
+	    if (serializer.EndBlock(pos2))
         newLine = true;
       fSerialized[index] = true;
     }

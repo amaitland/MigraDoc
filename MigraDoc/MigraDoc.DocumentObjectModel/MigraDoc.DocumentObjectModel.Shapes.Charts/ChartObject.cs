@@ -53,15 +53,8 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     internal ChartObject(DocumentObject parent) : base(parent) { }
 
     #region Internal
-    /// <summary>
-    /// Converts ChartObject into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer _serializer)
-    {
-      // Nothing to do
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

@@ -44,121 +44,121 @@ namespace MigraDoc.DocumentObjectModel.Internals
   /// </summary>
   public class Meta
   {
-    /// <summary>
-    /// Initializes a new instance of the DomMeta class.
-    /// </summary>
-    public Meta(Type documentObjectType)
-    {
-      Meta.AddValueDescriptors(this, documentObjectType);
-    }
+	/// <summary>
+	/// Initializes a new instance of the DomMeta class.
+	/// </summary>
+	public Meta(Type documentObjectType)
+	{
+	  Meta.AddValueDescriptors(this, documentObjectType);
+	}
 
-    /// <summary>
-    /// Gets the meta object of the specified document object.
-    /// </summary>
-    /// <param name="documentObject">The document object the meta is returned for.</param>
-    public static Meta GetMeta(DocumentObject documentObject)
-    {
-      return documentObject.Meta;
-    }
+	/// <summary>
+	/// Gets the meta object of the specified document object.
+	/// </summary>
+	/// <param name="documentObject">The document object the meta is returned for.</param>
+	public static Meta GetMeta(DocumentObject documentObject)
+	{
+	  return documentObject.Meta;
+	}
 
-    /// <summary>
-    /// Gets the object specified by name from dom.
-    /// </summary>
-    public object GetValue(DocumentObject dom, string name)
-    {
-      int dot = name.IndexOf('.');
-      if (dot == 0)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-      string trail = null;
-      if (dot > 0)
-      {
-        trail = name.Substring(dot + 1);
-        name = name.Substring(0, dot);
-      }
-	    return null;
-    }
+	/// <summary>
+	/// Gets the object specified by name from dom.
+	/// </summary>
+	public object GetValue(DocumentObject dom, string name)
+	{
+	  int dot = name.IndexOf('.');
+	  if (dot == 0)
+		throw new ArgumentException(DomSR.InvalidValueName(name));
+	  string trail = null;
+	  if (dot > 0)
+	  {
+		trail = name.Substring(dot + 1);
+		name = name.Substring(0, dot);
+	  }
+		return null;
+	}
 
-    /// <summary>
-    /// Sets the member of dom specified by name to val.
-    /// If a member with the specified name does not exist an ArgumentException will be thrown.
-    /// </summary>
-    public void SetValue(DocumentObject dom, string name, object val)
-    {
-      
-    }
+	/// <summary>
+	/// Sets the member of dom specified by name to val.
+	/// If a member with the specified name does not exist an ArgumentException will be thrown.
+	/// </summary>
+	public void SetValue(DocumentObject dom, string name, object val)
+	{
+	  
+	}
 
-    /// <summary>
-    /// Determines whether this meta contains a value with the specified name.
-    /// </summary>
-    public bool HasValue(string name)
-    {
-	    return false;
-    }
+	/// <summary>
+	/// Determines whether this meta contains a value with the specified name.
+	/// </summary>
+	public bool HasValue(string name)
+	{
+		return false;
+	}
 
-    /// <summary>
-    /// Sets the member of dom specified by name to null.
-    /// If a member with the specified name does not exist an ArgumentException will be thrown.
-    /// </summary>
-    public void SetNull(DocumentObject dom, string name)
-    {
-     
-    }
+	/// <summary>
+	/// Sets the member of dom specified by name to null.
+	/// If a member with the specified name does not exist an ArgumentException will be thrown.
+	/// </summary>
+	public void SetNull(DocumentObject dom, string name)
+	{
+	 
+	}
 
-    /// <summary>
-    /// Determines whether the member of dom specified by name is null.
-    /// If a member with the specified name does not exist an ArgumentException will be thrown.
-    /// </summary>
-    public virtual bool IsNull(DocumentObject dom, string name)
-    {
-	    return false;
-    }
+	/// <summary>
+	/// Determines whether the member of dom specified by name is null.
+	/// If a member with the specified name does not exist an ArgumentException will be thrown.
+	/// </summary>
+	public virtual bool IsNull(DocumentObject dom, string name)
+	{
+		return false;
+	}
 
-    /// <summary>
-    /// Sets all members of the specified dom to null.
-    /// </summary>
-    public virtual void SetNull(DocumentObject dom)
-    {
-      
-    }
+	/// <summary>
+	/// Sets all members of the specified dom to null.
+	/// </summary>
+	public virtual void SetNull(DocumentObject dom)
+	{
+	  
+	}
 
-    /// <summary>
-    /// Determines whether all members of the specified dom are null. If dom contains no members IsNull
-    /// returns true.
-    /// </summary>
-    public bool IsNull(DocumentObject dom)
-    {
-      
-      return true;
-    }
+	/// <summary>
+	/// Determines whether all members of the specified dom are null. If dom contains no members IsNull
+	/// returns true.
+	/// </summary>
+	public bool IsNull(DocumentObject dom)
+	{
+	  
+	  return true;
+	}
 
-    
+	
 
-    /// <summary>
-    /// Adds a value descriptor for each field and property found in type to meta.
-    /// </summary>
-    static void AddValueDescriptors(Meta meta, Type type)
-    {
-      FieldInfo[] fieldInfos = type.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-      foreach (FieldInfo fieldInfo in fieldInfos)
-      {
+	/// <summary>
+	/// Adds a value descriptor for each field and property found in type to meta.
+	/// </summary>
+	static void AddValueDescriptors(Meta meta, Type type)
+	{
+	  FieldInfo[] fieldInfos = type.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+	  foreach (FieldInfo fieldInfo in fieldInfos)
+	  {
 #if DEBUG_
-        string name = fieldInfo.Name;
-        if (name == "parent")
-          name.GetType();
+		string name = fieldInfo.Name;
+		if (name == "parent")
+		  name.GetType();
 #endif
-        
-      }
+		
+	  }
 
-      PropertyInfo[] propInfos = type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-      foreach (PropertyInfo propInfo in propInfos)
-      {
+	  PropertyInfo[] propInfos = type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+	  foreach (PropertyInfo propInfo in propInfos)
+	  {
 #if DEBUG_
-        string name = propInfo.Name;
-        if (name == "Font")
-          name.GetType();
+		string name = propInfo.Name;
+		if (name == "Font")
+		  name.GetType();
 #endif
-        
-      }
-    }
+		
+	  }
+	}
   }
 }

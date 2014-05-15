@@ -415,18 +415,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts ParagraphFormat into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      if (this.parent is Style)
-        this.Serialize(serializer, "ParagraphFormat", null);
-      else
-        this.Serialize(serializer, "Format", null);
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Converts ParagraphFormat into DDL.
     /// </summary>
     internal void Serialize(Serializer serializer, string name, ParagraphFormat refFormat)
@@ -434,9 +424,10 @@ namespace MigraDoc.DocumentObjectModel
       int pos = serializer.BeginContent(name);
 
       if (!this.IsNull("Font") && Parent.GetType() != typeof(Style))
-        this.Font.Serialize(serializer);
+      {
+      }
 
-      // If a refFormat is specified, it is important to compare the fields and not the properties.
+	    // If a refFormat is specified, it is important to compare the fields and not the properties.
       // Only the fields holds the internal information whether a value is NULL. In contrast to the
       // Efw.Application framework the nullable values and all the meta stuff is kept internal to
       // give the user the illusion of simplicity.
@@ -481,12 +472,14 @@ namespace MigraDoc.DocumentObjectModel
         serializer.WriteSimpleAttribute("OutlineLevel", this.OutlineLevel);
 
       if (!this.IsNull("ListInfo"))
-        this.ListInfo.Serialize(serializer);
+      {
+      }
 
-      if (!this.IsNull("TabStops"))
-        this.tabStops.Serialize(serializer);
+	    if (!this.IsNull("TabStops"))
+	    {
+	    }
 
-      if (!this.IsNull("Borders"))
+	    if (!this.IsNull("Borders"))
       {
         if (refFormat != null)
           this.borders.Serialize(serializer, refFormat.Borders);
@@ -495,9 +488,10 @@ namespace MigraDoc.DocumentObjectModel
       }
 
       if (!this.IsNull("Shading"))
-        this.shading.Serialize(serializer);
+      {
+      }
 
-      serializer.EndContent(pos);
+	    serializer.EndContent(pos);
     }
 
     /// <summary>

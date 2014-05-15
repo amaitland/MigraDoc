@@ -124,17 +124,8 @@ namespace MigraDoc.DocumentObjectModel.Tables
     }
 
     #region Internal
-    /// <summary>
-    /// Converts Cells into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      int cells = Count;
-      for (int cell = 0; cell < cells; cell++)
-        this[cell].Serialize(serializer);
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

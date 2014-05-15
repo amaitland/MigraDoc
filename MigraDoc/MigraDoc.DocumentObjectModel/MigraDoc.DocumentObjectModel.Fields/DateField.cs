@@ -78,21 +78,8 @@ namespace MigraDoc.DocumentObjectModel.Fields
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts DateField into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      string str = "\\field(Date)";
-      if (this.format.Value != string.Empty)
-        str += "[Format = \"" + this.Format + "\"]";
-      else
-        str += "[]"; //Has to be appended to avoid confusion with '[' in immediatly following text.
 
-      serializer.Write(str);
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Determines whether this instance is null (not set).
     /// </summary>
     public override bool IsNull()

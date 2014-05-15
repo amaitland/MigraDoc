@@ -384,15 +384,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts Borders into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      this.Serialize(serializer, null);
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Converts Borders into DDL.
     /// </summary>
     internal void Serialize(Serializer serializer, Borders refBorders)
