@@ -358,18 +358,6 @@ namespace MigraDoc.DocumentObjectModel
 
     internal static readonly Styles BuildInStyles = new Styles();
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Styles));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
   }
 }

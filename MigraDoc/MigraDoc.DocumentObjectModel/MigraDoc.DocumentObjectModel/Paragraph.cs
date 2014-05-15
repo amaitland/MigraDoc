@@ -535,19 +535,6 @@ namespace MigraDoc.DocumentObjectModel
     bool serializeContentOnly = false;
 
 	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Paragraph));
-        return meta;
-      }
-    }
-
-    /// <summary>
     /// Returns an array of Paragraphs that are separated by parabreaks. Null if no parabreak is found.
     /// </summary>
     internal Paragraph[] SplitOnParaBreak()
@@ -603,7 +590,7 @@ namespace MigraDoc.DocumentObjectModel
       }
       return paragraphElements;
     }
-    static Meta meta;
+    
     #endregion
   }
 }

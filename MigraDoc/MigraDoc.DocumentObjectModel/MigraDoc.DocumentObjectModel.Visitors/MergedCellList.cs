@@ -209,27 +209,27 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 	  Cell bottomNeighbor = GetNeighbor(cellIdx, NeighborPosition.Bottom);
 	  if (leftNeighbor != null)
 	  {
-		Borders nbrBrdrs = leftNeighbor.borders;
-		if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Right) >= GetEffectiveBorderWidth(borders, BorderType.Left))
-		  borders.SetValue("Left", GetBorderFromBorders(nbrBrdrs, BorderType.Right));
+		  Borders nbrBrdrs = leftNeighbor.borders;
+		  if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Right) >= GetEffectiveBorderWidth(borders, BorderType.Left))
+			  borders.left = GetBorderFromBorders(nbrBrdrs, BorderType.Right);
 	  }
 	  if (rightNeighbor != null)
 	  {
 		  Borders nbrBrdrs = rightNeighbor.borders;
-		if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Left) > GetEffectiveBorderWidth(borders, BorderType.Right))
-		  borders.SetValue("Right", GetBorderFromBorders(nbrBrdrs, BorderType.Left));
+		  if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Left) > GetEffectiveBorderWidth(borders, BorderType.Right))
+			  borders.right = GetBorderFromBorders(nbrBrdrs, BorderType.Left);
 	  }
 	  if (topNeighbor != null)
 	  {
 		  Borders nbrBrdrs = topNeighbor.borders;
-		if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Bottom) >= GetEffectiveBorderWidth(borders, BorderType.Top))
-		  borders.SetValue("Top", GetBorderFromBorders(nbrBrdrs, BorderType.Bottom));
+		  if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Bottom) >= GetEffectiveBorderWidth(borders, BorderType.Top))
+			  borders.top = GetBorderFromBorders(nbrBrdrs, BorderType.Bottom);
 	  }
 	  if (bottomNeighbor != null)
 	  {
 		  Borders nbrBrdrs = bottomNeighbor.borders;
-		if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Top) > GetEffectiveBorderWidth(borders, BorderType.Bottom))
-		  borders.SetValue("Bottom", GetBorderFromBorders(nbrBrdrs, BorderType.Top));
+		  if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Top) > GetEffectiveBorderWidth(borders, BorderType.Bottom))
+			  borders.bottom = GetBorderFromBorders(nbrBrdrs, BorderType.Top);
 	  }
 	  return borders;
 	}

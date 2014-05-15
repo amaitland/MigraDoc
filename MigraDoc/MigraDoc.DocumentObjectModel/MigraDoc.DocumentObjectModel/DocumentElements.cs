@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 using MigraDoc.DocumentObjectModel.Visitors;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
@@ -206,19 +205,7 @@ namespace MigraDoc.DocumentObjectModel
       }
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(DocumentElements));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

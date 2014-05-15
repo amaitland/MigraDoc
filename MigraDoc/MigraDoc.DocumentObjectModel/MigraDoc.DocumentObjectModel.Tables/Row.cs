@@ -120,7 +120,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
         if (index.IsNull)
         {
           Rows rws = this.parent as Rows;
-          SetValue("Index", rws.IndexOf(this));
+          index = rws.IndexOf(this);
         }
         return index;
       }
@@ -334,19 +334,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
         ((IVisitable)cell).AcceptVisitor(visitor, visitChildren);
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Row));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
@@ -113,19 +112,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
 
     #region Internal
 
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(PictureFormat));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

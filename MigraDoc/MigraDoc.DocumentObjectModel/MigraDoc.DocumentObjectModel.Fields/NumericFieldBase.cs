@@ -114,13 +114,5 @@ namespace MigraDoc.DocumentObjectModel.Fields
       }
       return false;
     }
-
-    /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    public override bool IsNull()
-    {
-      return false;
-    }
   }
 }

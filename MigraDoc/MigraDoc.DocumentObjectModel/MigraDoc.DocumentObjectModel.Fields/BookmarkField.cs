@@ -41,74 +41,49 @@ namespace MigraDoc.DocumentObjectModel.Fields
   /// </summary>
   public class BookmarkField : DocumentObject
   {
-    /// <summary>
-    /// Initializes a new instance of the BookmarkField class.
-    /// </summary>
-    internal BookmarkField()
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the BookmarkField class.
+	/// </summary>
+	internal BookmarkField()
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the BookmarkField class with the specified parent.
-    /// </summary>
-    internal BookmarkField(DocumentObject parent) : base(parent) { }
+	/// <summary>
+	/// Initializes a new instance of the BookmarkField class with the specified parent.
+	/// </summary>
+	internal BookmarkField(DocumentObject parent) : base(parent) { }
 
-    /// <summary>
-    /// Initializes a new instance of the BookmarkField class with the necessary bookmark name.
-    /// </summary>
-    public BookmarkField(string name)
-      : this()
-    {
-      this.Name = name;
-    }
+	/// <summary>
+	/// Initializes a new instance of the BookmarkField class with the necessary bookmark name.
+	/// </summary>
+	public BookmarkField(string name)
+	  : this()
+	{
+	  this.Name = name;
+	}
 
-    #region Methods
-    /// <summary>
-    /// Creates a deep copy of this object.
-    /// </summary>
-    public new BookmarkField Clone()
-    {
-      return (BookmarkField)DeepCopy();
-    }
-    #endregion
+	#region Methods
+	/// <summary>
+	/// Creates a deep copy of this object.
+	/// </summary>
+	public new BookmarkField Clone()
+	{
+	  return (BookmarkField)DeepCopy();
+	}
+	#endregion
 
-    #region Properties
-    /// <summary>
-    /// Gets or sets the name of the bookmark.
-    /// Used to reference the bookmark from a Hyperlink or PageRef.
-    /// </summary>
-    public string Name
-    {
-      get { return this.name.Value; }
-      set { this.name.Value = value; }
-    }
-    
-    internal NString name = NString.NullValue;
-    #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    public override bool IsNull()
-    {
-      return false;
-    }
-
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(BookmarkField));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
+	#region Properties
+	/// <summary>
+	/// Gets or sets the name of the bookmark.
+	/// Used to reference the bookmark from a Hyperlink or PageRef.
+	/// </summary>
+	public string Name
+	{
+	  get { return this.name.Value; }
+	  set { this.name.Value = value; }
+	}
+	
+	internal NString name = NString.NullValue;
+	#endregion
   }
 }

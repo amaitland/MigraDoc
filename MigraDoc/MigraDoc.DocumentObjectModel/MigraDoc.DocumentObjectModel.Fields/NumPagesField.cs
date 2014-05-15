@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Fields
 {
@@ -66,19 +65,7 @@ namespace MigraDoc.DocumentObjectModel.Fields
 
     #region Internal
 
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(NumPagesField));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

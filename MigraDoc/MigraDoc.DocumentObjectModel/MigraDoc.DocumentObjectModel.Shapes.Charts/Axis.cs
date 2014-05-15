@@ -41,285 +41,268 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
   /// </summary>
   public class Axis : ChartObject
   {
-    /// <summary>
-    /// Initializes a new instance of the Axis class.
-    /// </summary>
-    public Axis()
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the Axis class.
+	/// </summary>
+	public Axis()
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the Axis class with the specified parent.
-    /// </summary>
-    internal Axis(DocumentObject parent) : base(parent) { }
+	/// <summary>
+	/// Initializes a new instance of the Axis class with the specified parent.
+	/// </summary>
+	internal Axis(DocumentObject parent) : base(parent) { }
 
-    #region Methods
-    /// <summary>
-    /// Creates a deep copy of this object.
-    /// </summary>
-    public new Axis Clone()
-    {
-      return (Axis)DeepCopy();
-    }
+	#region Methods
+	/// <summary>
+	/// Creates a deep copy of this object.
+	/// </summary>
+	public new Axis Clone()
+	{
+	  return (Axis)DeepCopy();
+	}
 
-    /// <summary>
-    /// Implements the deep copy of the object.
-    /// </summary>
-    protected override object DeepCopy()
-    {
-      Axis axis = (Axis)base.DeepCopy();
-      if (axis.title != null)
-      {
-        axis.title = axis.title.Clone();
-        axis.title.parent = axis;
-      }
-      if (axis.tickLabels != null)
-      {
-        axis.tickLabels = axis.tickLabels.Clone();
-        axis.tickLabels.parent = axis;
-      }
-      if (axis.lineFormat != null)
-      {
-        axis.lineFormat = axis.lineFormat.Clone();
-        axis.lineFormat.parent = axis;
-      }
-      if (axis.majorGridlines != null)
-      {
-        axis.majorGridlines = axis.majorGridlines.Clone();
-        axis.majorGridlines.parent = axis;
-      }
-      if (axis.minorGridlines != null)
-      {
-        axis.minorGridlines = axis.minorGridlines.Clone();
-        axis.minorGridlines.parent = axis;
-      }
-      return axis;
-    }
-    #endregion
+	/// <summary>
+	/// Implements the deep copy of the object.
+	/// </summary>
+	protected override object DeepCopy()
+	{
+	  Axis axis = (Axis)base.DeepCopy();
+	  if (axis.title != null)
+	  {
+		axis.title = axis.title.Clone();
+		axis.title.parent = axis;
+	  }
+	  if (axis.tickLabels != null)
+	  {
+		axis.tickLabels = axis.tickLabels.Clone();
+		axis.tickLabels.parent = axis;
+	  }
+	  if (axis.lineFormat != null)
+	  {
+		axis.lineFormat = axis.lineFormat.Clone();
+		axis.lineFormat.parent = axis;
+	  }
+	  if (axis.majorGridlines != null)
+	  {
+		axis.majorGridlines = axis.majorGridlines.Clone();
+		axis.majorGridlines.parent = axis;
+	  }
+	  if (axis.minorGridlines != null)
+	  {
+		axis.minorGridlines = axis.minorGridlines.Clone();
+		axis.minorGridlines.parent = axis;
+	  }
+	  return axis;
+	}
+	#endregion
 
-    #region Properties
-    /// <summary>
-    /// Gets the title of the axis.
-    /// </summary>
-    public AxisTitle Title
-    {
-      get
-      {
-        if (this.title == null)
-          this.title = new AxisTitle(this);
+	#region Properties
+	/// <summary>
+	/// Gets the title of the axis.
+	/// </summary>
+	public AxisTitle Title
+	{
+	  get
+	  {
+		if (this.title == null)
+		  this.title = new AxisTitle(this);
 
-        return this.title;
-      }
-      set
-      {
-        SetParent(value);
-        this.title = value;
-      }
-    }
-    
-    internal AxisTitle title;
+		return this.title;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.title = value;
+	  }
+	}
+	
+	internal AxisTitle title;
 
-    /// <summary>
-    /// Gets or sets the minimum value of the axis.
-    /// </summary>
-    public double MinimumScale
-    {
-      get { return this.minimumScale.Value; }
-      set { this.minimumScale.Value = value; }
-    }
-    
-    internal NDouble minimumScale = NDouble.NullValue;
+	/// <summary>
+	/// Gets or sets the minimum value of the axis.
+	/// </summary>
+	public double MinimumScale
+	{
+	  get { return this.minimumScale.Value; }
+	  set { this.minimumScale.Value = value; }
+	}
+	
+	internal NDouble minimumScale = NDouble.NullValue;
 
-    /// <summary>
-    /// Gets or sets the maximum value of the axis.
-    /// </summary>
-    public double MaximumScale
-    {
-      get { return this.maximumScale.Value; }
-      set { this.maximumScale.Value = value; }
-    }
-    
-    internal NDouble maximumScale = NDouble.NullValue;
+	/// <summary>
+	/// Gets or sets the maximum value of the axis.
+	/// </summary>
+	public double MaximumScale
+	{
+	  get { return this.maximumScale.Value; }
+	  set { this.maximumScale.Value = value; }
+	}
+	
+	internal NDouble maximumScale = NDouble.NullValue;
 
-    /// <summary>
-    /// Gets or sets the interval of the primary tick.
-    /// </summary>
-    public double MajorTick
-    {
-      get { return this.majorTick.Value; }
-      set { this.majorTick.Value = value; }
-    }
-    
-    internal NDouble majorTick = NDouble.NullValue;
+	/// <summary>
+	/// Gets or sets the interval of the primary tick.
+	/// </summary>
+	public double MajorTick
+	{
+	  get { return this.majorTick.Value; }
+	  set { this.majorTick.Value = value; }
+	}
+	
+	internal NDouble majorTick = NDouble.NullValue;
 
-    /// <summary>
-    /// Gets or sets the interval of the secondary tick.
-    /// </summary>
-    public double MinorTick
-    {
-      get { return this.minorTick.Value; }
-      set { this.minorTick.Value = value; }
-    }
-    
-    internal NDouble minorTick = NDouble.NullValue;
+	/// <summary>
+	/// Gets or sets the interval of the secondary tick.
+	/// </summary>
+	public double MinorTick
+	{
+	  get { return this.minorTick.Value; }
+	  set { this.minorTick.Value = value; }
+	}
+	
+	internal NDouble minorTick = NDouble.NullValue;
 
-    /// <summary>
-    /// Gets or sets the type of the primary tick mark.
-    /// </summary>
-    public TickMarkType MajorTickMark
-    {
-      get { return (TickMarkType)this.majorTickMark.Value; }
-      set { this.majorTickMark.Value = (int)value; }
-    }
-    
-    internal NEnum majorTickMark = NEnum.NullValue(typeof(TickMarkType));
+	/// <summary>
+	/// Gets or sets the type of the primary tick mark.
+	/// </summary>
+	public TickMarkType MajorTickMark
+	{
+	  get { return (TickMarkType)this.majorTickMark.Value; }
+	  set { this.majorTickMark.Value = (int)value; }
+	}
+	
+	internal NEnum majorTickMark = NEnum.NullValue(typeof(TickMarkType));
 
-    /// <summary>
-    /// Gets or sets the type of the secondary tick mark.
-    /// </summary>
-    public TickMarkType MinorTickMark
-    {
-      get { return (TickMarkType)this.minorTickMark.Value; }
-      set { this.minorTickMark.Value = (int)value; }
-    }
-    
-    internal NEnum minorTickMark = NEnum.NullValue(typeof(TickMarkType));
+	/// <summary>
+	/// Gets or sets the type of the secondary tick mark.
+	/// </summary>
+	public TickMarkType MinorTickMark
+	{
+	  get { return (TickMarkType)this.minorTickMark.Value; }
+	  set { this.minorTickMark.Value = (int)value; }
+	}
+	
+	internal NEnum minorTickMark = NEnum.NullValue(typeof(TickMarkType));
 
-    /// <summary>
-    /// Gets the label of the primary tick.
-    /// </summary>
-    public TickLabels TickLabels
-    {
-      get
-      {
-        if (this.tickLabels == null)
-          this.tickLabels = new TickLabels(this);
+	/// <summary>
+	/// Gets the label of the primary tick.
+	/// </summary>
+	public TickLabels TickLabels
+	{
+	  get
+	  {
+		if (this.tickLabels == null)
+		  this.tickLabels = new TickLabels(this);
 
-        return this.tickLabels;
-      }
-      set
-      {
-        SetParent(value);
-        this.tickLabels = value;
-      }
-    }
-    
-    internal TickLabels tickLabels;
+		return this.tickLabels;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.tickLabels = value;
+	  }
+	}
+	
+	internal TickLabels tickLabels;
 
-    /// <summary>
-    /// Gets the format of the axis line.
-    /// </summary>
-    public LineFormat LineFormat
-    {
-      get
-      {
-        if (this.lineFormat == null)
-          this.lineFormat = new LineFormat(this);
+	/// <summary>
+	/// Gets the format of the axis line.
+	/// </summary>
+	public LineFormat LineFormat
+	{
+	  get
+	  {
+		if (this.lineFormat == null)
+		  this.lineFormat = new LineFormat(this);
 
-        return this.lineFormat;
-      }
-      set
-      {
-        SetParent(value);
-        this.lineFormat = value;
-      }
-    }
-    
-    internal LineFormat lineFormat;
+		return this.lineFormat;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.lineFormat = value;
+	  }
+	}
+	
+	internal LineFormat lineFormat;
 
-    /// <summary>
-    /// Gets the primary gridline object.
-    /// </summary>
-    public Gridlines MajorGridlines
-    {
-      get
-      {
-        if (this.majorGridlines == null)
-          this.majorGridlines = new Gridlines(this);
+	/// <summary>
+	/// Gets the primary gridline object.
+	/// </summary>
+	public Gridlines MajorGridlines
+	{
+	  get
+	  {
+		if (this.majorGridlines == null)
+		  this.majorGridlines = new Gridlines(this);
 
-        return this.majorGridlines;
-      }
-      set
-      {
-        SetParent(value);
-        this.majorGridlines = value;
-      }
-    }
-    
-    internal Gridlines majorGridlines;
+		return this.majorGridlines;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.majorGridlines = value;
+	  }
+	}
+	
+	internal Gridlines majorGridlines;
 
-    /// <summary>
-    /// Gets the secondary gridline object.
-    /// </summary>
-    public Gridlines MinorGridlines
-    {
-      get
-      {
-        if (this.minorGridlines == null)
-          this.minorGridlines = new Gridlines(this);
+	/// <summary>
+	/// Gets the secondary gridline object.
+	/// </summary>
+	public Gridlines MinorGridlines
+	{
+	  get
+	  {
+		if (this.minorGridlines == null)
+		  this.minorGridlines = new Gridlines(this);
 
-        return this.minorGridlines;
-      }
-      set
-      {
-        SetParent(value);
-        this.minorGridlines = value;
-      }
-    }
-    
-    internal Gridlines minorGridlines;
+		return this.minorGridlines;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.minorGridlines = value;
+	  }
+	}
+	
+	internal Gridlines minorGridlines;
 
-    /// <summary>
-    /// Gets or sets, whether the axis has a primary gridline object.
-    /// </summary>
-    public bool HasMajorGridlines
-    {
-      get { return this.hasMajorGridlines.Value; }
-      set { this.hasMajorGridlines.Value = value; }
-    }
-    
-    internal NBool hasMajorGridlines = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets, whether the axis has a primary gridline object.
+	/// </summary>
+	public bool HasMajorGridlines
+	{
+	  get { return this.hasMajorGridlines.Value; }
+	  set { this.hasMajorGridlines.Value = value; }
+	}
+	
+	internal NBool hasMajorGridlines = NBool.NullValue;
 
-    /// <summary>
-    /// Gets or sets, whether the axis has a secondary gridline object.
-    /// </summary>
-    public bool HasMinorGridlines
-    {
-      get { return this.hasMinorGridlines.Value; }
-      set { this.hasMinorGridlines.Value = value; }
-    }
-    
-    internal NBool hasMinorGridlines = NBool.NullValue;
-    #endregion
+	/// <summary>
+	/// Gets or sets, whether the axis has a secondary gridline object.
+	/// </summary>
+	public bool HasMinorGridlines
+	{
+	  get { return this.hasMinorGridlines.Value; }
+	  set { this.hasMinorGridlines.Value = value; }
+	}
+	
+	internal NBool hasMinorGridlines = NBool.NullValue;
+	#endregion
 
-    /// <summary>
-    /// Determines whether the specified gridlines object is a MajorGridlines or an MinorGridlines.
-    /// </summary>
-    internal string CheckGridlines(Gridlines gridlines)
-    {
-      if ((this.majorGridlines != null) && (gridlines == this.majorGridlines))
-        return "MajorGridlines";
-      if ((this.minorGridlines != null) && (gridlines == this.minorGridlines))
-        return "MinorGridlines";
+	/// <summary>
+	/// Determines whether the specified gridlines object is a MajorGridlines or an MinorGridlines.
+	/// </summary>
+	internal string CheckGridlines(Gridlines gridlines)
+	{
+	  if ((this.majorGridlines != null) && (gridlines == this.majorGridlines))
+		return "MajorGridlines";
+	  if ((this.minorGridlines != null) && (gridlines == this.minorGridlines))
+		return "MinorGridlines";
 
-      return "";
-    }
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Axis));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
+	  return "";
+	}
   }
 }

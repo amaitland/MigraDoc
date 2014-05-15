@@ -113,8 +113,8 @@ namespace MigraDoc.DocumentObjectModel.Tables
       {
         if (index.IsNull)
         {
-          Columns clms = this.Parent as Columns;
-          SetValue("Index", clms.IndexOf(this));
+          Columns clms = Parent as Columns;
+            index = clms.IndexOf(this);
         }
         return index;
       }
@@ -278,19 +278,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
 
     #region Internal
 
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Column));
-        return meta;
-      }
-    }
-    static Meta meta;
+      
     #endregion
   }
 }

@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Tables
 {
@@ -125,19 +124,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
 
     #region Internal
 
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Cells));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

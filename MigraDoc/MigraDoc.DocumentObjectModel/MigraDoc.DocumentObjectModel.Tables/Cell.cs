@@ -395,19 +395,7 @@ namespace MigraDoc.DocumentObjectModel.Tables
         ((IVisitable)this.elements).AcceptVisitor(visitor, visitChildren);
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Cell));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

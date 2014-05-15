@@ -153,22 +153,5 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     
     internal NEnum verticalAlignment = NEnum.NullValue(typeof(VerticalAlignment));
     #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(AxisTitle));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
   }
 }

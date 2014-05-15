@@ -136,32 +136,6 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     internal LineFormat lineFormat;
     #endregion
 
-    #region Internal
-
-	  /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    public override bool IsNull()
-    {
-      // legend objects are never null, i.e. the presence of this object is meaningful.
-      return false;
-    }
-
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Legend));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
-
     #region IVisitable Members
 
     void IVisitable.AcceptVisitor(DocumentObjectVisitor visitor, bool visitChildren)

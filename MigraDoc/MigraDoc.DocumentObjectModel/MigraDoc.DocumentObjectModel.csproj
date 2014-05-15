@@ -147,9 +147,6 @@
     <Compile Include="MigraDoc.DocumentObjectModel.Fields\SectionPagesField.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Internals\Meta.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Internals\INullableValue.cs">
       <SubType>Code</SubType>
     </Compile>
