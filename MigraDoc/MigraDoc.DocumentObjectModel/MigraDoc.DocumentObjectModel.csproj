@@ -336,12 +336,6 @@
     <Compile Include="MigraDoc.DocumentObjectModel\Colors.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel\DdlEncoder.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel\DdlVisibleAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel\Document.cs">
       <SubType>Code</SubType>
     </Compile>
