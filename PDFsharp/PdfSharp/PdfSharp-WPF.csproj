@@ -393,7 +393,6 @@
   <ItemGroup>
     <Folder Include="PdfSharp.Drawing.Wpf\" />
     <Folder Include="PdfSharp.Forms\" />
-    <Folder Include="PdfSharpPdf.AcroForms\enums\" />
     <Folder Include="Resources\images\" />
   </ItemGroup>
   <ItemGroup>
