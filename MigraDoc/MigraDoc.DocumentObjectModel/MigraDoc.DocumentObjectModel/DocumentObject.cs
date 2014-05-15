@@ -64,6 +64,16 @@ namespace MigraDoc.DocumentObjectModel
 	  return DeepCopy();
 	}
 
+	public bool IsNull(string param)
+	{
+		return false;
+	}
+
+	  public object GetValue(string param)
+	  {
+		  return null;
+	  }
+
 	/// <summary>
 	/// Implements the deep copy of the object.
 	/// </summary>
