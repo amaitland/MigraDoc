@@ -295,26 +295,6 @@ namespace MigraDoc.DocumentObjectModel
 
     #region Internal
 
-	  /// <summary>
-    /// Converts HeaderFooter into DDL.
-    /// </summary>
-    internal void Serialize(Serializer serializer, string prefix)
-    {
-      serializer.WriteComment(this.comment.Value);
-      serializer.WriteLine("\\" + prefix + (IsHeader ? "header" : "footer"));
-
-      int pos = serializer.BeginAttributes();
-      if (!IsNull("Format"))
-        this.format.Serialize(serializer, "Format", null);
-      serializer.EndAttributes(pos);
-
-      serializer.BeginContent();
-      if (!IsNull("Elements"))
-      {
-      }
-	    serializer.EndContent();
-    }
-
     /// <summary>
     /// Allows the visitor object to visit the document object and it's child objects.
     /// </summary>

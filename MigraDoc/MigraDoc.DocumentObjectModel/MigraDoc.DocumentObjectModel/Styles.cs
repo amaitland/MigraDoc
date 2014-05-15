@@ -327,49 +327,7 @@ namespace MigraDoc.DocumentObjectModel
       this.Add(style);
     }
 
-    #region Internal
-
-	  /// <summary>
-    /// Serialize a style, but serialize its base style first (if that was not yet done).
-    /// </summary>
-    void SerializeStyle(Serializer serializer, int index, ref bool[] fSerialized, ref bool[] fSerializePending,
-      ref bool newLine)
-    {
-      Style style = this[index];
-
-      // It is not possible to modify the default paragraph font
-      if (style.Name == Style.DefaultParagraphFontName)
-        return;
-
-      // Circular dependencies cannot occur if changing the base style is implemented
-      // correctly. But before we proof that, we check it here.
-      if (fSerializePending[index])
-      {
-        string message = String.Format("Circular dependency detected according to style '{0}'.", style.Name);
-        throw new ApplicationException(message);
-      }
-
-      // Only style 'Normal' has no base style
-      if (style.BaseStyle != "")
-      {
-        int idxBaseStyle = GetIndex(style.BaseStyle);
-        if (idxBaseStyle != -1)
-        {
-          if (!fSerialized[idxBaseStyle])
-          {
-            fSerializePending[index] = true;
-            SerializeStyle(serializer, idxBaseStyle, ref fSerialized, ref fSerializePending, ref newLine);
-            fSerializePending[index] = false;
-          }
-        }
-      }
-      int pos2 = serializer.BeginBlock();
-      if (newLine)
-        serializer.WriteLineNoCommit();
-	    if (serializer.EndBlock(pos2))
-        newLine = true;
-      fSerialized[index] = true;
-    }
+    
 
     /// <summary>
     /// Allows the visitor object to visit the document object and it's child objects.
@@ -413,6 +371,5 @@ namespace MigraDoc.DocumentObjectModel
       }
     }
     static Meta meta;
-    #endregion
   }
 }
