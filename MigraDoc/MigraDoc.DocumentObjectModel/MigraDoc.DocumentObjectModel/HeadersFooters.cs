@@ -136,7 +136,7 @@ namespace MigraDoc.DocumentObjectModel
         this.evenPage = value;
       }
     }
-    [DV]
+    
     internal HeaderFooter evenPage;
 
     /// <summary>
@@ -157,7 +157,7 @@ namespace MigraDoc.DocumentObjectModel
         this.firstPage = value;
       }
     }
-    [DV]
+    
     internal HeaderFooter firstPage;
 
     /// <summary>
@@ -178,7 +178,7 @@ namespace MigraDoc.DocumentObjectModel
         this.primary = value;
       }
     }
-    [DV]
+    
     internal HeaderFooter primary;
     #endregion
 

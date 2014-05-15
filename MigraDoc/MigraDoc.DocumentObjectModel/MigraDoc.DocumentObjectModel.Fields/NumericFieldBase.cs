@@ -98,7 +98,7 @@ namespace MigraDoc.DocumentObjectModel.Fields
           throw new ArgumentException(DomSR.InvalidFieldFormat(value));
       }
     }
-    [DV]
+    
     internal NString format = NString.NullValue;
     #endregion
 

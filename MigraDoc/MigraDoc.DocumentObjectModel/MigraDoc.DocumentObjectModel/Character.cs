@@ -99,7 +99,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return (SymbolName)this.symbolName.Value; }
       set { this.symbolName.Value = (int)value; }
     }
-    [DV(Type = typeof(SymbolName))]
+    
     internal NEnum symbolName = NEnum.NullValue(typeof(SymbolName));
 
     /// <summary>
@@ -125,7 +125,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.count.Value; }
       set { this.count.Value = value; }
     }
-    [DV]
+    
     internal NInt count = new NInt(1);
     #endregion
 

@@ -450,7 +450,7 @@ namespace MigraDoc.DocumentObjectModel
         this.font = value;
       }
     }
-    [DV]
+    
     internal Font font;
 
     /// <summary>
@@ -461,7 +461,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.name.Value; }
       set { this.name.Value = value; }
     }
-    [DV]
+    
     internal NString name = NString.NullValue;
 
     /// <summary>
@@ -472,7 +472,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return (HyperlinkType)this.type.Value; }
       set { this.type.Value = (int)value; }
     }
-    [DV(Type = typeof(HyperlinkType))]
+    
     internal NEnum type = NEnum.NullValue(typeof(HyperlinkType));
 
     /// <summary>
@@ -493,7 +493,7 @@ namespace MigraDoc.DocumentObjectModel
         this.elements = value;
       }
     }
-    [DV(ItemType = typeof(DocumentObject))]
+    
     internal ParagraphElements elements;
     #endregion
 

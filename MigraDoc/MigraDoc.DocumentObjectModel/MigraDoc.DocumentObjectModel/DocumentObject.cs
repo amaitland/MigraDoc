@@ -78,24 +78,13 @@ namespace MigraDoc.DocumentObjectModel
     }
 
     /// <summary>
-    /// Creates an object using the default constructor.
-    /// </summary>
-    public object CreateValue(string name)
-    {
-      ValueDescriptor vd = Meta[name];
-      if (vd != null)
-        return vd.CreateValue();
-      return null;
-    }
-
-    /// <summary>
     /// Gets the parent object.
     /// </summary>
     internal DocumentObject Parent
     {
       get { return this.parent; }
     }
-    [DV(RefOnly = true)]
+    
     protected internal DocumentObject parent;
 
     /// <summary>

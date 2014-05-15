@@ -368,7 +368,7 @@ namespace MigraDoc.Rendering
       get { return this.privateFonts; }
       set { this.privateFonts = value; }
     }
-    //[DV]
+    //
     internal XPrivateFontCollection privateFonts;
 #endif
   }

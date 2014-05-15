@@ -70,7 +70,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.color; }
       set { this.color = value; }
     }
-    [DV]
+    
     internal Color color = Color.Empty;
 
     /// <summary>
@@ -81,7 +81,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.visible.Value; }
       set { this.visible.Value = value; }
     }
-    [DV]
+    
     internal NBool visible = NBool.NullValue;
     #endregion
 

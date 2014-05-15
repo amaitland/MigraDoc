@@ -73,7 +73,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return (ListType)this.listType.Value; }
       set { this.listType.Value = (int)value; }
     }
-    [DV(Type = typeof(ListType))]
+    
     internal NEnum listType = NEnum.NullValue(typeof(ListType));
 
     /// <summary>
@@ -84,7 +84,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.numberPosition; }
       set { this.numberPosition = value; }
     }
-    [DV]
+    
     internal Unit numberPosition = Unit.NullValue;
 
     /// <summary>
@@ -96,7 +96,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.continuePreviousList.Value; }
       set { this.continuePreviousList.Value = value; }
     }
-    [DV]
+    
     internal NBool continuePreviousList = NBool.NullValue;
     #endregion
 

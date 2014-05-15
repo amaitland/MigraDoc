@@ -81,7 +81,7 @@ namespace MigraDoc.DocumentObjectModel
     {
       get { return this.position; }
     }
-    [DV]
+    
     internal Unit position = Unit.NullValue;  // always defined
     // useful enhancement: 'Position = Center' and 'Position = Right'
 
@@ -93,7 +93,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return (TabAlignment)this.alignment.Value; }
       set { this.alignment.Value = (int)value; }
     }
-    [DV(Type = typeof(TabAlignment))]
+    
     internal NEnum alignment = NEnum.NullValue(typeof(TabAlignment));
 
     /// <summary>
@@ -104,7 +104,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return (TabLeader)this.leader.Value; }
       set { this.leader.Value = (int)value; }
     }
-    [DV(Type = typeof(TabLeader))]
+    
     internal NEnum leader = NEnum.NullValue(typeof(TabLeader));
 
     /// <summary>

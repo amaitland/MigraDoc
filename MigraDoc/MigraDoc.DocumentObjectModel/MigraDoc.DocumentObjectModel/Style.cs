@@ -126,7 +126,7 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets the font of ParagraphFormat. 
     /// Calling style.Font is just a shortcut to style.ParagraphFormat.Font.
     /// </summary>
-    [DV]
+    
     public Font Font
     {
       get { return ParagraphFormat.Font; }
@@ -141,7 +141,7 @@ namespace MigraDoc.DocumentObjectModel
     {
       get { return this.name.Value; }
     }
-    [DV]
+    
     internal NString name = NString.NullValue;
 
     /// <summary>
@@ -164,7 +164,7 @@ namespace MigraDoc.DocumentObjectModel
         this.paragraphFormat = value;
       }
     }
-    [DV]
+    
     internal ParagraphFormat paragraphFormat;
 
     /// <summary>
@@ -219,7 +219,7 @@ namespace MigraDoc.DocumentObjectModel
         baseStyle.Value = value;
       }
     }
-    [DV]
+    
     internal NString baseStyle = NString.NullValue;
 
     /// <summary>
@@ -261,7 +261,7 @@ namespace MigraDoc.DocumentObjectModel
         return (StyleType)this.styleType.Value;
       }
     }
-    [DV(Type = typeof(StyleType))]
+    
     internal NEnum styleType = NEnum.NullValue(typeof(StyleType));
 
     /// <summary>
@@ -306,7 +306,7 @@ namespace MigraDoc.DocumentObjectModel
     {
       get { return this.buildIn.Value; }
     }
-    [DV]
+    
     internal NBool buildIn = NBool.NullValue;
     // THHO: muss dass nicht builtIn heiﬂen?!?!?!?
 
@@ -318,7 +318,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.comment.Value; }
       set { this.comment.Value = value; }
     }
-    [DV]
+    
     internal NString comment = NString.NullValue;
     #endregion
 

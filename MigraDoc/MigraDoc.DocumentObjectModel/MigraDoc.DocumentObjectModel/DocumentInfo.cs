@@ -73,7 +73,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.title.Value; }
       set { this.title.Value = value; }
     }
-    [DV]
+    
     internal NString title = NString.NullValue;
 
     /// <summary>
@@ -84,7 +84,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.author.Value; }
       set { this.author.Value = value; }
     }
-    [DV]
+    
     internal NString author = NString.NullValue;
 
     /// <summary>
@@ -95,7 +95,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.keywords.Value; }
       set { this.keywords.Value = value; }
     }
-    [DV]
+    
     internal NString keywords = NString.NullValue;
 
     /// <summary>
@@ -106,7 +106,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.subject.Value; }
       set { this.subject.Value = value; }
     }
-    [DV]
+    
     internal NString subject = NString.NullValue;
 
     /// <summary>
@@ -117,7 +117,7 @@ namespace MigraDoc.DocumentObjectModel
       get { return this.comment.Value; }
       set { this.comment.Value = value; }
     }
-    [DV]
+    
     internal NString comment = NString.NullValue;
     #endregion
 

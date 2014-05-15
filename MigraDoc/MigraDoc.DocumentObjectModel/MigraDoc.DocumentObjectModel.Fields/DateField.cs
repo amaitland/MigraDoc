@@ -73,7 +73,7 @@ namespace MigraDoc.DocumentObjectModel.Fields
       get { return this.format.Value; }
       set { this.format.Value = value; }
     }
-    [DV]
+    
     internal NString format = NString.NullValue;
     #endregion
 

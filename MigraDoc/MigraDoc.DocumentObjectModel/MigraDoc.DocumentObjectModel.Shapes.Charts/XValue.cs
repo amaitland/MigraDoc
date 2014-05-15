@@ -62,7 +62,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// The actual value of the XValue.
     /// </summary>
-    [DV] // No Get- and Set -Property.
+     // No Get- and Set -Property.
     protected string Value;
 
     #region Methods

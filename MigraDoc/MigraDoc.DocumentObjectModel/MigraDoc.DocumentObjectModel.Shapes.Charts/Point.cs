@@ -104,7 +104,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
         this.lineFormat = value;
       }
     }
-    [DV]
+    
     internal LineFormat lineFormat;
 
     /// <summary>
@@ -125,7 +125,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
         this.fillFormat = value;
       }
     }
-    [DV]
+    
     internal FillFormat fillFormat;
 
     /// <summary>
@@ -136,7 +136,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
       get { return this.value.Value; }
       set { this.value.Value = value; }
     }
-    [DV]
+    
     internal NDouble value = NDouble.NullValue;
     #endregion
 

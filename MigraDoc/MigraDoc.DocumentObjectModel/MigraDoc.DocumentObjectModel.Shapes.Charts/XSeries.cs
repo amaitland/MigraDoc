@@ -51,7 +51,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// <summary>
     /// The actual value container of the XSeries.
     /// </summary>
-    [DV]
+    
     protected XSeriesElements xSeriesElements;
 
     #region Methods

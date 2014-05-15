@@ -97,7 +97,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.name.Value; }
       set { this.name.Value = value; }
     }
-    [DV]
+    
     internal NString name = NString.NullValue;
 
     /// <summary>
@@ -109,7 +109,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.scaleWidth.Value; }
       set { this.scaleWidth.Value = value; }
     }
-    [DV]
+    
     internal NDouble scaleWidth = NDouble.NullValue;
 
     /// <summary>
@@ -121,7 +121,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.scaleHeight.Value; }
       set { this.scaleHeight.Value = value; }
     }
-    [DV]
+    
     internal NDouble scaleHeight = NDouble.NullValue;
 
     /// <summary>
@@ -133,7 +133,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.lockAspectRatio.Value; }
       set { this.lockAspectRatio.Value = value; }
     }
-    [DV]
+    
     internal NBool lockAspectRatio = NBool.NullValue;
 
     /// <summary>
@@ -153,7 +153,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
         this.pictureFormat = value;
       }
     }
-    [DV]
+    
     internal PictureFormat pictureFormat;
 
     /// <summary>
@@ -164,7 +164,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       get { return this.resolution.Value; }
       set { this.resolution.Value = value; }
     }
-    [DV]
+    
     internal NDouble resolution = NDouble.NullValue;
     //#endregion
 

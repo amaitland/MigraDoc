@@ -79,7 +79,7 @@ namespace MigraDoc.DocumentObjectModel.Fields
           throw new ArgumentException(DomSR.InvalidInfoFieldName(value));
       }
     }
-    [DV]
+    
     internal NString name = NString.NullValue;
     #endregion
 

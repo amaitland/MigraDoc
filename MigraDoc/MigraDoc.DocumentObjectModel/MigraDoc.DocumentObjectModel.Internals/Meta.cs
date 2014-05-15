@@ -75,25 +75,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
         trail = name.Substring(dot + 1);
         name = name.Substring(0, dot);
       }
-      ValueDescriptor vd = this.vds[name];
-      if (vd == null)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-
-      object value = vd.GetValue(dom, flags);
-      if (value == null && flags == GV.GetNull)  //??? oder auch GV.ReadOnly?
-        return null;
-
-      //REVIEW DaSt: Sollte beim GV.ReadWrite das Objekt angelegt werden?
-      if (trail != null)
-      {
-        if (value == null || trail == "")
-          throw new ArgumentException(DomSR.InvalidValueName(name));
-        DocumentObject doc = value as DocumentObject;
-        if (doc == null)
-          throw new ArgumentException(DomSR.InvalidValueName(name));
-        value = doc.GetValue(trail, flags);
-      }
-      return value;
+	    return null;
     }
 
     /// <summary>
@@ -102,28 +84,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public void SetValue(DocumentObject dom, string name, object val)
     {
-      int dot = name.IndexOf('.');
-      if (dot == 0)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-      string trail = null;
-      if (dot > 0)
-      {
-        trail = name.Substring(dot + 1);
-        name = name.Substring(0, dot);
-      }
-      ValueDescriptor vd = this.vds[name];
-      if (vd == null)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-
-      if (trail != null)
-      {
-        //REVIEW DaSt: dom.GetValue(name) und rekursiv SetValue aufrufen,
-        //             oder dom.GetValue(name.BisVorletzteElement) und erst SetValue aufrufen.
-        DocumentObject doc = dom.GetValue(name) as DocumentObject;
-        doc.SetValue(trail, val);
-      }
-      else
-        vd.SetValue(dom, val);
+      
     }
 
     /// <summary>
@@ -131,8 +92,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public bool HasValue(string name)
     {
-      ValueDescriptor vd = this.vds[name];
-      return vd != null;
+	    return false;
     }
 
     /// <summary>
@@ -141,11 +101,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public void SetNull(DocumentObject dom, string name)
     {
-      ValueDescriptor vd = vds[name];
-      if (vd == null)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-
-      vd.SetNull(dom);
+     
     }
 
     /// <summary>
@@ -154,39 +110,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public virtual bool IsNull(DocumentObject dom, string name)
     {
-      //bool isNull = false;
-      int dot = name.IndexOf('.');
-      if (dot == 0)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-      string trail = null;
-      if (dot > 0)
-      {
-        trail = name.Substring(dot + 1);
-        name = name.Substring(0, dot);
-      }
-      ValueDescriptor vd = this.vds[name];
-      if (vd == null)
-        throw new ArgumentException(DomSR.InvalidValueName(name));
-
-      if (vd is NullableDescriptor || vd is ValueTypeDescriptor)
-      {
-        if (trail != null)
-          throw new ArgumentException(DomSR.InvalidValueName(name));
-        return vd.IsNull(dom);
-      }
-      DocumentObject docObj = (DocumentObject)vd.GetValue(dom, GV.ReadOnly);
-      if (docObj == null)
-        return true;
-      if (trail != null)
-        return docObj.IsNull(trail);
-      else
-        return docObj.IsNull();
-
-      //      DomValueDescriptor vd = vds[name];
-      //      if (vd == null)
-      //        throw new ArgumentException(DomSR.InvalidValueName(name));
-      //      
-      //      return vd.IsNull(dom);
+	    return false;
     }
 
     /// <summary>
@@ -194,12 +118,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public virtual void SetNull(DocumentObject dom)
     {
-      int count = vds.Count;
-      for (int index = 0; index < count; index++)
-      {
-        if (!vds[index].IsRefOnly)
-          vds[index].SetNull(dom);
-      }
+      
     }
 
     /// <summary>
@@ -208,34 +127,11 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// </summary>
     public bool IsNull(DocumentObject dom)
     {
-      int count = vds.Count;
-      for (int index = 0; index < count; index++)
-      {
-        ValueDescriptor vd = vds[index];
-        if (vd.IsRefOnly)
-          continue;
-        if (!vd.IsNull(dom))
-          return false;
-      }
+      
       return true;
     }
 
-    /// <summary>
-    /// Gets the DomValueDescriptor of the member specified by name from the DocumentObject.
-    /// </summary>
-    public ValueDescriptor this[string name]
-    {
-      get { return this.vds[name]; }
-    }
-
-    /// <summary>
-    /// Gets the DomValueDescriptorCollection of the DocumentObject.
-    /// </summary>
-    public ValueDescriptorCollection ValueDescriptors
-    {
-      get { return this.vds; }
-    }
-    ValueDescriptorCollection vds = new ValueDescriptorCollection();
+    
 
     /// <summary>
     /// Adds a value descriptor for each field and property found in type to meta.
@@ -250,12 +146,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
         if (name == "parent")
           name.GetType();
 #endif
-        DVAttribute[] dvs = (DVAttribute[])fieldInfo.GetCustomAttributes(typeof(DVAttribute), false);
-        if (dvs.Length == 1)
-        {
-          ValueDescriptor vd = ValueDescriptor.CreateValueDescriptor(fieldInfo, dvs[0]);
-          meta.ValueDescriptors.Add(vd);
-        }
+        
       }
 
       PropertyInfo[] propInfos = type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -266,12 +157,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
         if (name == "Font")
           name.GetType();
 #endif
-        DVAttribute[] dvs = (DVAttribute[])propInfo.GetCustomAttributes(typeof(DVAttribute), false);
-        if (dvs.Length == 1)
-        {
-          ValueDescriptor vd = ValueDescriptor.CreateValueDescriptor(propInfo, dvs[0]);
-          meta.ValueDescriptors.Add(vd);
-        }
+        
       }
     }
   }
