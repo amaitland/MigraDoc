@@ -542,5 +542,35 @@ namespace MigraDoc.DocumentObjectModel
     }
     static Meta meta;
     #endregion
+
+    public Border GetByType(BorderType type)
+    {
+        if (type == BorderType.Bottom)
+        {
+            return bottom;
+        }
+        if (type == BorderType.Top)
+        {
+            return top;
+        }
+        if (type == BorderType.Left)
+        {
+            return left;
+        }
+        if (type == BorderType.Right)
+        {
+            return right;
+        }
+        if (type == BorderType.DiagonalDown)
+        {
+            return diagonalDown;
+        }
+        if (type == BorderType.DiagonalUp)
+        {
+            return diagonalUp;
+        }
+
+        return null;
+    }
   }
 }

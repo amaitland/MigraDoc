@@ -138,7 +138,7 @@ namespace MigraDoc.Rendering
 
     void FormatHeadersFooters()
     {
-      HeadersFooters headers = (HeadersFooters)this.currentSection.GetValue("Headers", GV.ReadOnly);
+      HeadersFooters headers = (HeadersFooters)this.currentSection.GetValue("Headers");
       if (headers != null)
       {
         PagePosition pagePos = CurrentPagePosition;
@@ -147,7 +147,7 @@ namespace MigraDoc.Rendering
           FormatHeader(hfp, ChooseHeaderFooter(headers, pagePos));
       }
 
-      HeadersFooters footers = (HeadersFooters)this.currentSection.GetValue("Footers", GV.ReadOnly);
+      HeadersFooters footers = (HeadersFooters)this.currentSection.GetValue("Footers");
       if (footers != null)
       {
         PagePosition pagePos = CurrentPagePosition;
@@ -391,14 +391,14 @@ namespace MigraDoc.Rendering
       if (pagePos == PagePosition.First)
       {
         if (pageSetup.DifferentFirstPageHeaderFooter)
-          return (HeaderFooter)hfs.GetValue("FirstPage", GV.ReadOnly);
+          return (HeaderFooter)hfs.GetValue("FirstPage");
       }
       if (pagePos == PagePosition.Even || this.currentPage % 2 == 0)
       {
         if (pageSetup.OddAndEvenPagesHeaderFooter)
-          return (HeaderFooter)hfs.GetValue("EvenPage", GV.ReadOnly);
+          return (HeaderFooter)hfs.GetValue("EvenPage");
       }
-      return (HeaderFooter)hfs.GetValue("Primary", GV.ReadOnly);
+      return (HeaderFooter)hfs.GetValue("Primary");
     }
 
     /// <summary>

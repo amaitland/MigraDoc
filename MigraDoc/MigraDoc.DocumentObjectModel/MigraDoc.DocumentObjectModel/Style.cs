@@ -98,7 +98,7 @@ namespace MigraDoc.DocumentObjectModel
     /// <summary>
     /// Returns the value with the specified name and value access.
     /// </summary>
-    public override object GetValue(string name, GV flags) //newStL
+    public override object GetValue(string name) //newStL
     {
       if (name == null)
         throw new ArgumentNullException("name");
@@ -109,7 +109,7 @@ namespace MigraDoc.DocumentObjectModel
       {
         return ParagraphFormat.GetValue(name);
       }
-      return base.GetValue(name, flags);
+      return base.GetValue(name);
     }
 
     #region Properties

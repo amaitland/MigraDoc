@@ -49,7 +49,7 @@ namespace MigraDoc.Rendering
 
     private Border GetBorder(BorderType type)
     {
-      return (Border)this.borders.GetValue(type.ToString(), GV.ReadOnly);
+      return this.borders.GetByType(type);
     }
 
     private XColor GetColor(BorderType type)

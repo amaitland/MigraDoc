@@ -150,12 +150,6 @@
     <Compile Include="MigraDoc.DocumentObjectModel.Internals\Meta.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Internals\enums\GV.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MigraDoc.DocumentObjectModel.Internals\enums\VDFlags.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MigraDoc.DocumentObjectModel.Internals\INullableValue.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -64,7 +64,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// <summary>
     /// Gets the object specified by name from dom.
     /// </summary>
-    public object GetValue(DocumentObject dom, string name, GV flags)
+    public object GetValue(DocumentObject dom, string name)
     {
       int dot = name.IndexOf('.');
       if (dot == 0)
