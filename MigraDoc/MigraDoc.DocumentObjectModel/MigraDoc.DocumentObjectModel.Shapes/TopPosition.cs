@@ -220,19 +220,6 @@ namespace MigraDoc.DocumentObjectModel.Shapes
         return (ShapePosition)Enum.Parse(typeof(ShapePosition), value, true);
     }
 
-    #region Internal
-    /// <summary>
-    /// Converts TopPosition into DDL.
-    /// </summary>  
-    internal void Serialize(Serializer serializer)
-    {
-      if (this.shapePosition == ShapePosition.Undefined)
-        serializer.WriteSimpleAttribute("Top", this.Position);
-      else
-        serializer.WriteSimpleAttribute("Top", this.ShapePosition);
-    }
-    #endregion
-
     /// <summary>
     /// Represents the unitialized TopPosition object.
     /// </summary>

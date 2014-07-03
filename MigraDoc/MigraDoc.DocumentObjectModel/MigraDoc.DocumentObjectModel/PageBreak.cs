@@ -65,15 +65,8 @@ namespace MigraDoc.DocumentObjectModel
     //#endregion
 
     //#region Internal
-    /// <summary>
-    /// Converts PageBreak into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      serializer.WriteLine("\\pagebreak");
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

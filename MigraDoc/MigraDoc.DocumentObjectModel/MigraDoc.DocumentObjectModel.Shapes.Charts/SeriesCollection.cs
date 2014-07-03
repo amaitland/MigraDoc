@@ -81,20 +81,8 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts SeriesCollection into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      int count = Count;
-      for (int index = 0; index < count; ++index)
-      {
-        Series series = this[index];
-        series.Serialize(serializer);
-      }
-    }
 
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

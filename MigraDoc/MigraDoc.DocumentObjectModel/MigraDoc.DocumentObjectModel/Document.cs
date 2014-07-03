@@ -332,43 +332,8 @@ namespace MigraDoc.DocumentObjectModel
     internal string ddlFile = "";
 
     #region Internal
-    /// <summary>
-    /// Converts Document into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      serializer.WriteComment(this.comment.Value);
-      serializer.WriteLine("\\document");
 
-      int pos = serializer.BeginAttributes();
-      if (!this.IsNull("Info"))
-        this.Info.Serialize(serializer);
-      if (!this.defaultTabStop.IsNull)
-        serializer.WriteSimpleAttribute("DefaultTabStop", DefaultTabStop);
-      if (!this.footnoteLocation.IsNull)
-        serializer.WriteSimpleAttribute("FootnoteLocation", FootnoteLocation);
-      if (!this.footnoteNumberingRule.IsNull)
-        serializer.WriteSimpleAttribute("FootnoteNumberingRule", FootnoteNumberingRule);
-      if (!this.footnoteNumberStyle.IsNull)
-        serializer.WriteSimpleAttribute("FootnoteNumberStyle", FootnoteNumberStyle);
-      if (!this.footnoteStartingNumber.IsNull)
-        serializer.WriteSimpleAttribute("FootnoteStartingNumber", FootnoteStartingNumber);
-      if (!this.imagePath.IsNull)
-        serializer.WriteSimpleAttribute("ImagePath", ImagePath);
-      if (!this.useCmykColor.IsNull)
-        serializer.WriteSimpleAttribute("UseCmykColor", UseCmykColor);
-      serializer.EndAttributes(pos);
-
-      serializer.BeginContent();
-      Styles.Serialize(serializer);
-
-      if (!this.IsNull("Sections"))
-        Sections.Serialize(serializer);
-      serializer.EndContent();
-      serializer.Flush();
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Allows the visitor object to visit the document object and all it's child objects.
     /// </summary>
     void IVisitable.AcceptVisitor(DocumentObjectVisitor visitor, bool visitChildren)

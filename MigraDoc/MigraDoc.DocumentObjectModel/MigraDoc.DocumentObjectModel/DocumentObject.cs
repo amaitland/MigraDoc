@@ -136,12 +136,7 @@ namespace MigraDoc.DocumentObjectModel
       }
     }
 
-    /// <summary>
-    /// Converts DocumentObject into DDL.
-    /// </summary>
-    internal abstract void Serialize(Serializer serializer);
-
-    /// <summary>
+	  /// <summary>
     /// Returns the value with the specified name.
     /// </summary>
     public virtual object GetValue(string name)

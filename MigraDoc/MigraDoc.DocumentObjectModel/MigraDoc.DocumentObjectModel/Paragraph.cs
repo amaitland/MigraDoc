@@ -534,40 +534,7 @@ namespace MigraDoc.DocumentObjectModel
     }
     bool serializeContentOnly = false;
 
-    /// <summary>
-    /// Converts Paragraph into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      if (!serializeContentOnly)
-      {
-        serializer.WriteComment(this.comment.Value);
-        serializer.WriteLine("\\paragraph");
-
-        int pos = serializer.BeginAttributes();
-
-        if (this.style.Value != "")
-          serializer.WriteLine("Style = \"" + this.style.Value + "\"");
-
-        if (!this.IsNull("Format"))
-          this.format.Serialize(serializer, "Format", null);
-
-        serializer.EndAttributes(pos);
-
-        serializer.BeginContent();
-        if (!this.IsNull("Elements"))
-          this.Elements.Serialize(serializer);
-        serializer.CloseUpLine();
-        serializer.EndContent();
-      }
-      else
-      {
-        this.Elements.Serialize(serializer);
-        serializer.CloseUpLine();
-      }
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Returns the meta object of this instance.
     /// </summary>
     internal override Meta Meta

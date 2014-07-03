@@ -593,37 +593,8 @@ namespace MigraDoc.DocumentObjectModel
     #endregion
 
     #region Internal
-    /// <summary>
-    /// Converts FormattedText into DDL.
-    /// </summary>
-    internal override void Serialize(Serializer serializer)
-    {
-      bool isFormatted = false;
-      if (!this.IsNull("Font"))
-      {
-        this.Font.Serialize(serializer);
-        isFormatted = true;
-      }
-      else
-      {
-        if (!this.style.IsNull)
-        {
-          serializer.Write("\\font(\"" + this.Style + "\")");
-          isFormatted = true;
-        }
-      }
 
-      if (isFormatted)
-        serializer.Write("{");
-
-      if (!this.IsNull("Elements"))
-        this.Elements.Serialize(serializer);
-
-      if (isFormatted)
-        serializer.Write("}");
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Allows the visitor object to visit the document object and it's child objects.
     /// </summary>
     void IVisitable.AcceptVisitor(DocumentObjectVisitor visitor, bool visitChildren)
