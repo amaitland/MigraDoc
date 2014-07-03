@@ -74,7 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\SplitDocument\Program.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.SplitDocument\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

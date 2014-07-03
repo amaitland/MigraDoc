@@ -68,7 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\HelloWorld\Program.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.HelloWorld\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

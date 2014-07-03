@@ -83,7 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\PrivateFonts\Program.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.PrivateFonts\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,10 +95,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\..\fonts\Early_Tickertape.ttf">
+    <Resource Include="..\PdfSharp.Samples.Fonts\Early_Tickertape.ttf">
       <Link>Fonts\Early_Tickertape.ttf</Link>
     </Resource>
-    <Resource Include="..\..\..\fonts\Oblivious.ttf">
+    <Resource Include="..\PdfSharp.Samples.Fonts\Oblivious.ttf">
       <Link>Fonts\Oblivious.ttf</Link>
     </Resource>
   </ItemGroup>

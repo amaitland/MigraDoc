@@ -83,7 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\ExportImages\Program.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.ExportImages\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

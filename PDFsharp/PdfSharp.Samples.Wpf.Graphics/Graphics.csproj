@@ -72,25 +72,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\Graphics\Base.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Base.cs">
       <Link>Base.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\Images.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Images.cs">
       <Link>Images.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\LinesAndCurves.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\LinesAndCurves.cs">
       <Link>LinesAndCurves.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\Paths.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Paths.cs">
       <Link>Paths.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\Program.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\Shapes.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Shapes.cs">
       <Link>Shapes.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Graphics\Text.cs">
+    <Compile Include="..\PdfSharp.Samples.Gdi.Graphics\Text.cs">
       <Link>Text.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
