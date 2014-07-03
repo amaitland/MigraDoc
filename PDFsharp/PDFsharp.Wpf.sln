@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtectDocument", "PdfSharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnprotectDocument", "PdfSharp.Samples.Wpf.UnprotectDocument\UnprotectDocument.csproj", "{48D1A915-1A9E-4DFB-B3F4-1D06044A12BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Xps", "PdfSharp.Xps\PdfSharp.Xps.csproj", "{0BC3964B-A3BC-49D5-9B7C-463299B5A166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Xps.UnitTests", "PdfSharp.Xps.UnitTests\PdfSharp.Xps.UnitTests.csproj", "{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +131,14 @@ Global
 		{48D1A915-1A9E-4DFB-B3F4-1D06044A12BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D1A915-1A9E-4DFB-B3F4-1D06044A12BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D1A915-1A9E-4DFB-B3F4-1D06044A12BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC3964B-A3BC-49D5-9B7C-463299B5A166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC3964B-A3BC-49D5-9B7C-463299B5A166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC3964B-A3BC-49D5-9B7C-463299B5A166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC3964B-A3BC-49D5-9B7C-463299B5A166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

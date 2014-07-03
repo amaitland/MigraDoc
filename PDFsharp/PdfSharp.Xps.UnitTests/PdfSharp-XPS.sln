@@ -4,18 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8268FAC2-7ECA-43AD-AD75-4E5EDAE47144}"
 	ProjectSection(SolutionItems) = preProject
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		PdfSharp-XPS.vsmdi = PdfSharp-XPS.vsmdi
+		PdfSharp-XPS2.vsmdi = PdfSharp-XPS2.vsmdi
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp-WPF", "..\..\code\PdfSharp\PdfSharp-WPF.csproj", "{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Xps", "..\..\code\PdfSharp.Xps\PdfSharp.Xps.csproj", "{0BC3964B-A3BC-49D5-9B7C-463299B5A166}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Xps.UnitTests", "..\..\testing\PdfSharp.Xps.UnitTests\PdfSharp.Xps.UnitTests.csproj", "{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Xps.UnitTests", "PdfSharp.Xps.UnitTests.csproj", "{8E18EF36-98CB-4796-ACB4-E0AABA942D9C}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = PdfSharp-XPS.vsmdi
+		CategoryFile = PdfSharp-XPS2.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
