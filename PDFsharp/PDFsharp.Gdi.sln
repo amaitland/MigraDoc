@@ -49,7 +49,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Charting", "PdfSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Explorer", "Pdfsharp.Explorer\PdfSharp.Explorer.csproj", "{2E8F09D6-EBCE-4A3C-BDDF-41D5B0DB87B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Samples.Gdi.XGraphicsLab", "PdfSharp.XGraphicsLab.Gdi\PdfSharp.Samples.Gdi.XGraphicsLab.csproj", "{C065BB11-6849-49E9-B099-AE99E7729E94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.XGraphicsLab.Gdi", "PdfSharp.XGraphicsLab.Gdi\PdfSharp.XGraphicsLab.Gdi.csproj", "{C065BB11-6849-49E9-B099-AE99E7729E94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Charting.Demo", "PdfSharp.Charting.Demo\PdfSharp.Charting.Demo.csproj", "{A29FE2BF-7B39-4787-B318-77A68CBF9986}"
 EndProject
