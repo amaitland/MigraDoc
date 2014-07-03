@@ -45,7 +45,7 @@ using MigraDoc.DocumentObjectModel.IO;
 using MigraDoc.Rendering;
 using MigraDoc.Rendering.Printing;
 using MigraDoc.Rendering.Forms;
-using MigraDoc.RtfRendering;
+
 
 namespace DocumentViewer
 {
@@ -601,10 +601,7 @@ namespace DocumentViewer
     /// </summary>
     private void miRtf_Click(object sender, System.EventArgs e)
     {
-      RtfDocumentRenderer rtf = new RtfDocumentRenderer();
-      rtf.Render(this.pagePreview.Document, "test.rtf", null);
-
-      Process.Start("test.rtf");
+      
     }
 
     /// <summary>

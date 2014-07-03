@@ -119,31 +119,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
-    <Compile Include="..\HelloMigraDoc\AddToDom.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
       <Link>HelloMigraDoc\AddToDom.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Charts.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
       <Link>HelloMigraDoc\Charts.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Cover.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
       <Link>HelloMigraDoc\Cover.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Documents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
       <Link>HelloMigraDoc\Documents.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\FillerText.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
       <Link>HelloMigraDoc\FillerText.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Paragraphs.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
       <Link>HelloMigraDoc\Paragraphs.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Styles.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
       <Link>HelloMigraDoc\Styles.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\TableOfContents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
       <Link>HelloMigraDoc\TableOfContents.cs</Link>
     </Compile>
-    <Compile Include="..\HelloMigraDoc\Tables.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
       <Link>HelloMigraDoc\Tables.cs</Link>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />

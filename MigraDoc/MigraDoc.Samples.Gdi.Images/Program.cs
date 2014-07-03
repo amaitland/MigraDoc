@@ -35,7 +35,6 @@ using System.Text;
 using PdfSharp.Pdf;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.Rendering;
-using MigraDoc.RtfRendering;
 
 
 namespace Images
@@ -52,10 +51,6 @@ namespace Images
 
       string ddl = MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToString(document);
 
-#if true
-      RtfDocumentRenderer renderer = new RtfDocumentRenderer();
-      renderer.Render(document, "HelloWorld.rtf", null);
-#endif
       // ----- Unicode encoding and font program embedding in MigraDoc is demonstrated here -----
 
       // A flag indicating whether to create a Unicode PDF or a WinAnsi PDF file.
