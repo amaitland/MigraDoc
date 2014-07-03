@@ -443,7 +443,7 @@
     <EmbeddedResource Include="iconVSshowall.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\code\PdfSharp\PdfSharp-Hybrid.csproj">
+    <ProjectReference Include="..\PdfSharp\PdfSharp-Hybrid.csproj">
       <Project>{4C6B899E-D8F5-439E-ACA1-6C9D4CF79407}</Project>
       <Name>PdfSharp-Hybrid</Name>
     </ProjectReference>
