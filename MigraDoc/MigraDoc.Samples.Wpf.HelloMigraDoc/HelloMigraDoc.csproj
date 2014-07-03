@@ -74,40 +74,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\AddToDom.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
       <Link>AddToDom.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Charts.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
       <Link>Charts.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Cover.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
       <Link>Cover.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Documents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
       <Link>Documents.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\FillerText.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
       <Link>FillerText.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Paragraphs.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
       <Link>Paragraphs.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Styles.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
       <Link>Styles.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\TableOfContents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
       <Link>TableOfContents.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Tables.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
       <Link>Tables.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\Based on GDI+\HelloMigraDoc\images\Logo landscape.png">
+    <Content Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\images\Logo landscape.png">
       <Link>images\Logo landscape.png</Link>
     </Content>
   </ItemGroup>
@@ -120,9 +120,9 @@
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
       <Name>MigraDoc.DocumentObjectModel-WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
-      <Name>MigraDoc.Rendering-WPF</Name>
+      <Name>MigraDoc.Rendering.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

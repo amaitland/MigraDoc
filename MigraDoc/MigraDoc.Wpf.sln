@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.DocumentObjectMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Wpf", "..\PdfSharp\PdfSharp\PdfSharp.Wpf.csproj", "{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Rendering-WPF", "MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj", "{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Rendering.Wpf", "MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj", "{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMigraDoc", "MigraDoc.Samples.Wpf.HelloMigraDoc\HelloMigraDoc.csproj", "{C1062E9F-20E6-4D18-BD9E-70B4D69CE16F}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "MigraDoc.Samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice", "MigraDoc.Samples.Wpf.Invoice\Invoice.csproj", "{549C82D4-BEBD-4ADB-90FA-29ABD99187BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Charting-WPF", "..\PdfSharp\PdfSharp.Charting\PdfSharp.Charting-WPF.csproj", "{E6A2734E-0CD6-4210-8AEC-47EE348F8D78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Charting.Wpf", "..\PDFsharp\PdfSharp.Charting\PdfSharp.Charting.Wpf.csproj", "{E6A2734E-0CD6-4210-8AEC-47EE348F8D78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentViewer", "MigraDoc.Samples.Wpf.DocumentViewer\DocumentViewer.csproj", "{593DB21C-F98A-493E-B3C3-B48A2E1AC8CE}"
 EndProject

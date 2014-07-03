@@ -66,7 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\HelloWorld\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloWorld\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,9 +80,9 @@
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
       <Name>MigraDoc.DocumentObjectModel-WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
-      <Name>MigraDoc.Rendering-WPF</Name>
+      <Name>MigraDoc.Rendering.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

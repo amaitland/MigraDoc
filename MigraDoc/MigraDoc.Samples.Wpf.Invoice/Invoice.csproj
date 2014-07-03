@@ -65,10 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\Invoice\InvoiceForm.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.Invoice\InvoiceForm.cs">
       <Link>InvoiceForm.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\Invoice\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.Invoice\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,19 +82,19 @@
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
       <Name>MigraDoc.DocumentObjectModel-WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
-      <Name>MigraDoc.Rendering-WPF</Name>
+      <Name>MigraDoc.Rendering.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\Based on GDI+\Invoice\dsdPowerBook.png">
+    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\dsdPowerBook.png">
       <Link>dsdPowerBook.png</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Based on GDI+\Invoice\PowerBooks-CMYK.jpg">
+    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\PowerBooks-CMYK.jpg">
       <Link>PowerBooks-CMYK.jpg</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Based on GDI+\Invoice\PowerBooks.png">
+    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\PowerBooks.png">
       <Link>PowerBooks.png</Link>
     </EmbeddedResource>
   </ItemGroup>

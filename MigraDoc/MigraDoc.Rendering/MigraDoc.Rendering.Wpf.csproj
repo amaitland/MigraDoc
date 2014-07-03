@@ -334,9 +334,9 @@
     <None Include="StrongnameKey.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PDFsharp\PdfSharp.Charting\PdfSharp.Charting-WPF.csproj">
+    <ProjectReference Include="..\..\PDFsharp\PdfSharp.Charting\PdfSharp.Charting.Wpf.csproj">
       <Project>{E6A2734E-0CD6-4210-8AEC-47EE348F8D78}</Project>
-      <Name>PdfSharp.Charting-WPF</Name>
+      <Name>PdfSharp.Charting.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>

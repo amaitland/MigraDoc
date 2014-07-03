@@ -68,34 +68,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\AddToDom.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
       <Link>HelloMigraDoc\AddToDom.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Charts.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
       <Link>HelloMigraDoc\Charts.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Cover.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
       <Link>HelloMigraDoc\Cover.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Documents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
       <Link>HelloMigraDoc\Documents.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\FillerText.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
       <Link>HelloMigraDoc\FillerText.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Paragraphs.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
       <Link>HelloMigraDoc\Paragraphs.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Styles.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
       <Link>HelloMigraDoc\Styles.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\TableOfContents.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
       <Link>HelloMigraDoc\TableOfContents.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\HelloMigraDoc\Tables.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
       <Link>HelloMigraDoc\Tables.cs</Link>
     </Compile>
-    <Compile Include="..\..\Based on GDI+\MixMigraDocAndPdfSharp\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,9 +112,9 @@
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
       <Name>MigraDoc.DocumentObjectModel-WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
-      <Name>MigraDoc.Rendering-WPF</Name>
+      <Name>MigraDoc.Rendering.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
