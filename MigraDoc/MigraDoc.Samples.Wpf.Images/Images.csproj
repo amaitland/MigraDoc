@@ -74,21 +74,17 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\PDFsharp\code\PdfSharp\PdfSharp-WPF.csproj">
+    <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
-      <Name>PdfSharp-WPF</Name>
+      <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\code\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
       <Name>MigraDoc.DocumentObjectModel-WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\code\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering-WPF.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
       <Name>MigraDoc.Rendering-WPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\code\MigraDoc.RtfRendering\MigraDoc.RtfRendering-WPF.csproj">
-      <Project>{00416AAB-3EEE-44A2-923B-86782560CE00}</Project>
-      <Name>MigraDoc.RtfRendering-WPF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
