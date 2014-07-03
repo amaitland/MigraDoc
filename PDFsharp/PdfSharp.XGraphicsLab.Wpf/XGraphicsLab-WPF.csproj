@@ -154,189 +154,189 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\XGraphicsLab\ChooseColorDialog.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\ChooseColorDialog.cs">
       <Link>Forms\ChooseColorDialog.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\FormPages\BrushPage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\BrushPage.cs">
       <Link>Forms\BrushPage.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\FormPages\ColorPage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\ColorPage.cs">
       <Link>Forms\ColorPage.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\FormPages\FontPage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\FontPage.cs">
       <Link>Forms\FontPage.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\FormPages\GeneralPage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\GeneralPage.cs">
       <Link>Forms\GeneralPage.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\FormPages\PenPage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\PenPage.cs">
       <Link>Forms\PenPage.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\GraphicsProperties.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\GraphicsProperties.cs">
       <Link>Forms\GraphicsProperties.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\PreviewForm.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\PreviewForm.cs">
       <Link>Forms\PreviewForm.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\PropertiesForm.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\PropertiesForm.cs">
       <Link>Forms\PropertiesForm.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\BarCodes\BarCodesDataMatrix.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\BarCodes\BarCodesDataMatrix.cs">
       <Link>OldTesters\BarCodes\BarCodesDataMatrix.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\BarCodes\BarCodesOrientation.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\BarCodes\BarCodesOrientation.cs">
       <Link>OldTesters\BarCodes\BarCodesOrientation.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\BarCodes\BarCodesTypes.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\BarCodes\BarCodesTypes.cs">
       <Link>OldTesters\BarCodes\BarCodesTypes.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Brushes\BrushesLinearGradient.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Brushes\BrushesLinearGradient.cs">
       <Link>OldTesters\Brushes\BrushesLinearGradient.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesBmp.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesBmp.cs">
       <Link>OldTesters\Images\ImagesBmp.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesBmpOS2.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesBmpOS2.cs">
       <Link>OldTesters\Images\ImagesBmpOS2.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesFormXObject.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesFormXObject.cs">
       <Link>OldTesters\Images\ImagesFormXObject.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesFormXObjectTemplate.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesFormXObjectTemplate.cs">
       <Link>OldTesters\Images\ImagesFormXObjectTemplate.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesGif.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesGif.cs">
       <Link>OldTesters\Images\ImagesGif.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesJpeg.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesJpeg.cs">
       <Link>OldTesters\Images\ImagesJpeg.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesPng.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesPng.cs">
       <Link>OldTesters\Images\ImagesPng.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Images\ImagesTiff.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Images\ImagesTiff.cs">
       <Link>OldTesters\Images\ImagesTiff.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesArc.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesArc.cs">
       <Link>OldTesters\Lines\LinesArc.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesBezierCurve.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesBezierCurve.cs">
       <Link>OldTesters\Lines\LinesBezierCurve.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesBezierCurves.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesBezierCurves.cs">
       <Link>OldTesters\Lines\LinesBezierCurves.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesCircleArc.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesCircleArc.cs">
       <Link>OldTesters\Lines\LinesCircleArc.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesCurve.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesCurve.cs">
       <Link>OldTesters\Lines\LinesCurve.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesPolyLines.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesPolyLines.cs">
       <Link>OldTesters\Lines\LinesPolyLines.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Lines\LinesStraightLines.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Lines\LinesStraightLines.cs">
       <Link>OldTesters\Lines\LinesStraightLines.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Miscellaneous\MiscClock.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Miscellaneous\MiscClock.cs">
       <Link>OldTesters\Miscellaneous\MiscClock.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Miscellaneous\MiscSpiroGraph.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Miscellaneous\MiscSpiroGraph.cs">
       <Link>OldTesters\Miscellaneous\MiscSpiroGraph.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathClipGlyph.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathClipGlyph.cs">
       <Link>OldTesters\Paths\PathClipGlyph.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathClipTest.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathClipTest.cs">
       <Link>OldTesters\Paths\PathClipTest.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathFlatten.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathFlatten.cs">
       <Link>OldTesters\Paths\PathFlatten.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathGlyph.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathGlyph.cs">
       <Link>OldTesters\Paths\PathGlyph.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathTest01.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathTest01.cs">
       <Link>OldTesters\Paths\PathTest01.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Paths\PathWiden.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Paths\PathWiden.cs">
       <Link>OldTesters\Paths\PathWiden.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesBeginContainer.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesBeginContainer.cs">
       <Link>OldTesters\Shapes\ShapesBeginContainer.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesClipTest1.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesClipTest1.cs">
       <Link>OldTesters\Shapes\ShapesClipTest1.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesClosedCurve.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesClosedCurve.cs">
       <Link>OldTesters\Shapes\ShapesClosedCurve.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesEllipse.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesEllipse.cs">
       <Link>OldTesters\Shapes\ShapesEllipse.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesMigraDocObject.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesMigraDocObject.cs">
       <Link>OldTesters\Shapes\ShapesMigraDocObject.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesPie.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesPie.cs">
       <Link>OldTesters\Shapes\ShapesPie.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesPolygon.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesPolygon.cs">
       <Link>OldTesters\Shapes\ShapesPolygon.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesRectangle.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesRectangle.cs">
       <Link>OldTesters\Shapes\ShapesRectangle.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesRoundedRectangle.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesRoundedRectangle.cs">
       <Link>OldTesters\Shapes\ShapesRoundedRectangle.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesSave.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesSave.cs">
       <Link>OldTesters\Shapes\ShapesSave.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Shapes\ShapesTransform.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Shapes\ShapesTransform.cs">
       <Link>OldTesters\Shapes\ShapesTransform.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\Acro8Bug.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\Acro8Bug.cs">
       <Link>OldTesters\Text\Acro8Bug.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\Embedding.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\Embedding.cs">
       <Link>OldTesters\Text\Embedding.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\Layout1.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\Layout1.cs">
       <Link>OldTesters\Text\Layout1.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\RealizeTest.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\RealizeTest.cs">
       <Link>OldTesters\Text\RealizeTest.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TestText01.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TestText01.cs">
       <Link>OldTesters\Text\TestText01.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TestText02.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TestText02.cs">
       <Link>OldTesters\Text\TestText02.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TextAlign.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TextAlign.cs">
       <Link>OldTesters\Text\TextAlign.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TextCodePage.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TextCodePage.cs">
       <Link>OldTesters\Text\TextCodePage.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TextTransform1.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TextTransform1.cs">
       <Link>OldTesters\Text\TextTransform1.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\TextTransform2.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\TextTransform2.cs">
       <Link>OldTesters\Text\TextTransform2.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\Tester\Text\Unicode.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\Tester\Text\Unicode.cs">
       <Link>OldTesters\Text\Unicode.cs</Link>
     </Compile>
-    <Compile Include="..\XGraphicsLab\UITools.cs">
+    <Compile Include="..\PdfSharp.XGraphicsLab.Gdi\UITools.cs">
       <Link>Forms\UITools.cs</Link>
     </Compile>
     <Compile Include="Drawings\DrawingTest.xaml.cs">
@@ -381,42 +381,42 @@
       <DependentUpon>WpfPreview.xaml</DependentUpon>
     </Compile>
     <Compile Include="XGraphicsLab.cs" />
-    <EmbeddedResource Include="..\XGraphicsLab\ChooseColorDialog.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\ChooseColorDialog.resx">
       <Link>Forms\ChooseColorDialog.resx</Link>
       <DependentUpon>ChooseColorDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\FormPages\BrushPage.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\BrushPage.resx">
       <Link>Forms\BrushPage.resx</Link>
       <DependentUpon>BrushPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\FormPages\ColorPage.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\ColorPage.resx">
       <Link>Forms\ColorPage.resx</Link>
       <DependentUpon>ColorPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\FormPages\FontPage.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\FontPage.resx">
       <Link>Forms\FontPage.resx</Link>
       <DependentUpon>FontPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\FormPages\GeneralPage.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\GeneralPage.resx">
       <Link>Forms\GeneralPage.resx</Link>
       <DependentUpon>GeneralPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\FormPages\PenPage.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\FormPages\PenPage.resx">
       <Link>Forms\PenPage.resx</Link>
       <DependentUpon>PenPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\PreviewForm.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\PreviewForm.resx">
       <Link>Forms\PreviewForm.resx</Link>
       <DependentUpon>PreviewForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\XGraphicsLab\PropertiesForm.resx">
+    <EmbeddedResource Include="..\PdfSharp.XGraphicsLab.Gdi\PropertiesForm.resx">
       <Link>Forms\PropertiesForm.resx</Link>
       <DependentUpon>PropertiesForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -443,9 +443,9 @@
     <EmbeddedResource Include="iconVSshowall.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PdfSharp\PdfSharp-Hybrid.csproj">
+    <ProjectReference Include="..\PdfSharp\PdfSharp.Hybrid.csproj">
       <Project>{4C6B899E-D8F5-439E-ACA1-6C9D4CF79407}</Project>
-      <Name>PdfSharp-Hybrid</Name>
+      <Name>PdfSharp.Hybrid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
