@@ -181,19 +181,32 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
 	protected Font GetParentFont(DocumentObject obj)
 	{
-	  DocumentObject parentElements = DocumentRelations.GetParent(obj);
-	  DocumentObject parentObject = DocumentRelations.GetParent(parentElements);
-	  Font parentFont = null;
-	  if (parentObject is Paragraph)
-	  {
-		ParagraphFormat format = ((Paragraph)parentObject).Format;
-		parentFont = format.font;
-	  }
-	  else //Hyperlink or FormattedText
-	  {
-		parentFont = parentObject.GetValue("Font") as Font;
-	  }
-	  return parentFont;
+		DocumentObject parentElements = DocumentRelations.GetParent(obj);
+		DocumentObject parentObject = DocumentRelations.GetParent(parentElements);
+		Font parentFont = null;
+		var o = parentObject as Paragraph;
+		if (o != null)
+		{
+			ParagraphFormat format = o.Format;
+			parentFont = format.font;
+		}
+		else //Hyperlink or FormattedText
+		{
+			var hl = parentObject as Hyperlink;
+			if (hl != null)
+			{
+				parentFont = hl.Font;
+			}
+			else
+			{
+				var formattedText = parentObject as FormattedText;
+				if (formattedText != null)
+				{
+					parentFont = formattedText.Font;
+				}
+			}
+		}
+		return parentFont;
 	}
   }
 }

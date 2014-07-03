@@ -70,7 +70,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     protected virtual object DeepCopy()
     {
-      DocumentObject value = (DocumentObject)MemberwiseClone();
+      var value = (DocumentObject)MemberwiseClone();
       value.parent = null;
       return value;
     }
@@ -80,7 +80,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     internal DocumentObject Parent
     {
-      get { return this.parent; }
+      get { return parent; }
     }
     [DV(RefOnly = true)]
     protected internal DocumentObject parent;
@@ -92,10 +92,10 @@ namespace MigraDoc.DocumentObjectModel
     {
       get
       {
-        DocumentObject doc = Parent;
+        var doc = Parent;
         while (doc != null)
         {
-          Document document = doc as Document;
+          var document = doc as Document;
           if (document != null)
             return document;
           doc = doc.parent;
@@ -111,10 +111,10 @@ namespace MigraDoc.DocumentObjectModel
     {
       get
       {
-        DocumentObject doc = Parent;
+        var doc = Parent;
         while (doc != null)
         {
-          Section section = doc as Section;
+          var section = doc as Section;
           if (section != null)
             return section;
           doc = doc.parent;
@@ -124,62 +124,9 @@ namespace MigraDoc.DocumentObjectModel
     }
 
 	  /// <summary>
-    /// Returns the value with the specified name.
-    /// </summary>
-    public virtual object GetValue(string name)
-    {
-      return GetValue(name, GV.ReadWrite);
-    }
-
-    /// <summary>
-    /// Returns the value with the specified name and value flags.
-    /// </summary>
-    public virtual object GetValue(string name, GV flags)
-    {
-	    return null;
-    }
-
-    /// <summary>
-    /// Sets the given value and sets its parent afterwards.
-    /// </summary>
-    public virtual void SetValue(string name, object val)
-    {
-      
-    }
-
-    /// <summary>
-    /// Determines whether the value of the given name is null.
-    /// </summary>
-    public virtual bool IsNull(string name)
-    {
-	    return false;
-    }
-
-    /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    public virtual bool IsNull()
-    {
-		return false;
-    }
-
-    /// <summary>
-    /// Resets this instance, i.e. IsNull() will return true afterwards.
-    /// </summary>
-    public virtual void SetNull()
-    {
-      
-    }
-
-    /// <summary>
-    /// Gets or sets a value that contains arbitrary information about this object.
-    /// </summary>
-    public object Tag
-    {
-      get { return this.tag; }
-      set { this.tag = value; }
-    }
-    object tag;
+	  /// Gets or sets a value that contains arbitrary information about this object.
+	  /// </summary>
+	  public object Tag { get; set; }
 
 	  /// <summary>
     /// Sets the parent of the specified value.

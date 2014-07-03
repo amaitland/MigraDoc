@@ -185,7 +185,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
         else
           filePath = Directory.GetCurrentDirectory() + "\\";
 
-        if (!Document.IsNull("ImagePath"))
+        if (!Document.imagePath.IsNull)
         {
           string foundfile = ImageHelper.GetImageName(filePath, this.Name, Document.ImagePath);
           if (foundfile != null)

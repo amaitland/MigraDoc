@@ -170,13 +170,11 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     /// </exception>
     public Borders GetEffectiveBorders(Cell cell)
     {
-      Borders borders = cell.GetValue("Borders", GV.ReadOnly) as Borders;
+      Borders borders = cell.borders;
       if (borders != null)
       {
-        Document doc = borders.Document;
         borders = borders.Clone();
         borders.parent = cell;
-        doc = borders.Document;
       }
       else
         borders = new Borders(cell.parent);
@@ -209,27 +207,27 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       Cell bottomNeighbor = GetNeighbor(cellIdx, NeighborPosition.Bottom);
       if (leftNeighbor != null)
       {
-        Borders nbrBrdrs = leftNeighbor.GetValue("Borders", GV.ReadWrite) as Borders;
+        Borders nbrBrdrs = leftNeighbor.borders;
         if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Right) >= GetEffectiveBorderWidth(borders, BorderType.Left))
-          borders.SetValue("Left", GetBorderFromBorders(nbrBrdrs, BorderType.Right));
+          borders.Left = GetBorderFromBorders(nbrBrdrs, BorderType.Right);
       }
       if (rightNeighbor != null)
       {
-        Borders nbrBrdrs = rightNeighbor.GetValue("Borders", GV.ReadWrite) as Borders;
+        Borders nbrBrdrs = rightNeighbor.borders;
         if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Left) > GetEffectiveBorderWidth(borders, BorderType.Right))
-          borders.SetValue("Right", GetBorderFromBorders(nbrBrdrs, BorderType.Left));
+          borders.right = GetBorderFromBorders(nbrBrdrs, BorderType.Left);
       }
       if (topNeighbor != null)
       {
-        Borders nbrBrdrs = topNeighbor.GetValue("Borders", GV.ReadWrite) as Borders;
+        Borders nbrBrdrs = topNeighbor.borders;
         if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Bottom) >= GetEffectiveBorderWidth(borders, BorderType.Top))
-          borders.SetValue("Top", GetBorderFromBorders(nbrBrdrs, BorderType.Bottom));
+          borders.top = GetBorderFromBorders(nbrBrdrs, BorderType.Bottom);
       }
       if (bottomNeighbor != null)
       {
-        Borders nbrBrdrs = bottomNeighbor.GetValue("Borders", GV.ReadWrite) as Borders;
+        Borders nbrBrdrs = bottomNeighbor.borders;
         if (nbrBrdrs != null && GetEffectiveBorderWidth(nbrBrdrs, BorderType.Top) > GetEffectiveBorderWidth(borders, BorderType.Bottom))
-          borders.SetValue("Bottom", GetBorderFromBorders(nbrBrdrs, BorderType.Top));
+          borders.bottom = GetBorderFromBorders(nbrBrdrs, BorderType.Top);
       }
       return borders;
     }
@@ -260,50 +258,55 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     /// Returns the border of the given borders-object of the specified type (top, bottom, ...).
     /// If that border doesn't exist, it returns a new border object that inherits all properties from the given borders object
     /// </summary>
-    private Border GetBorderFromBorders(Borders borders, BorderType type)
-    {
-      Border returnBorder = borders.GetValue(type.ToString(), GV.ReadOnly) as Border;
-      if (returnBorder == null)
-      {
-        returnBorder = new Border();
-        returnBorder.style = borders.style;
-        returnBorder.width = borders.width;
-        returnBorder.color = borders.color;
-        returnBorder.visible = borders.visible;
-      }
-      return returnBorder;
-    }
+	private static Border GetBorderFromBorders(Borders borders, BorderType type)
+	{
+		Border returnBorder = borders.GetByType(type);
+		if (returnBorder == null)
+		{
+			returnBorder = new Border();
+			returnBorder.style = borders.style;
+			returnBorder.width = borders.width;
+			returnBorder.color = borders.color;
+			returnBorder.visible = borders.visible;
+		}
+		return returnBorder;
+	}
 
     /// <summary>
     /// Returns the width of the border at the specified position.
     /// </summary>
-    private Unit GetEffectiveBorderWidth(Borders borders, BorderType type)
-    {
-      if (borders == null)
-        return 0;
+	private static Unit GetEffectiveBorderWidth(Borders borders, BorderType type)
+	{
+		if (borders == null)
+			return 0;
 
-      Border border = borders.GetValue(type.ToString(), GV.GetNull) as Border;
+		Border border = borders.GetByType(type);
 
-      DocumentObject relevantDocObj = border;
-      if (relevantDocObj == null || relevantDocObj.IsNull("Width"))
-        relevantDocObj = borders;
+		NBool visible;
+		Unit width;
 
-      object visible = relevantDocObj.GetValue("visible", GV.GetNull);
-      object style = relevantDocObj.GetValue("style", GV.GetNull);
-      object width = relevantDocObj.GetValue("width", GV.GetNull);
-      object color = relevantDocObj.GetValue("color", GV.GetNull);
+		if (border == null || border.width.IsNull)
+		{
+			visible = borders.visible;
+			width = borders.width;
+		}
+		else
+		{
+			visible = border.visible;
+			width = border.width;
+		}
 
-      if (visible != null || style != null || width != null || color != null)
-      {
-        if (visible != null && !(bool)visible)
-          return 0;
-        if (width != null)
-          return (Unit)width;
+		if (!visible.IsNull || !width.IsNull)
+		{
+			if (!visible.IsNull && !visible.Value)
+				return 0;
+			if (!width.IsNull)
+				return width;
 
-        return 0.5;
-      }
-      return 0;
-    }
+			return 0.5;
+		}
+		return 0;
+	}
 
     /// <summary>
     /// Gets the specified cell's uppermost neighbor at the specified position.

@@ -115,7 +115,21 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public bool HasHeaderFooter(HeaderFooterIndex index)
     {
-      return !this.IsNull(index.ToString());
+		if (index == HeaderFooterIndex.Primary)
+		{
+			return primary != null;
+		}
+
+		if (index == HeaderFooterIndex.EvenPage)
+		{
+			return evenPage != null;
+		}
+
+		if (index == HeaderFooterIndex.FirstPage)
+		{
+			return firstPage != null;
+		}
+		return false;
     }
 
     /// <summary>

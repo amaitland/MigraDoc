@@ -39,246 +39,246 @@ namespace MigraDoc.DocumentObjectModel.Tables
   /// </summary>
   public class Column : DocumentObject
   {
-    /// <summary>
-    /// Initializes a new instance of the Column class.
-    /// </summary>
-    public Column()
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the Column class.
+	/// </summary>
+	public Column()
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the Column class with the specified parent.
-    /// </summary>
-    internal Column(DocumentObject parent) : base(parent) { }
+	/// <summary>
+	/// Initializes a new instance of the Column class with the specified parent.
+	/// </summary>
+	internal Column(DocumentObject parent) : base(parent) { }
 
-    #region Methods
-    /// <summary>
-    /// Creates a deep copy of this object.
-    /// </summary>
-    public new Column Clone()
-    {
-      return (Column)DeepCopy();
-    }
+	#region Methods
+	/// <summary>
+	/// Creates a deep copy of this object.
+	/// </summary>
+	public new Column Clone()
+	{
+	  return (Column)DeepCopy();
+	}
 
-    /// <summary>
-    /// Implements the deep copy of the object.
-    /// </summary>
-    protected override object DeepCopy()
-    {
-      Column column = (Column)base.DeepCopy();
-      if (column.format != null)
-      {
-        column.format = column.format.Clone();
-        column.format.parent = column;
-      }
-      if (column.borders != null)
-      {
-        column.borders = column.borders.Clone();
-        column.borders.parent = column;
-      }
-      if (column.shading != null)
-      {
-        column.shading = column.shading.Clone();
-        column.shading.parent = column;
-      }
-      return column;
-    }
-    #endregion
+	/// <summary>
+	/// Implements the deep copy of the object.
+	/// </summary>
+	protected override object DeepCopy()
+	{
+	  Column column = (Column)base.DeepCopy();
+	  if (column.format != null)
+	  {
+		column.format = column.format.Clone();
+		column.format.parent = column;
+	  }
+	  if (column.borders != null)
+	  {
+		column.borders = column.borders.Clone();
+		column.borders.parent = column;
+	  }
+	  if (column.shading != null)
+	  {
+		column.shading = column.shading.Clone();
+		column.shading.parent = column;
+	  }
+	  return column;
+	}
+	#endregion
 
-    #region Properties
-    /// <summary>
-    /// Gets the table the Column belongs to.
-    /// </summary>
-    public Table Table
-    {
-      get
-      {
-        if (this.table == null)
-        {
-          Columns clms = this.Parent as Columns;
-          if (clms != null)
-            this.table = clms.Parent as Table;
-        }
-        return this.table;
-      }
-    }
-    Table table;
+	#region Properties
+	/// <summary>
+	/// Gets the table the Column belongs to.
+	/// </summary>
+	public Table Table
+	{
+	  get
+	  {
+		if (this.table == null)
+		{
+		  Columns clms = this.Parent as Columns;
+		  if (clms != null)
+			this.table = clms.Parent as Table;
+		}
+		return this.table;
+	  }
+	}
+	Table table;
 
-    /// <summary>
-    /// Gets the index of the column. First column has index 0.
-    /// </summary>
-    public int Index
-    {
-      get
-      {
-        if (index.IsNull)
-        {
-          Columns clms = this.Parent as Columns;
-          SetValue("Index", clms.IndexOf(this));
-        }
-        return index;
-      }
-    }
-    [DV]
-    internal NInt index = NInt.NullValue;
+	/// <summary>
+	/// Gets the index of the column. First column has index 0.
+	/// </summary>
+	public int Index
+	{
+	  get
+	  {
+		if (index.IsNull)
+		{
+		  Columns clms = this.Parent as Columns;
+		  index = clms.IndexOf(this);
+		}
+		return index;
+	  }
+	}
+	[DV]
+	internal NInt index = NInt.NullValue;
 
-    /// <summary>
-    /// Gets a cell by its row index. The first cell has index 0.
-    /// </summary>
-    public Cell this[int index]
-    {
-      get
-      {
-        //Check.ArgumentOutOfRange(index >= 0 && index < table.Rows.Count, "index");
-        return Table.Rows[index][this.index];
-      }
-    }
+	/// <summary>
+	/// Gets a cell by its row index. The first cell has index 0.
+	/// </summary>
+	public Cell this[int index]
+	{
+	  get
+	  {
+		//Check.ArgumentOutOfRange(index >= 0 && index < table.Rows.Count, "index");
+		return Table.Rows[index][this.index];
+	  }
+	}
 
-    /// <summary>
-    /// Sets or gets the default style name for all cells of the column.
-    /// </summary>
-    public string Style
-    {
-      get { return this.style.Value; }
-      set { this.style.Value = value; }
-    }
-    [DV]
-    internal NString style = NString.NullValue;
+	/// <summary>
+	/// Sets or gets the default style name for all cells of the column.
+	/// </summary>
+	public string Style
+	{
+	  get { return this.style.Value; }
+	  set { this.style.Value = value; }
+	}
+	[DV]
+	internal NString style = NString.NullValue;
 
-    /// <summary>
-    /// Gets the default ParagraphFormat for all cells of the column.
-    /// </summary>
-    public ParagraphFormat Format
-    {
-      get
-      {
-        if (this.format == null)
-          this.format = new ParagraphFormat(this);
+	/// <summary>
+	/// Gets the default ParagraphFormat for all cells of the column.
+	/// </summary>
+	public ParagraphFormat Format
+	{
+	  get
+	  {
+		if (this.format == null)
+		  this.format = new ParagraphFormat(this);
 
-        return this.format;
-      }
-      set
-      {
-        SetParent(value);
-        this.format = value;
-      }
-    }
-    [DV]
-    internal ParagraphFormat format;
+		return this.format;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.format = value;
+	  }
+	}
+	[DV]
+	internal ParagraphFormat format;
 
-    /// <summary>
-    /// Gets or sets the width of a column.
-    /// </summary>
-    public Unit Width
-    {
-      get { return this.width; }
-      set { this.width = value; }
-    }
-    [DV]
-    internal Unit width = Unit.NullValue;
+	/// <summary>
+	/// Gets or sets the width of a column.
+	/// </summary>
+	public Unit Width
+	{
+	  get { return this.width; }
+	  set { this.width = value; }
+	}
+	[DV]
+	internal Unit width = Unit.NullValue;
 
-    /// <summary>
-    /// Gets or sets the default left padding for all cells of the column.
-    /// </summary>
-    public Unit LeftPadding
-    {
-      get { return this.leftPadding; }
-      set { this.leftPadding = value; }
-    }
-    [DV]
-    internal Unit leftPadding = Unit.NullValue;
+	/// <summary>
+	/// Gets or sets the default left padding for all cells of the column.
+	/// </summary>
+	public Unit LeftPadding
+	{
+	  get { return this.leftPadding; }
+	  set { this.leftPadding = value; }
+	}
+	[DV]
+	internal Unit leftPadding = Unit.NullValue;
 
-    /// <summary>
-    /// Gets or sets the default right padding for all cells of the column.
-    /// </summary>
-    public Unit RightPadding
-    {
-      get { return this.rightPadding; }
-      set { this.rightPadding = value; }
-    }
-    [DV]
-    internal Unit rightPadding = Unit.NullValue;
+	/// <summary>
+	/// Gets or sets the default right padding for all cells of the column.
+	/// </summary>
+	public Unit RightPadding
+	{
+	  get { return this.rightPadding; }
+	  set { this.rightPadding = value; }
+	}
+	[DV]
+	internal Unit rightPadding = Unit.NullValue;
 
-    /// <summary>
-    /// Gets the default Borders object for all cells of the column.
-    /// </summary>
-    public Borders Borders
-    {
-      get
-      {
-        if (this.borders == null)
-          this.borders = new Borders(this);
+	/// <summary>
+	/// Gets the default Borders object for all cells of the column.
+	/// </summary>
+	public Borders Borders
+	{
+	  get
+	  {
+		if (this.borders == null)
+		  this.borders = new Borders(this);
 
-        return this.borders;
-      }
-      set
-      {
-        SetParent(value);
-        this.borders = value;
-      }
-    }
-    [DV]
-    internal Borders borders;
+		return this.borders;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.borders = value;
+	  }
+	}
+	[DV]
+	internal Borders borders;
 
-    /// <summary>
-    /// Gets or sets the number of columns that should be kept together with
-    /// current column in case of a page break.
-    /// </summary>
-    public int KeepWith
-    {
-      get { return this.keepWith.Value; }
-      set { this.keepWith.Value = value; }
-    }
-    [DV]
-    internal NInt keepWith = NInt.NullValue;
+	/// <summary>
+	/// Gets or sets the number of columns that should be kept together with
+	/// current column in case of a page break.
+	/// </summary>
+	public int KeepWith
+	{
+	  get { return this.keepWith.Value; }
+	  set { this.keepWith.Value = value; }
+	}
+	[DV]
+	internal NInt keepWith = NInt.NullValue;
 
-    /// <summary>
-    /// Gets or sets a value which define whether the column is a header.
-    /// </summary>
-    public bool HeadingFormat
-    {
-      get { return this.headingFormat.Value; }
-      set { this.headingFormat.Value = value; }
-    }
-    [DV]
-    internal NBool headingFormat = NBool.NullValue;
+	/// <summary>
+	/// Gets or sets a value which define whether the column is a header.
+	/// </summary>
+	public bool HeadingFormat
+	{
+	  get { return this.headingFormat.Value; }
+	  set { this.headingFormat.Value = value; }
+	}
+	[DV]
+	internal NBool headingFormat = NBool.NullValue;
 
-    /// <summary>
-    /// Gets the default Shading object for all cells of the column.
-    /// </summary>
-    public Shading Shading
-    {
-      get
-      {
-        if (this.shading == null)
-          this.shading = new Shading(this);
+	/// <summary>
+	/// Gets the default Shading object for all cells of the column.
+	/// </summary>
+	public Shading Shading
+	{
+	  get
+	  {
+		if (this.shading == null)
+		  this.shading = new Shading(this);
 
-        return this.shading;
-      }
-      set
-      {
-        SetParent(value);
-        this.shading = value;
-      }
-    }
-    [DV]
-    internal Shading shading;
+		return this.shading;
+	  }
+	  set
+	  {
+		SetParent(value);
+		this.shading = value;
+	  }
+	}
+	[DV]
+	internal Shading shading;
 
-    /// <summary>
-    /// Gets or sets a comment associated with this object.
-    /// </summary>
-    public string Comment
-    {
-      get { return this.comment.Value; }
-      set { this.comment.Value = value; }
-    }
-    [DV]
-    internal NString comment = NString.NullValue;
-    #endregion
+	/// <summary>
+	/// Gets or sets a comment associated with this object.
+	/// </summary>
+	public string Comment
+	{
+	  get { return this.comment.Value; }
+	  set { this.comment.Value = value; }
+	}
+	[DV]
+	internal NString comment = NString.NullValue;
+	#endregion
 
-    #region Internal
+	#region Internal
 
 	  
-    #endregion
+	#endregion
   }
 }

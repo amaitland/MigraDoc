@@ -306,14 +306,6 @@ namespace MigraDoc.DocumentObjectModel
         ((IVisitable)this.elements).AcceptVisitor(visitor, visitChildren);
     }
 
-    /// <summary>
-    /// Determines whether this instance is null (not set).
-    /// </summary>
-    public override bool IsNull()
-    {
-      return false;
-    }
-
 	  
     #endregion
   }

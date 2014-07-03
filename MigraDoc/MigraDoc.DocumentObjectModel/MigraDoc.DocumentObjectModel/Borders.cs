@@ -62,11 +62,45 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public bool HasBorder(BorderType type)
     {
-      if (!Enum.IsDefined(typeof(BorderType), type))
-        throw new InvalidEnumArgumentException("type");
+		Border border = GetByType(type);
 
-      return !(this.IsNull(type.ToString()));
+		return border != null;
     }
+
+	public Border GetByType(BorderType type)
+	{
+		if (type == BorderType.Bottom)
+		{
+			return bottom;
+		}
+
+		if (type == BorderType.Top)
+		{
+			return top;
+		}
+
+		if (type == BorderType.Left)
+		{
+			return left;
+		}
+
+		if (type == BorderType.Right)
+		{
+			return right;
+		}
+
+		if (type == BorderType.DiagonalDown)
+		{
+			return diagonalDown;
+		}
+
+		if (type == BorderType.DiagonalUp)
+		{
+			return diagonalUp;
+		}
+
+		return null;
+	}
 
     #region Methods
     /// <summary>

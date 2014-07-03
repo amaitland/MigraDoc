@@ -95,23 +95,6 @@ namespace MigraDoc.DocumentObjectModel
     }
     #endregion
 
-    /// <summary>
-    /// Returns the value with the specified name and value access.
-    /// </summary>
-    public override object GetValue(string name, GV flags) //newStL
-    {
-      if (name == null)
-        throw new ArgumentNullException("name");
-      if (name == "")
-        throw new ArgumentException("name");
-
-      if (name.ToLower().StartsWith("font"))
-      {
-        return ParagraphFormat.GetValue(name);
-      }
-      return base.GetValue(name, flags);
-    }
-
     #region Properties
     /// <summary>
     /// Indicates whether the style is read-only. 
