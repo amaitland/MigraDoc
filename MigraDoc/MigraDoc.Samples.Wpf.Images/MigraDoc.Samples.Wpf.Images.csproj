@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{549C82D4-BEBD-4ADB-90FA-29ABD99187BD}</ProjectGuid>
+    <ProjectGuid>{E40BC204-21DD-4D50-B264-60955AFFBC89}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Invoice</RootNamespace>
-    <AssemblyName>Invoice</AssemblyName>
+    <RootNamespace>Images</RootNamespace>
+    <AssemblyName>Images</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -65,41 +65,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MigraDoc.Samples.Gdi.Invoice\InvoiceForm.cs">
-      <Link>InvoiceForm.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.Invoice\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.Images\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.Wpf.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
-      <Name>MigraDoc.DocumentObjectModel-WPF</Name>
+      <Name>MigraDoc.DocumentObjectModel.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
       <Name>MigraDoc.Rendering.Wpf</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\dsdPowerBook.png">
-      <Link>dsdPowerBook.png</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\PowerBooks-CMYK.jpg">
-      <Link>PowerBooks-CMYK.jpg</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\MigraDoc.Samples.Gdi.Invoice\PowerBooks.png">
-      <Link>PowerBooks.png</Link>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Invoice.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

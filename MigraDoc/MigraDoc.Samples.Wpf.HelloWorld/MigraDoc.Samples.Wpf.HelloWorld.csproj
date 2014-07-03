@@ -3,14 +3,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C1062E9F-20E6-4D18-BD9E-70B4D69CE16F}</ProjectGuid>
+    <ProjectGuid>{03205AAC-DDDE-450D-91FE-74D749CC39CA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloMigraDoc</RootNamespace>
-    <AssemblyName>HelloMigraDoc</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>HelloWorld</RootNamespace>
+    <AssemblyName>HelloWorld</AssemblyName>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -48,6 +48,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -61,64 +62,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
-      <Link>AddToDom.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
-      <Link>Charts.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
-      <Link>Cover.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
-      <Link>Documents.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
-      <Link>FillerText.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
-      <Link>Paragraphs.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloWorld\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
-      <Link>Styles.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
-      <Link>TableOfContents.cs</Link>
-    </Compile>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
-      <Link>Tables.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\images\Logo landscape.png">
-      <Link>images\Logo landscape.png</Link>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.Wpf.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
-      <Name>MigraDoc.DocumentObjectModel-WPF</Name>
+      <Name>MigraDoc.DocumentObjectModel.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>

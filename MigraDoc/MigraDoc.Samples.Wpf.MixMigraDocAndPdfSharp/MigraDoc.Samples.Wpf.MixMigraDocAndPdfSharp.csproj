@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E40BC204-21DD-4D50-B264-60955AFFBC89}</ProjectGuid>
+    <ProjectGuid>{E5FBF994-0C49-496E-BC0A-8AAF97DD2562}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Images</RootNamespace>
-    <AssemblyName>Images</AssemblyName>
+    <RootNamespace>MixMigraDocAndPdfSharp</RootNamespace>
+    <AssemblyName>MixMigraDocAndPdfSharp</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -45,7 +45,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -63,9 +63,39 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MigraDoc.Samples.Gdi.Images\Program.cs">
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
+      <Link>HelloMigraDoc\AddToDom.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
+      <Link>HelloMigraDoc\Charts.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
+      <Link>HelloMigraDoc\Cover.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
+      <Link>HelloMigraDoc\Documents.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
+      <Link>HelloMigraDoc\FillerText.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
+      <Link>HelloMigraDoc\Paragraphs.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
+      <Link>HelloMigraDoc\Styles.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
+      <Link>HelloMigraDoc\TableOfContents.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
+      <Link>HelloMigraDoc\Tables.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,9 +108,9 @@
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.Wpf.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
-      <Name>MigraDoc.DocumentObjectModel-WPF</Name>
+      <Name>MigraDoc.DocumentObjectModel.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>

@@ -5,13 +5,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{03205AAC-DDDE-450D-91FE-74D749CC39CA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{593DB21C-F98A-493E-B3C3-B48A2E1AC8CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloWorld</RootNamespace>
-    <AssemblyName>HelloWorld</AssemblyName>
+    <RootNamespace>DocumentViewer</RootNamespace>
+    <AssemblyName>DocumentViewer</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -64,21 +66,99 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MigraDoc.Samples.Gdi.HelloWorld\Program.cs">
-      <Link>Program.cs</Link>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\MigraDoc.Samples.Gdi.DocumentViewer\SampleDocuments.cs">
+      <Link>SampleDocuments.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\AddToDom.cs">
+      <Link>HelloMigraDoc\AddToDom.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Charts.cs">
+      <Link>HelloMigraDoc\Charts.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Cover.cs">
+      <Link>HelloMigraDoc\Cover.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Documents.cs">
+      <Link>HelloMigraDoc\Documents.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\FillerText.cs">
+      <Link>HelloMigraDoc\FillerText.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Paragraphs.cs">
+      <Link>HelloMigraDoc\Paragraphs.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Styles.cs">
+      <Link>HelloMigraDoc\Styles.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\TableOfContents.cs">
+      <Link>HelloMigraDoc\TableOfContents.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Samples.Gdi.HelloMigraDoc\Tables.cs">
+      <Link>HelloMigraDoc\Tables.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PDFsharp\PdfSharp.Charting\PdfSharp.Charting.Wpf.csproj">
+      <Project>{E6A2734E-0CD6-4210-8AEC-47EE348F8D78}</Project>
+      <Name>PdfSharp.Charting.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.Wpf.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
-      <Name>MigraDoc.DocumentObjectModel-WPF</Name>
+      <Name>MigraDoc.DocumentObjectModel.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>

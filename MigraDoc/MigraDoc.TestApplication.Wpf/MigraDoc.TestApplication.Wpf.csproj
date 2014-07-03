@@ -93,9 +93,9 @@
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel-WPF.csproj">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.Wpf.csproj">
       <Project>{769E6587-72F9-475C-9422-D43ACD4C7AC1}</Project>
-      <Name>MigraDoc.DocumentObjectModel-WPF</Name>
+      <Name>MigraDoc.DocumentObjectModel.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MigraDoc.Rendering\MigraDoc.Rendering.Wpf.csproj">
       <Project>{497784DA-4FDD-43E5-BC4E-6702C8F1AEE0}</Project>
