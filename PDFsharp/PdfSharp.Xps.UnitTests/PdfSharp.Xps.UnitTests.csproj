@@ -110,9 +110,9 @@
     <EmbeddedResource Include="Resources\Test01.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PdfSharp\PdfSharp-WPF.csproj">
+    <ProjectReference Include="..\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
-      <Name>PdfSharp-WPF</Name>
+      <Name>PdfSharp.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\PdfSharp.Xps\PdfSharp.Xps.csproj">
       <Project>{0BC3964B-A3BC-49D5-9B7C-463299B5A166}</Project>
