@@ -89,7 +89,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\PDFsharp\code\PdfSharp\PdfSharp-WPF.csproj">
+    <ProjectReference Include="..\..\PDFsharp\PdfSharp\PdfSharp.Wpf.csproj">
       <Project>{02FCC0BB-2AA2-43BA-8D2F-66D168B87A1D}</Project>
       <Name>PdfSharp-WPF</Name>
     </ProjectReference>
