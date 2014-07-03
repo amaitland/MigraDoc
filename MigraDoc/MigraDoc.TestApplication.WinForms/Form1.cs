@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
 using MigraDoc.Rendering;
-using MigraDoc.RtfRendering;
 
 namespace TestFormsApplication
 {
@@ -90,11 +89,7 @@ namespace TestFormsApplication
 
         private static void OpenRtf(Document doc)
         {
-            var filename = "c:\\temp\\test.rtf";
-            RtfDocumentRenderer rtf = new RtfDocumentRenderer();
-            var workingDir = System.IO.Path.GetDirectoryName(filename);
-            rtf.Render(doc, filename, workingDir);
-            ShellExecute(filename, "");
+            
         }
 
         public static void ShellExecute(string file, string verb)
