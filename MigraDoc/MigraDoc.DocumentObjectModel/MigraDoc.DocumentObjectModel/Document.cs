@@ -322,15 +322,6 @@ namespace MigraDoc.DocumentObjectModel
     internal Sections sections;
     #endregion
 
-    /// <summary>
-    /// Gets the DDL file name.
-    /// </summary>
-    public string DdlFile
-    {
-      get { return this.ddlFile; }
-    }
-    internal string ddlFile = "";
-
     #region Internal
 
 	  /// <summary>
@@ -346,19 +337,7 @@ namespace MigraDoc.DocumentObjectModel
       }
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Document));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

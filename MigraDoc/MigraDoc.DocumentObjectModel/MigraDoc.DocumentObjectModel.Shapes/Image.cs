@@ -206,19 +206,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
       return filePath;
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Image));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

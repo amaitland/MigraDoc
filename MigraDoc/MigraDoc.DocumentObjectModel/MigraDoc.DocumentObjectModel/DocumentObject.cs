@@ -32,8 +32,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
 using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel
@@ -75,17 +73,6 @@ namespace MigraDoc.DocumentObjectModel
       DocumentObject value = (DocumentObject)MemberwiseClone();
       value.parent = null;
       return value;
-    }
-
-    /// <summary>
-    /// Creates an object using the default constructor.
-    /// </summary>
-    public object CreateValue(string name)
-    {
-      ValueDescriptor vd = Meta[name];
-      if (vd != null)
-        return vd.CreateValue();
-      return null;
     }
 
     /// <summary>
@@ -149,7 +136,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public virtual object GetValue(string name, GV flags)
     {
-      return Meta.GetValue(this, name, flags);
+	    return null;
     }
 
     /// <summary>
@@ -157,9 +144,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public virtual void SetValue(string name, object val)
     {
-      Meta.SetValue(this, name, val);
-      if (val is DocumentObject)
-        ((DocumentObject)val).parent = this;
+      
     }
 
     /// <summary>
@@ -167,7 +152,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public virtual bool IsNull(string name)
     {
-      return Meta.IsNull(this, name);
+	    return false;
     }
 
     /// <summary>
@@ -175,7 +160,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public virtual bool IsNull()
     {
-      return Meta.IsNull(this);
+		return false;
     }
 
     /// <summary>
@@ -183,7 +168,7 @@ namespace MigraDoc.DocumentObjectModel
     /// </summary>
     public virtual void SetNull()
     {
-      Meta.SetNull(this);
+      
     }
 
     /// <summary>
@@ -196,15 +181,7 @@ namespace MigraDoc.DocumentObjectModel
     }
     object tag;
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal abstract Meta Meta
-    {
-      get;
-    }
-
-    /// <summary>
+	  /// <summary>
     /// Sets the parent of the specified value.
     /// If a parent is already set, an ArgumentException will be thrown.
     /// </summary>

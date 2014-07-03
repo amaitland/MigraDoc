@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 using MigraDoc.DocumentObjectModel.Fields;
 using MigraDoc.DocumentObjectModel.Shapes;
 
@@ -431,23 +430,6 @@ namespace MigraDoc.DocumentObjectModel
     {
       base.Add(docObj);
     }
-    #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(ParagraphElements));
-        return meta;
-      }
-    }
-    static Meta meta;
     #endregion
   }
 }

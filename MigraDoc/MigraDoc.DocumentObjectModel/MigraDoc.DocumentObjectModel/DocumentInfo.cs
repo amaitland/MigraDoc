@@ -119,22 +119,5 @@ namespace MigraDoc.DocumentObjectModel
     [DV]
     internal NString comment = NString.NullValue;
     #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(DocumentInfo));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
   }
 }

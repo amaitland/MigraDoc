@@ -202,19 +202,7 @@ namespace MigraDoc.DocumentObjectModel
       }
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(HeadersFooters));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
   }
 }

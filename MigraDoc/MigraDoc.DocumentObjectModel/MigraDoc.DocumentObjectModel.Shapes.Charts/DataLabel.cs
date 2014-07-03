@@ -143,22 +143,5 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     [DV(Type = typeof(DataLabelType))]
     internal NEnum type = NEnum.NullValue(typeof(DataLabelType));
     #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(DataLabel));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
   }
 }

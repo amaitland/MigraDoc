@@ -33,7 +33,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Fields
 {
@@ -62,23 +61,6 @@ namespace MigraDoc.DocumentObjectModel.Fields
     {
       return (SectionField)DeepCopy();
     }
-    #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(SectionField));
-        return meta;
-      }
-    }
-    static Meta meta;
     #endregion
   }
 }

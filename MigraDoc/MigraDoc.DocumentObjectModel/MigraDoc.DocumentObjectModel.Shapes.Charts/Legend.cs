@@ -147,19 +147,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
       return false;
     }
 
-    /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(Legend));
-        return meta;
-      }
-    }
-    static Meta meta;
+	  
     #endregion
 
     #region IVisitable Members

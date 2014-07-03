@@ -31,7 +31,6 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -51,22 +50,5 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
     /// Initializes a new instance of the ChartObject class with the specified parent.
     /// </summary>
     internal ChartObject(DocumentObject parent) : base(parent) { }
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(ChartObject));
-        return meta;
-      }
-    }
-    static Meta meta;
-    #endregion
   }
 }

@@ -32,7 +32,6 @@
 
 using System;
 using System.Collections;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Shapes.Charts
 {
@@ -88,23 +87,6 @@ namespace MigraDoc.DocumentObjectModel.Shapes.Charts
       foreach (double val in values)
         this.Add(val);
     }
-    #endregion
-
-    #region Internal
-
-	  /// <summary>
-    /// Returns the meta object of this instance.
-    /// </summary>
-    internal override Meta Meta
-    {
-      get
-      {
-        if (meta == null)
-          meta = new Meta(typeof(SeriesElements));
-        return meta;
-      }
-    }
-    static Meta meta;
     #endregion
   }
 }
