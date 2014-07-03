@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "MigraDoc.Samples.Gdi.HelloWorld\HelloWorld.csproj", "{8DA531F0-1581-46DB-B910-3B411F711D77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.HelloWorld", "MigraDoc.Samples.Gdi.HelloWorld\MigraDoc.Samples.Gdi.HelloWorld.csproj", "{8DA531F0-1581-46DB-B910-3B411F711D77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMigraDoc", "MigraDoc.Samples.Gdi.HelloMigraDoc\HelloMigraDoc.csproj", "{242B1C00-9785-4219-B550-9E3421D503CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.HelloMigraDoc", "MigraDoc.Samples.Gdi.HelloMigraDoc\MigraDoc.Samples.Gdi.HelloMigraDoc.csproj", "{242B1C00-9785-4219-B550-9E3421D503CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice", "MigraDoc.Samples.Gdi.Invoice\Invoice.csproj", "{77C0F1C7-00F1-4337-A6CA-55DF2928A716}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.Invoice", "MigraDoc.Samples.Gdi.Invoice\MigraDoc.Samples.Gdi.Invoice.csproj", "{77C0F1C7-00F1-4337-A6CA-55DF2928A716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentViewer", "MigraDoc.Samples.Gdi.DocumentViewer\DocumentViewer.csproj", "{22C94B24-0DAA-4772-81A5-54C3FEE647D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.DocumentViewer", "MigraDoc.Samples.Gdi.DocumentViewer\MigraDoc.Samples.Gdi.DocumentViewer.csproj", "{22C94B24-0DAA-4772-81A5-54C3FEE647D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixMigraDocAndPdfSharp", "MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp\MixMigraDocAndPdfSharp.csproj", "{D1D1E6B2-FD8F-4082-BCF5-EF51A6BE0546}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp", "MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp\MigraDoc.Samples.Gdi.MixMigraDocAndPdfSharp.csproj", "{D1D1E6B2-FD8F-4082-BCF5-EF51A6BE0546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images", "MigraDoc.Samples.Gdi.Images\Images.csproj", "{2DE61EFE-C97D-481D-945E-4D2157D0D576}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigraDoc.Samples.Gdi.Images", "MigraDoc.Samples.Gdi.Images\MigraDoc.Samples.Gdi.Images.csproj", "{2DE61EFE-C97D-481D-945E-4D2157D0D576}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp.Gdi", "..\PdfSharp\PdfSharp\PdfSharp.Gdi.csproj", "{5384CE57-1F94-4D22-860D-2E9C1AC12DDF}"
 EndProject
