@@ -30,6 +30,7 @@
 
 using System;
 using PdfSharp.Charting;
+using PdfSharp.Core.Extensions;
 using PdfSharp.Drawing;
 
 namespace MigraDoc.Rendering.ChartMapper
@@ -54,9 +55,9 @@ namespace MigraDoc.Rendering.ChartMapper
 #endif
       }
       font.Italic = domFont.Italic;
-      if (!domFont.IsNull("Name"))
+      if (domFont.Name.IsNotEmpty())
         font.Name = domFont.Name;
-      if (!domFont.IsNull("Size"))
+      if (!domFont.Size.IsEmpty)
         font.Size = domFont.Size.Point;
       font.Subscript = domFont.Subscript;
       font.Superscript = domFont.Superscript;

@@ -53,7 +53,7 @@ namespace MigraDoc.Rendering.Forms
   /// Represents a Windows control to display a MigraDoc document.
   /// </summary>
   [Obsolete("This class won't be implemented; it will be removed soon.")]
-  public class DocumentPreview : System.Windows.Window
+  public class DocumentPreview : Window
   {
     //private PdfSharp.Forms.PagePreview preview;
     //private System.ComponentModel.Container components = null;

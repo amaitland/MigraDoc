@@ -289,26 +289,26 @@ namespace MigraDoc.Rendering
     /// <summary>
     /// Writes document information like author and subject to the PDF document.
     /// </summary>
-    public void WriteDocumentInformation()
-    {
-      if (!this.document.IsNull("Info"))
-      {
-        DocumentInfo docInfo = this.document.Info;
-        PdfDocumentInformation pdfInfo = this.pdfDocument.Info;
+	public void WriteDocumentInformation()
+	{
+		if (this.document.Info != null)
+		{
+			DocumentInfo docInfo = this.document.Info;
+			PdfDocumentInformation pdfInfo = this.pdfDocument.Info;
 
-        if (!docInfo.IsNull("Author"))
-          pdfInfo.Author = docInfo.Author;
+			if (!string.IsNullOrEmpty(docInfo.Author))
+				pdfInfo.Author = docInfo.Author;
 
-        if (!docInfo.IsNull("Keywords"))
-          pdfInfo.Keywords = docInfo.Keywords;
+			if (!string.IsNullOrEmpty(docInfo.Keywords))
+				pdfInfo.Keywords = docInfo.Keywords;
 
-        if (!docInfo.IsNull("Subject"))
-          pdfInfo.Subject = docInfo.Subject;
+			if (!string.IsNullOrEmpty(docInfo.Subject))
+				pdfInfo.Subject = docInfo.Subject;
 
-        if (!docInfo.IsNull("Title"))
-          pdfInfo.Title = docInfo.Title;
-      }
-    }
+			if (!string.IsNullOrEmpty(docInfo.Title))
+				pdfInfo.Title = docInfo.Title;
+		}
+	}
 
     /// <summary>
     /// Creates a new PDF document.
