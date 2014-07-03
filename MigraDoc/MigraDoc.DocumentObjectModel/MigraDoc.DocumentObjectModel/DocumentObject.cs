@@ -163,27 +163,11 @@ namespace MigraDoc.DocumentObjectModel
     }
 
     /// <summary>
-    /// Determines whether this instance has a value of the given name.
-    /// </summary>
-    public virtual bool HasValue(string name)
-    {
-      return Meta.HasValue(name);
-    }
-
-    /// <summary>
     /// Determines whether the value of the given name is null.
     /// </summary>
     public virtual bool IsNull(string name)
     {
       return Meta.IsNull(this, name);
-    }
-
-    /// <summary>
-    /// Resets the value of the given name, i.e. IsNull(name) will return true afterwards.
-    /// </summary>
-    public virtual void SetNull(string name)
-    {
-      Meta.SetNull(this, name);
     }
 
     /// <summary>
