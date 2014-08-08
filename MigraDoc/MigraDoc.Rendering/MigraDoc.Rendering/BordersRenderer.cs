@@ -31,7 +31,6 @@
 using System.Diagnostics;
 using MigraDoc.DocumentObjectModel;
 using PdfSharp.Drawing;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.Rendering
 {
@@ -49,7 +48,7 @@ namespace MigraDoc.Rendering
 
     private Border GetBorder(BorderType type)
     {
-      return (Border)this.borders.GetValue(type.ToString(), GV.ReadOnly);
+      return (Border)this.borders.GetByType(type);
     }
 
     private XColor GetColor(BorderType type)
@@ -81,12 +80,13 @@ namespace MigraDoc.Rendering
       BorderStyle style = BorderStyle.Single;
 
       Border border = GetBorder(type);
-      if (border != null && !border.IsNull("Style"))
-        style = border.Style;
-      else if (!this.borders.IsNull("Style"))
-        style = this.borders.Style;
+      if (border != null && border.Style != null)
+        return border.Style.Value;
+	    
+		if (this.borders.Style != null)
+			return this.borders.Style.Value;
 
-      return style;
+	    return style;
     }
 
     internal XUnit GetWidth(BorderType type)
@@ -98,15 +98,15 @@ namespace MigraDoc.Rendering
 
       if (border != null)
       {
-        if (!border.IsNull("Visible") && !border.Visible)
+        if (border.Visible == false)
           return 0;
 
-        if (border != null && !border.IsNull("Width"))
+        if (!border.Width.IsNull)
           return border.Width.Point;
 
-        if (!border.IsNull("Color") || !border.IsNull("Style") || border.Visible)
+        if (!border.Color.IsEmpty || border.Style.HasValue)
         {
-          if (!this.borders.IsNull("Width"))
+			if (!this.borders.width.IsNull)
             return this.borders.Width.Point;
 
           return 0.5;
@@ -114,13 +114,13 @@ namespace MigraDoc.Rendering
       }
       else if (!(type == BorderType.DiagonalDown || type == BorderType.DiagonalUp))
       {
-        if (!this.borders.IsNull("Visible") && !this.borders.Visible)
+        if (borders.Visible == false)
           return 0;
 
-        if (!this.borders.IsNull("Width"))
+		if (!this.borders.Width.IsNull)
           return this.borders.Width.Point;
 
-        if (!this.borders.IsNull("Color") || !this.borders.IsNull("Style") || this.borders.Visible)
+        if (!this.borders.Color.IsEmpty || this.borders.Style.HasValue)
           return 0.5;
       }
       return 0;
@@ -224,33 +224,33 @@ namespace MigraDoc.Rendering
       switch (borderType)
       {
         case BorderType.Left:
-          if (this.borders.IsNull("Left"))
+          if (this.borders.left == null)
             return false;
           return GetWidth(borderType) > 0;
 
         case BorderType.Right:
-          if (this.borders.IsNull("Right"))
+          if (this.borders.right == null)
             return false;
           return GetWidth(borderType) > 0;
 
         case BorderType.Top:
-          if (this.borders.IsNull("Top"))
+          if (this.borders.top == null)
             return false;
           return GetWidth(borderType) > 0;
 
         case BorderType.Bottom:
-          if (this.borders.IsNull("Bottom"))
+          if (this.borders.bottom == null)
             return false;
 
           return GetWidth(borderType) > 0;
 
         case BorderType.DiagonalDown:
-          if (this.borders.IsNull("DiagonalDown"))
+          if (this.borders.diagonalDown == null)
             return false;
           return GetWidth(borderType) > 0;
 
         case BorderType.DiagonalUp:
-          if (borders.IsNull("DiagonalUp"))
+          if (borders.diagonalUp == null)
             return false;
 
           return GetWidth(borderType) > 0;

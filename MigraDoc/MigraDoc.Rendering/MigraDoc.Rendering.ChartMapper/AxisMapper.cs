@@ -36,16 +36,9 @@ namespace MigraDoc.Rendering.ChartMapper
   /// <summary>
   /// The AxisMapper class.
   /// </summary>
-  public class AxisMapper
+  public static class AxisMapper
   {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AxisMapper"/> class.
-    /// </summary>
-    public AxisMapper()
-    {
-    }
-
-    void MapObject(Axis axis, MigraDoc.DocumentObjectModel.Shapes.Charts.Axis domAxis)
+	public static void Map(Axis axis, MigraDoc.DocumentObjectModel.Shapes.Charts.Axis domAxis)
     {
       if (!domAxis.IsNull("TickLabels.Format"))
         axis.TickLabels.Format = domAxis.TickLabels.Format;
@@ -91,12 +84,6 @@ namespace MigraDoc.Rendering.ChartMapper
 
       if (!domAxis.IsNull("LineFormat"))
         LineFormatMapper.Map(axis.LineFormat, domAxis.LineFormat);
-    }
-
-    internal static void Map(Axis axis, MigraDoc.DocumentObjectModel.Shapes.Charts.Axis domAxis)
-    {
-      AxisMapper mapper = new AxisMapper();
-      mapper.MapObject(axis, domAxis);
     }
   }
 }

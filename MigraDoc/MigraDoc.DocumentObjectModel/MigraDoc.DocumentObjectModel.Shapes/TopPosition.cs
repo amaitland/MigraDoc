@@ -31,14 +31,13 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
 
 namespace MigraDoc.DocumentObjectModel.Shapes
 {
   /// <summary>
   /// Represents the top position in a shape.
   /// </summary>
-  public struct TopPosition : INullableValue
+  public struct TopPosition
   {
     /// <summary>
     /// Initializes a new instance of TopPosition from Unit.
@@ -143,7 +142,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Sets the Position from an object.
     /// </summary>
-    void INullableValue.SetValue(object value)
+    public void SetValue(object value)
     {
       if (value == null)
         throw new ArgumentNullException("value");
@@ -161,7 +160,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets the Position as Unit or ShapePosition.
     /// </summary>
-    object INullableValue.GetValue()
+    public object GetValue()
     {
       if (this.shapePosition == ShapePosition.Undefined)
         return this.position;
@@ -172,7 +171,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Resets this instance, i.e. IsNull() will return true afterwards.
     /// </summary>
-    void INullableValue.SetNull()
+    public void SetNull()
     {
       this = new TopPosition();
     }
@@ -180,7 +179,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Determines whether this instance is null (not set).
     /// </summary>
-    bool INullableValue.IsNull
+    public bool IsNull
     {
       get { return !this.notNull; }
     }

@@ -304,18 +304,14 @@ namespace MigraDoc.Rendering
         return listNumber;
       }
 
-      //bool listTypeChanged = this.previousListInfo == null || this.previousListInfo.ListType != listType;
-
       if (isNumberList)
       {
         listNumber = 1;
-        if (/*!listTypeChanged &&*/ (listInfo.IsNull("ContinuePreviousList") || listInfo.ContinuePreviousList))
+        if ((listInfo.ContinuePreviousList == true))
           listNumber = (int)this.previousListNumbers[listType] + 1;
 
         this.previousListNumbers[listType] = listNumber;
       }
-      //      else
-      //        listNumber = int.MinValue;
 
       this.previousListInfo = listInfo;
       return listNumber;

@@ -65,13 +65,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets a value indicating whether the line should be visible.
     /// </summary>
-    public bool Visible
-    {
-      get { return this.visible.Value; }
-      set { this.visible.Value = value; }
-    }
-    [DV]
-    internal NBool visible = NBool.NullValue;
+    public bool? Visible { get; set; }
 
     /// <summary>
     /// Gets or sets the width of the line in Unit.

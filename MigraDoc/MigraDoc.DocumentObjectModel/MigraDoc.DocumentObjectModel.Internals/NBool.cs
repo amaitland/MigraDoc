@@ -37,7 +37,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
   /// <summary>
   /// Represents a nullable boolean value.
   /// </summary>
-  internal struct NBool : INullableValue
+  internal struct NBool
   {
     public NBool(bool value)
     {
@@ -61,7 +61,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// <summary>
     /// Gets the value of the instance.
     /// </summary>
-    object INullableValue.GetValue()
+    public object GetValue()
     {
       return this.Value;
     }
@@ -69,7 +69,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// <summary>
     /// Sets the value of the instance.
     /// </summary>
-    void INullableValue.SetValue(object value)
+    public void SetValue(object value)
     {
       this.val = (bool)value ? (sbyte)1 : (sbyte)0;
     }

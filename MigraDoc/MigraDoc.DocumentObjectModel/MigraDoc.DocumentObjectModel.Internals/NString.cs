@@ -37,7 +37,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
   /// <summary>
   /// Represents a nullable string value.
   /// </summary>
-  internal struct NString : INullableValue
+  internal struct NString
   {
     /// <summary>
     /// Gets or sets the value of the instance.
@@ -51,7 +51,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// <summary>
     /// Returns the value of the instance.
     /// </summary>
-    object INullableValue.GetValue()
+    public object GetValue()
     {
       return this.Value;
     }
@@ -59,7 +59,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
     /// <summary>
     /// Sets the value of the instance.
     /// </summary>
-    void INullableValue.SetValue(object value)
+    public void SetValue(object value)
     {
       this.val = (String)value;
     }

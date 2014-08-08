@@ -46,7 +46,7 @@ namespace MigraDoc.DocumentObjectModel.Internals
   /// <summary>
   /// Represents a nullable Enum value.
   /// </summary>
-  internal struct NEnum : INullableValue
+  internal struct NEnum
   {
     public NEnum(int val, Type type)
     {
@@ -91,12 +91,12 @@ namespace MigraDoc.DocumentObjectModel.Internals
       }
     }
 
-    object INullableValue.GetValue()
+	  public object GetValue()
     {
       return ToObject();
     }
 
-    void INullableValue.SetValue(object value)
+	  public void SetValue(object value)
     {
       this.val = (int)value;
     }

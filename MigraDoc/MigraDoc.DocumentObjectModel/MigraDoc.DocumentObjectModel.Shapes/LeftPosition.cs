@@ -31,7 +31,6 @@
 #endregion
 
 using System;
-using MigraDoc.DocumentObjectModel.Internals;
 using MigraDoc.DocumentObjectModel.Shapes;
 
 namespace MigraDoc.DocumentObjectModel.Shapes
@@ -39,7 +38,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
   /// <summary>
   /// Represents the left position in a shape.
   /// </summary>
-  public struct LeftPosition : INullableValue
+  public struct LeftPosition
   {
     /// <summary>
     /// Initializes a new instance of the LeftPosition class from Unit.
@@ -88,7 +87,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Sets the Position from an object.
     /// </summary>
-    void INullableValue.SetValue(object value)
+    public void SetValue(object value)
     {
       //REVIEW KlPo4KlPo: Code-Verdopplung in TopPostion/LeftPosition
       if (value == null)
@@ -108,7 +107,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets the value of the position.
     /// </summary>
-    object INullableValue.GetValue()
+    public object GetValue()
     {
       if (this.shapePosition == ShapePosition.Undefined)
         return this.position;
@@ -119,7 +118,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Resets this instance, i.e. IsNull() will return true afterwards.
     /// </summary>
-    void INullableValue.SetNull()
+    public void SetNull()
     {
       this = new LeftPosition();
     }
@@ -127,7 +126,7 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Determines whether this instance is null (not set).
     /// </summary>
-    bool INullableValue.IsNull
+    public bool IsNull
     {
       get { return !this.notNull; }
     }

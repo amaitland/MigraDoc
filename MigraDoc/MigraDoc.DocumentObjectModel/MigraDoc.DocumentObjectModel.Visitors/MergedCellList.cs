@@ -264,10 +264,10 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 		if (returnBorder == null)
 		{
 			returnBorder = new Border();
-			returnBorder.style = borders.style;
-			returnBorder.width = borders.width;
+			returnBorder.Style = borders.Style;
+			returnBorder.Width = borders.Width;
 			returnBorder.color = borders.color;
-			returnBorder.visible = borders.visible;
+			returnBorder.Visible = borders.Visible;
 		}
 		return returnBorder;
 	}

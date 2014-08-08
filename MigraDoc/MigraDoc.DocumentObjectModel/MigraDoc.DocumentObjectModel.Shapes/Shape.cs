@@ -87,7 +87,6 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     }
     #endregion
 
-    #region Properties
     /// <summary>
     /// Gets or sets the wrapping format of the shape.
     /// </summary>
@@ -198,29 +197,12 @@ namespace MigraDoc.DocumentObjectModel.Shapes
     /// <summary>
     /// Gets or sets the height of the shape.
     /// </summary>
-    public Unit Height
-    {
-      get { return this.height; }
-      set { this.height = value; }
-    }
-    [DV]
-    internal Unit height = Unit.NullValue;
+    public Unit Height { get; set; }
+    
 
     /// <summary>
     /// Gets or sets the width of the shape.
     /// </summary>
-    public Unit Width
-    {
-      get { return this.width; }
-      set { this.width = value; }
-    }
-    [DV]
-    internal Unit width = Unit.NullValue;
-    #endregion
-
-    #region Internal
-
-	  
-    #endregion
+    public Unit Width { get; set; }
   }
 }

@@ -91,13 +91,8 @@ namespace MigraDoc.DocumentObjectModel
     /// Gets or sets a value indicating whether
     /// the previous list numbering should be continued.
     /// </summary>
-    public bool ContinuePreviousList
-    {
-      get { return this.continuePreviousList.Value; }
-      set { this.continuePreviousList.Value = value; }
-    }
-    [DV]
-    internal NBool continuePreviousList = NBool.NullValue;
+    public bool? ContinuePreviousList { get; set; }
+      
     #endregion
   }
 }

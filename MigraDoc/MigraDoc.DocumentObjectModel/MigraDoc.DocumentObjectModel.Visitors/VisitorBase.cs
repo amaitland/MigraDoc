@@ -134,8 +134,8 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenListInfo(ListInfo listInfo, ListInfo refListInfo)
     {
-      if (listInfo.continuePreviousList.IsNull)
-        listInfo.continuePreviousList = refListInfo.continuePreviousList;
+      if (listInfo.ContinuePreviousList == null)
+        listInfo.ContinuePreviousList = refListInfo.ContinuePreviousList;
       if (listInfo.listType.IsNull)
         listInfo.listType = refListInfo.listType;
       if (listInfo.numberPosition.IsNull)
@@ -176,14 +176,14 @@ namespace MigraDoc.DocumentObjectModel.Visitors
       if (border == null)
         border = new Border(parentBorders);
 
-      if (border.visible.IsNull)
-        border.visible = parentBorders.visible;
+      if (border.Visible == null)
+		  border.Visible = parentBorders.Visible;
 
-      if (border.style.IsNull)
-        border.style = parentBorders.style;
+	  if (border.Style == null)
+		  border.Style = parentBorders.Style;
 
-      if (border.width.IsNull)
-        border.width = parentBorders.width;
+      if (border.Width.IsNull)
+		  border.Width = parentBorders.width;
 
       if (border.color.IsNull)
         border.color = parentBorders.color;
@@ -193,12 +193,12 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenBorders(Borders borders, Borders refBorders)
     {
-      if (borders.visible.IsNull)
-        borders.visible = refBorders.visible;
+		if (borders.Visible == null)
+			borders.Visible = refBorders.Visible;
       if (borders.width.IsNull)
         borders.width = refBorders.width;
-      if (borders.style.IsNull)
-        borders.style = refBorders.style;
+      if (borders.Style == null)
+		  borders.Style = refBorders.Style;
       if (borders.color.IsNull)
         borders.color = refBorders.color;
 
@@ -235,12 +235,12 @@ namespace MigraDoc.DocumentObjectModel.Visitors
 
     protected void FlattenBorder(Border border, Border refBorder)
     {
-      if (border.visible.IsNull)
-        border.visible = refBorder.visible;
-      if (border.width.IsNull)
-        border.width = refBorder.width;
-      if (border.style.IsNull)
-        border.style = refBorder.style;
+      if (border.Visible == null)
+		  border.Visible = refBorder.Visible;
+      if (border.Width.IsNull)
+		  border.Width = refBorder.Width;
+      if (border.Style == null)
+		  border.Style = refBorder.Style;
       if (border.color.IsNull)
         border.color = refBorder.color;
     }
@@ -601,10 +601,10 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     #region Shape
     internal override void VisitTextFrame(TextFrame textFrame)
     {
-      if (textFrame.height.IsNull)
-        textFrame.height = Unit.FromInch(1);
-      if (textFrame.width.IsNull)
-        textFrame.width = Unit.FromInch(1);
+      if (textFrame.Height.IsNull)
+        textFrame.Height = Unit.FromInch(1);
+      if (textFrame.Width.IsNull)
+        textFrame.Width = Unit.FromInch(1);
     }
     #endregion
 
@@ -860,8 +860,6 @@ namespace MigraDoc.DocumentObjectModel.Visitors
     {
       if (textArea == null || textArea.elements == null)
         return;
-
-      Document document = textArea.Document;
 
       ParagraphFormat parentFormat;
 
